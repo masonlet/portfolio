@@ -1,20 +1,20 @@
 import { defineConfig } from 'vite'
+import { resolve } from "path";
 
 export default defineConfig({
-  root: '.',
-  base: './',
+  root: 'src',
+  publicDir: "../public",
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
-    minify: 'esbuild',
-    assetsDir: '',   
     rollupOptions: {
       input: {
-        main: 'public/index.html',
-        projects: 'public/projects.html',
-        contacts: 'public/contacts.html',
-        resume: 'public/resume.html'
-      }
+        index: resolve(__dirname, "src/pages/index.html"),
+        projects: resolve(__dirname, "src/pages/projects.html"),
+        resume: resolve(__dirname, "src/pages/resume.html"),
+        contacts: resolve(__dirname, "src/pages/contacts.html"),
+      },
     },
+    cssCodeSplit: false,
   },
 });
