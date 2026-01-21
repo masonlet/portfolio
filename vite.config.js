@@ -1,19 +1,19 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  root: '.',
+  root: 'src',
+  publicDir: '../public',
   base: './',
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
     minify: 'esbuild',
-    assetsDir: '',   
     rollupOptions: {
       input: {
-        main: 'public/index.html',
-        projects: 'public/projects.html',
-        contacts: 'public/contacts.html',
-        resume: 'public/resume.html'
+        main: 'src/index.html',
+        projects: 'src/projects.html',
+        contacts: 'src/contacts.html',
+        resume: 'src/resume.html'
       }
     },
   },
