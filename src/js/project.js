@@ -142,7 +142,10 @@ const IMAGE_PATHS = {
   googletest: new URL(`/img/tech/googletest.png`, import.meta.url).href,
   pytest: new URL(`/img/tech/pytest.png`, import.meta.url).href,
   pip: new URL(`/img/tech/pip.png`, import.meta.url).href,
-  pypi: new URL(`/img/tech/pypi.png`, import.meta.url).href
+  pypi: new URL(`/img/tech/pypi.png`, import.meta.url).href,
+  vercel: new URL(`/img/tech/vercel.png`, import.meta.url).href,
+  vitest: new URL(`/img/tech/vitest.png`, import.meta.url).href,
+  node: new URL(`/img/tech/nodejs.png`, import.meta.url).href
 };  
 
 const projectCards = document.querySelectorAll('.project-card');
