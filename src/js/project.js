@@ -1,4 +1,11 @@
 const projectData = {
+  'top-languages': {
+    title: 'GitHub Top Languages',
+    description: 'A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.',
+    image: new URL('/img/projects/github-top-languages.webp', import.meta.url).href,
+    github: 'https://github.com/masonlet/github-top-languages',
+    tech: ['js', 'node', 'vercel', 'vitest']
+  },
   'starlet-setup': {
     title: 'Starlet Setup',
     description: 'Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.',
