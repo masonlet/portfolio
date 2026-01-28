@@ -24,9 +24,8 @@ const projectData = {
     title: 'Portfolio',
     description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.',
     image: new URL('/img/projects/portfolio.webp', import.meta.url).href,
-
     github: 'https://github.com/masonlet/portfolio',
-    tech: ['html', 'css', 'js']
+    tech: ['html', 'css', 'js', 'vercel']
   },
   'githubvisualizer': {
     title: 'GitHub Visualizer',
