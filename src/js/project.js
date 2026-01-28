@@ -3,7 +3,7 @@ const projectData = {
     title: 'Starlet Setup',
     description: 'Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.',
     image: new URL('/img/projects/starlet-setup.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starlet-setup',
+    github: 'https://github.com/starlet-engine/starlet-setup',
     tech: ['python', 'cmake', 'pytest', 'pip', 'pypi']
   },
   'tasktracker': {
@@ -14,10 +14,10 @@ const projectData = {
     tech: ['cpp', 'cmake', `googletest`]
   },
   'opengl': {
-    title: 'C++ OpenGL Engine',
+    title: 'Starlet Engine',
     description: 'A C++ OpenGL engine ecosystem.',
     image: new URL('/img/projects/opengl.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletdevelopment',
+    github: 'https://github.com/starlet-engine',
     tech: ['cpp', 'opengl', 'cmake', 'glfw']
   },
   'portfolio': {
@@ -39,28 +39,28 @@ const projectData = {
     title: 'Image Sandbox',
     description: 'A C++ playground for experimenting with images loaded using StarletSerializer.',
     image: new URL('/img/projects/imagesandbox.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletimagesandbox',
+    github: 'https://github.com/starlet-engine/image-sandbox',
     tech: ['cpp', 'cmake']
   },
   'samples': {
     title: 'Starlet Samples',
     description: 'A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.',
     image: new URL('/img/projects/samples.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletsamples',
+    github: 'https://github.com/starlet-engine/samples',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
   },
   'noisesandbox': {
     title: 'Noise Sandbox',
     description: 'A C++ playground for learning and experimenting with noise algorithms.',
     image: new URL('/img/projects/noise.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletnoisesandbox',
+    github: 'https://github.com/starlet-engine/noise-sandbox',
     tech: ['cpp', 'cmake']
   },
   'starter': {
     title: 'Starlet Starter',
     description: 'A Template for Starlet Game Projects.',
     image: new URL('/img/projects/starter.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletstarter',
+    github: 'https://github.com/starlet-engine/starter',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
   },
   'cardportfolio': {
@@ -74,56 +74,56 @@ const projectData = {
     title: 'Starlet Graphics',
     description: 'Graphics loading & management library for Starlet projects.',
     image: new URL('/img/projects/graphics.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletgraphics',
+    github: 'https://github.com/starlet-engine/graphics',
     tech: ['cpp', 'cmake']
   },
   'serializer': {
     title: 'Starlet Serializer',
     description: 'Serialization library for Starlet projects to handle both data reading and writing.',
     image: new URL('/img/projects/serializer.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletserializer',
+    github: 'https://github.com/starlet-engine/serializer',
     tech: ['cpp', 'cmake', `googletest`]
   },
   'engine': {
     title: 'Starlet Engine',
     description: 'Modular OpenGL engine written in C++.',
     image: new URL('/img/projects/engine.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletengine',
+    github: 'https://github.com/starlet-engine/engine',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
   },
   'scene': {
     title: 'Starlet Scene',
     description: 'ECS-based scene & scene management library for Starlet projects.',
     image: new URL('/img/projects/scene.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletscene',
+    github: 'https://github.com/starlet-engine/scene',
     tech: ['cpp', 'cmake']
   },
   'logger': {
     title: 'Starlet Logger',
     description: 'Logging library for Starlet projects.',
     image: new URL('/img/projects/logger.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletlogger',
+    github: 'https://github.com/starlet-engine/logger',
     tech: ['cpp', 'cmake', `googletest`]
   },
   'controls': {
     title: 'Starlet Controls',
     description: 'Input management library for Starlet projects.',
     image: new URL('/img/projects/controls.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletcontrols',
+    github: 'https://github.com/starlet-engine/controls',
     tech: ['cpp', 'cmake']
   },
   'math': {
     title: 'Starlet Math',
     description: 'A lightweight header-only math library for Starlet projects.',
     image: new URL('/img/projects/math.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starletmath',
+    github: 'https://github.com/starlet-engine/math',
     tech: ['cpp', 'cmake', `googletest`]
   },
   'tests': {
-    title: 'Starlet Tests',
+    title: 'Starlet Testing',
     description: 'A repository containing unit tests for Starlet libaries using Goolge Test(gtest).',
     image: new URL('/img/projects/tests.webp', import.meta.url).href,
-    github: 'https://github.com/masonlet/starlettests',
+    github: 'https://github.com/starlet-engine/testing',
     tech: ['cpp', 'cmake', `googletest`]
   },
 };
