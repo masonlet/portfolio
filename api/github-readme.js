@@ -1,8 +1,8 @@
-const DOMPurify = require("isomorphic-dompurify");
+import DOMPurify from "isomorphic-dompurify";
 
 const valid = /^[a-zA-Z0-9_.-]+$/;
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (req.method !== "GET") return res.status(405).json({ 
     error: "Method not allowed" 
   });

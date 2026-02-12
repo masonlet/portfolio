@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "type": "module",
   "version": "1.0.0",
   "description": "Mason L'Etoile's portfolio website",
   "author": "Mason L'Etoile",
