@@ -5,6 +5,19 @@ const grid = document.querySelector('#projects-grid');
 const details = document.querySelector('#project-details');
 const ANIMATION_DURATION = 300;
 
+function parseGithubUrl(url) {
+  try {
+    const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+    if (match) return {
+      owner: match[1], 
+      repo: match[2].replace(/\.git$/, '') 
+    };
+  } catch (e) {
+    console.error("Failed to parse GitHub URL:", e);
+  }
+  return null;
+}
+
 function createTechIcons(icons){
   if (!icons || icons.length === 0) return '';
 
@@ -51,9 +64,39 @@ function showProjectDetails(projectKey) {
           <button id="github-button">View on GitHub →</button>
         </a>
       </div>
-      <p>${data.description}</p>
-      <img src="${data.image}" alt="${data.title}" id="project-preview"/>
+      <div id="readme-container" class="loading">
+        <p>Loading README...</p>
+      </div>
     `;
+
+    const parsed = parseGithubUrl(data.github);
+    if (!parsed || !parsed.owner || !parsed.repo) {
+      const container = document.getElementById('readme-container');
+      container.classList.remove('loading');
+      container.innerHTML = `<p>${data.description}</p><img src="${data.image}" alt="${data.title}" id="project-preview"/>`;
+      return;
+    }
+
+    fetch(
+      `/api/github-readme?owner=${parsed.owner}&repo=${parsed.repo}`
+    ).then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.text();
+    }).then(html => {
+      const container = document.getElementById('readme-container');
+      if (container) {
+        container.classList.remove('loading');
+        container.innerHTML = html;
+      }
+    }).catch(e => {
+      if (e.name === 'AbortError') return;
+      console.error('README fetch failed:', e);
+      const container = document.getElementById('readme-container');
+      if (container) {
+        container.classList.remove('loading');
+        container.innerHTML = `<p class="fallback">${data.description}</p>`;
+      }
+    })
   });
 }
 projectCards.forEach(card => {
@@ -68,10 +111,11 @@ function showProjectsGrid() {
     details.innerHTML = '';
   });
 }
+
 document.addEventListener('click', e => {
-  if (e.target.id === 'back-to-grid' || e.target.closest('#back-to-grid')){
-    showProjectsGrid();
-  }
+  if (e.target.id === 'back-to-grid' || 
+      e.target.closest('#back-to-grid')
+  ) showProjectsGrid();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
