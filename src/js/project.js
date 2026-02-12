@@ -50,6 +50,13 @@ function fadeTransition(hideElement, showElement, callback){
   }, ANIMATION_DURATION);
 }
 
+function displayFallbackContent(container, data) {
+  if (!container) return;
+
+  container.classList.remove('loading');
+  container.innerHTML = `<p>${data.description}</p><img src="${data.image}" alt="${data.title}" id="project-preview"/>`;
+}
+
 function showProjectDetails(projectKey) {
   const data = projectData[projectKey];
   if (!data) return;
@@ -70,10 +77,9 @@ function showProjectDetails(projectKey) {
     `;
 
     const parsed = parseGithubUrl(data.github);
+
     if (!parsed || !parsed.owner || !parsed.repo) {
-      const container = document.getElementById('readme-container');
-      container.classList.remove('loading');
-      container.innerHTML = `<p>${data.description}</p><img src="${data.image}" alt="${data.title}" id="project-preview"/>`;
+      displayFallbackContent(document.getElementById('readme-container'), data);
       return;
     }
 
@@ -91,11 +97,7 @@ function showProjectDetails(projectKey) {
     }).catch(e => {
       if (e.name === 'AbortError') return;
       console.error('README fetch failed:', e);
-      const container = document.getElementById('readme-container');
-      if (container) {
-        container.classList.remove('loading');
-        container.innerHTML = `<p class="fallback">${data.description}</p>`;
-      }
+      displayFallbackContent(document.getElementById('readme-container'), data);
     })
   });
 }
