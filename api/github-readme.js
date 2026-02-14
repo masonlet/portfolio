@@ -1,5 +1,3 @@
-import DOMPurify from "isomorphic-dompurify";
-
 const valid = /^[a-zA-Z0-9_.-]+$/;
 
 export default async (req, res) => {
@@ -44,30 +42,21 @@ export default async (req, res) => {
     }
 
     const githubHtml = await response.text();
-
     if (!githubHtml?.trim()) return res.status(404).json({
       error: "No README content found"
     });
 
     const baseUrl = `https://github.com/${owner}/${repo}`;
     const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/HEAD`;
-
     const processedHtml = githubHtml
       .replace(/src="(?!http)(.*?)"/g, `src="${rawBase}/$1"`)
       .replace(/href="(?!http)(.*?)\.md"/g, `href="${baseUrl}/blob/HEAD/$1.md"`)
       .replace(/href="(?!http)(?!#)(.*?)"/g, `href="${baseUrl}/blob/HEAD/$1"`);
 
-    const cleanHtml = DOMPurify.sanitize(processedHtml, {
-      USE_PROFILES: { html: true },
-      ADD_ATTR: ['target', 'rel', 'class', 'id'],
-      ADD_TAGS: ['input'],
-      FORBID_TAGS: ['style', 'script']
-    });
-
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
     return res.status(200).send(
-      `<div class="readme-content">${cleanHtml}</div>`
+      `<div class="readme-content">${processedHtml}</div>`
     );
   } catch (err) {
     console.error("README endpoint error:", err);
