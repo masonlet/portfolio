@@ -1,17 +1,19 @@
 import { Resend } from 'resend';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env['RESEND_API_KEY']);
 
-export default async (req, res) => {
-  if (req.method !== 'POST') {
+export default async (
+  req: VercelRequest,
+  res: VercelResponse
+) => {
+  if (req.method !== 'POST')
     return res.status(405).json({ error: 'Method not allowed' });
-  }
 
   const { subject, email, message } = req.body;
   
-  if (!subject || !email || !message) {
+  if (!subject || !email || !message)
     return res.status(400).json({ error: 'All fields are required' });
-  }
 
   try {
     await resend.emails.send({
@@ -20,9 +22,9 @@ export default async (req, res) => {
       subject: `Contact form: ${subject}`,
       text: `From: ${email}\n\n${message}`
     });
-    res.json({ success: true, message: 'Message sent successfully' });
+    return res.json({ success: true, message: 'Message sent successfully' });
   } catch (error) {
     console.error('Email error:', error);
-    res.status(500).json({ error: 'Failed to send message' });
+    return res.status(500).json({ error: 'Failed to send message' });
   }
 };
