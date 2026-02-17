@@ -1,6 +1,11 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
 const valid = /^[a-zA-Z0-9_.-]+$/;
 
-export default async (req, res) => {
+export default async (
+  req: VercelRequest,
+  res: VercelResponse
+) => {
   if (req.method !== "GET") return res.status(405).json({ 
     error: "Method not allowed" 
   });
@@ -10,7 +15,8 @@ export default async (req, res) => {
     error: "Missing owner or repo" 
   });
 
-  if (!valid.test(owner) || !valid.test(repo)
+  if (typeof owner !== "string" || !valid.test(owner) || 
+      typeof repo !== "string" || !valid.test(repo)
   ) return res.status(400).json({ 
     error: "Invalid owner or repo" 
   });
@@ -20,8 +26,8 @@ export default async (req, res) => {
     const headers = {
       "Accept": "application/vnd.github.html",      
       "User-Agent": "portfolio-readme-loader",
-      ...(process.env.GITHUB_TOKEN && {
-        Authorization: `token ${process.env.GITHUB_TOKEN}`
+      ...(process.env['GITHUB_TOKEN'] && {
+        Authorization: `token ${process.env['GITHUB_TOKEN']}`
       }),
     };
  

@@ -1,4 +1,20 @@
-export const projectData = {
+export type TechKey = 
+  | 'html' | 'css' | 'js' 
+  | 'python' | 'java' | 'cpp' | 'cs'
+  | 'opengl' | 'glfw' | 'cmake' | 'googletest' | 'pytest'
+  | 'pip' | 'pypi' | 'vercel' | 'vitest' | 'node';
+
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  tech: TechKey[];
+}
+
+export type ProjectData = Record<string, Project>;
+
+export const projectData: ProjectData = {
   'top-languages': {
     title: 'GitHub Top Languages',
     description: 'A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.',
@@ -134,7 +150,11 @@ export const projectData = {
   },
 };
 
-export const IMAGE_PATHS = {
+export type ProjectKey  = keyof typeof projectData;
+
+export type ImageData = Record<TechKey, string>;
+
+export const IMAGE_PATHS: ImageData = {
   html: new URL(`/img/tech/html.png`, import.meta.url).href,
   css: new URL(`/img/tech/css.png`, import.meta.url).href,
   js: new URL(`/img/tech/js.png`, import.meta.url).href,

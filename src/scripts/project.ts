@@ -1,16 +1,27 @@
-import { projectData, IMAGE_PATHS } from './projectData.js';
+import { 
+  type Project,
+  type ProjectKey,
+  projectData,
+  type TechKey,
+  IMAGE_PATHS
+} from './projectData';
 
-const projectCards = document.querySelectorAll('.project-card');
-const grid = document.querySelector('#projects-grid');
-const details = document.querySelector('#project-details');
+const projectCards = document.querySelectorAll<HTMLElement>('.project-card');
+const grid = document.querySelector<HTMLElement>('#projects-grid');
+const details = document.querySelector<HTMLElement>('#project-details');
 const ANIMATION_DURATION = 300;
 
-function parseGithubUrl(url) {
+interface GithubParsedUrl {
+  owner: string;
+  repo: string;
+}
+
+function parseGithubUrl(url: string): GithubParsedUrl | null {
   try {
     const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
     if (match) return {
-      owner: match[1], 
-      repo: match[2].replace(/\.git$/, '') 
+      owner: match[1]!, 
+      repo: match[2]!.replace(/\.git$/, '') 
     };
   } catch (e) {
     console.error("Failed to parse GitHub URL:", e);
@@ -18,17 +29,26 @@ function parseGithubUrl(url) {
   return null;
 }
 
-function createTechIcons(icons){
+function createTechIcons(icons: TechKey[] | undefined): string {
   if (!icons || icons.length === 0) return '';
 
   const iconData = icons
-    .map(lang => `<img src="${IMAGE_PATHS[lang]}" alt="${lang}" class="tech-icon" loading="lazy">`)
+    .map(lang => {
+      const imagePath = IMAGE_PATHS[lang];
+      if (!imagePath) return  '';
+      return `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+    })
+    .filter(Boolean)
     .join('');
 
   return `<div class="project-tech">${iconData}</div>`;
 }
 
-function fadeTransition(hideElement, showElement, callback){
+function fadeTransition(
+  hideElement: HTMLElement,
+  showElement: HTMLElement,
+  callback?: () => void
+): void {
   hideElement.classList.add('fade-out');
 
   setTimeout(() => {
@@ -50,16 +70,21 @@ function fadeTransition(hideElement, showElement, callback){
   }, ANIMATION_DURATION);
 }
 
-function displayFallbackContent(container, data) {
+function displayFallbackContent(
+  container: HTMLElement | null, 
+  data: Project
+): void {
   if (!container) return;
 
   container.classList.remove('loading');
   container.innerHTML = `<p>${data.description}</p><img src="${data.image}" alt="${data.title}" id="project-preview"/>`;
 }
 
-function showProjectDetails(projectKey) {
-  const data = projectData[projectKey];
+function showProjectDetails(projectKey: string): void {
+  const data = projectData[projectKey as ProjectKey];
   if (!data) return;
+
+  if (!grid || !details) return;
   
   fadeTransition(grid, details, () => {
     details.innerHTML = `
@@ -94,8 +119,8 @@ function showProjectDetails(projectKey) {
         container.classList.remove('loading');
         container.innerHTML = html;
       }
-    }).catch(e => {
-      if (e.name === 'AbortError') return;
+    }).catch((e: unknown) => {
+      if (e instanceof Error && e.name === 'AbortError') return;
       console.error('README fetch failed:', e);
       displayFallbackContent(document.getElementById('readme-container'), data);
     })
@@ -104,23 +129,28 @@ function showProjectDetails(projectKey) {
 projectCards.forEach(card => {
   card.addEventListener('click', () => {
     const projectKey = card.getAttribute('data-project');
-    showProjectDetails(projectKey);
+    if (projectKey) showProjectDetails(projectKey);
   });
 });
 
 function showProjectsGrid() {
+  if (!grid || !details) return;
+
   fadeTransition(details, grid, () => {
     details.innerHTML = '';
   });
 }
 
-document.addEventListener('click', e => {
-  if (e.target.id === 'back-to-grid' || 
-      e.target.closest('#back-to-grid')
-  ) showProjectsGrid();
+document.addEventListener('click', (e: MouseEvent) => {
+  const target = e.target as HTMLElement;
+
+  if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
+    showProjectsGrid();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+  if (!grid || !details) return;
+
   grid.classList.remove('hidden');
   grid.style.display = 'grid';
   grid.style.opacity = '1';
