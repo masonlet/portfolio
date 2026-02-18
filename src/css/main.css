@@ -2,7 +2,6 @@
 @import url('base/animations.css');
 @import url('base/reset.css');
 @import url('base/root.css');
-@import url('base/utilities.css');
 
 @import url('layout/main.css');
 @import url('layout/sections.css');
@@ -30,3 +29,4 @@
   font-style: normal;
   font-display: swap;
 }
+

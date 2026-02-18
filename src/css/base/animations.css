@@ -3,3 +3,8 @@
   50% { background-position: 100% 0%; }
 }
 
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
