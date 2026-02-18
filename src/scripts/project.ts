@@ -17,6 +17,15 @@ function isProjectKey(key: string): key is ProjectKey {
   return key in projectData;
 }
 
+function parseHash(): ProjectKey | null {
+  const hash = window.location.hash.slice(1);
+  return isProjectKey(hash) ? hash : null;
+}
+
+function syncURL(projectKey: ProjectKey | null): void {
+  history.replaceState(null, '', projectKey ? `#${projectKey}` : window.location.pathname);
+}
+
 function parseGithubUrl(url: string): GithubParsedUrl | null {
   const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
   if (!match || !match[1] || !match[2]) return null;
@@ -113,6 +122,8 @@ function showProjectDetails(
   if (!isProjectKey(projectKey)) return;
   const data: Project = projectData[projectKey];
   
+  syncURL(projectKey);
+
   fadeTransition(grid, details, 'block', () => {
     details.innerHTML = `
       <h3>${data.title}</h3>
@@ -139,6 +150,7 @@ function showProjectsGrid(
   details: HTMLElement
 ): void {
   active?.abort();
+  syncURL(null);
   fadeTransition(details, grid, 'grid', () => { 
     details.innerHTML = ''; 
   });
@@ -168,5 +180,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
       showProjectsGrid(grid, details);
   });
+
+  const initial = parseHash();
+  if (initial) showProjectDetails(initial, grid, details);
 });
 
