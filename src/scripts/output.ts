@@ -1,18 +1,30 @@
-// Constants
-const TYPING_SPEED = 20;
-const IMAGE_PATHS = {
-  html: new URL(`/img/tech/html.png`, import.meta.url).href, 
-  css: new URL(`/img/tech/css.png`, import.meta.url).href, 
-  js: new URL(`/img/tech/js.png`, import.meta.url).href,
-  python: new URL(`/img/tech/python.png`, import.meta.url).href, 
-  java: new URL(`/img/tech/java.png`, import.meta.url).href, 
-  cpp: new URL(`/img/tech/cpp.png`, import.meta.url).href, 
-  cs: new URL(`/img/tech/cs.png`, import.meta.url).href
-};  
-const SECTIONS = [`about`, `skills`, `contacts`];
+import { 
+  type TechKey,
+  IMAGE_PATHS 
+} from './projectData';
+
+const TYPING_SPEED: number = 20;
+
+type SideKey = `first` | `second`;
+
+const SECTIONS = [`about`, `skills`, `contacts`] as const;
+type SectionKey = typeof SECTIONS[number];
+
+interface TypingProgress {
+  currentSection: SectionKey | ``;
+  typingIndices: Partial<Record<SectionKey, number>>;
+}
+
+interface ActiveTyping {
+  section: SectionKey;
+  shouldContinue: boolean;
+}
+
+type SideContent = Partial<Record<SectionKey, string>>;
+type Content = Record<SideKey, SideContent>;
 
 // Content
-const content = {
+const content: Content = {
   first: {
     about: `Welcome to my portfolio.<br><br>
             I am deeply invested in learning, problem-solving and exploring the fascinating world of programming.
@@ -24,48 +36,47 @@ const content = {
             ranging from creating CRUD applications to developing mathematical expression evaluators.<br><br>
             Throughout this process, I have gained valuable experience with tools such as Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS), 
             and have strengthened my understanding of fundamental concepts in debugging and problem solving.`
-  }
+  },
+  second: {}
 };
 
 // State Management
 class StateManager {
-  constructor() {
-    this.activeTyping = null;
-  }
+  private activeTyping: ActiveTyping | null = null;
 
-  getProgress() {
+  getProgress(): TypingProgress {
     const saved = sessionStorage.getItem(`typingProgress`);
     return saved ? JSON.parse(saved) : { currentSection: ``, typingIndices: {} };
   }
 
-  saveProgress(section, index) {
+  saveProgress(section: SectionKey, index: number): void {
     const progress = this.getProgress();
     progress.currentSection = section;
     progress.typingIndices[section] = index;
     sessionStorage.setItem(`typingProgress`, JSON.stringify(progress));
   }
 
-  getCurrentSection() {
+  getCurrentSection(): SectionKey | `` {
     return this.getProgress().currentSection;
   }
 
-  getTypingIndex(section){
+  getTypingIndex(section: SectionKey): number {
     return this.getProgress().typingIndices[section] || 0;
   }
 
-  startTyping(section) {
+  startTyping(section: SectionKey): void {
     this.cancelTyping();
     this.activeTyping = { section, shouldContinue: true };
   }
 
-  cancelTyping() {
+  cancelTyping(): void {
     if (this.activeTyping) {
       this.activeTyping.shouldContinue = false;
       this.activeTyping = null;
     }
   }
 
-  shouldContinueTyping(section){
+  shouldContinueTyping(section: SectionKey): boolean {
     return this.activeTyping?.section === section && this.activeTyping?.shouldContinue;
   }
 };
@@ -73,33 +84,43 @@ class StateManager {
 const state = new StateManager();
 
 // Helper Functions
-function createSkills() {
-  if(content.first.skills) return content.first.skills;
+function createSkills(): string {
+  const side = content.first;
+  if(side.skills) return side.skills;
 
-  const createImage = type => `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
-  const frontEndImages = [`html`, `css`, `js`].map(createImage).join(``);
-  const backEndImages = [`java`, `cpp`, `cs`, `python`].map(createImage).join(``);
+  const createImage = (type: TechKey): string => 
+    `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
 
-  content.first.skills = `<div id="skills-div">Front-end languages<div class = "image-out">${frontEndImages}</div>Back-end languages<div class ="image-out">${backEndImages}</div></div>`;
-  return content.first.skills;
+  const frontEndImages = ([`html`, `css`, `js`] as TechKey[]).map(createImage).join(``);
+  const backEndImages = ([`java`, `cpp`, `cs`, `python`] as TechKey[]).map(createImage).join(``);
+
+  side.skills = `
+    <div id="skills-div">
+      Front-end languages <div class = "image-out">${frontEndImages}</div>
+      Back-end languages <div class ="image-out">${backEndImages}</div>
+    </div>`;
+  return side.skills;
 }
 
-function preloadImages(images) {
-  return Promise.all(
-    Object.values(images).map(path => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = resolve;
-        img.onerror = () => reject(new Error(`Failed to load image: ${path}`));
-        img.src = path;
-      });
-    })
-  ).catch(error => {
+async function preloadImages(images: Record<string, string>): Promise<void> {
+  try {
+    await Promise.all(
+      Object.values(images).map(
+        (path): Promise<void> => 
+          new Promise<void>((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => reject(new Error(`Failed to load image: ${path}`));
+            img.src = path;
+          })
+      )
+    );
+  } catch(error) {
     console.error(error);
-  });
+  }
 }
 
-function updateSectionHighlight(activeSection) {
+function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
     if (element) {
@@ -111,8 +132,11 @@ function updateSectionHighlight(activeSection) {
 }
 
 // Typewriter Functions
-async function printContent(section, isSecond = false) {
-  const side = isSecond ? `second` : `first`;
+async function printContent(
+  section: SectionKey, 
+  isSecond: boolean = false
+): Promise<void> {
+  const side: SideKey = isSecond ? `second` : `first`;
 
   const outputDiv = document.getElementById(`${side}-output`);
   if (!outputDiv) {
@@ -134,9 +158,8 @@ async function printContent(section, isSecond = false) {
     return;
   }
 
-  if (state.getCurrentSection() !== section) {
+  if (state.getCurrentSection() !== section) 
     state.saveProgress(section, 0);
-  }
 
   // Validate content
   const sideContent = content[side][section];
@@ -151,13 +174,16 @@ async function printContent(section, isSecond = false) {
   await typeContent(section, sideContent, outputDiv);
 }
 
-async function typeContent(section, textContent, outputDiv){
-  let index = state.getTypingIndex(section);
+async function typeContent(
+  section: SectionKey,
+  textContent: string,
+  outputDiv: HTMLElement
+): Promise<void> {
+  let index: number = state.getTypingIndex(section);
 
-  if (index > 0){
+  if (index > 0)
     outputDiv.innerHTML = textContent.substring(0, index);
-  }
-
+  
   while(index < textContent.length && state.shouldContinueTyping(section)) {
     if (textContent[index] === `<`) {
       const tagEnd = textContent.indexOf(`>`, index);
@@ -174,15 +200,20 @@ async function typeContent(section, textContent, outputDiv){
     await new Promise(resolve => setTimeout(resolve, TYPING_SPEED));
   }
  
-  if (state.shouldContinueTyping(section)) {
+  if (state.shouldContinueTyping(section)) 
     state.saveProgress(section, index);
-  }
 }
 
 //Listeners
 if(document.getElementById(`home-page`)) {
-  document.getElementById(`about`).addEventListener(`click`, () => printContent(`about`));
-  document.getElementById(`skills`).addEventListener(`click`, () => printContent(`skills`));
+  const aboutBtn = document.getElementById(`about`);
+  const skillsBtn = document.getElementById(`skills`);
+
+  if (!aboutBtn) throw new Error(`Required about button not found`);
+  if (!skillsBtn) throw new Error(`Required skills button not found`);
+
+  aboutBtn.addEventListener(`click`, () => printContent(`about`));
+  skillsBtn.addEventListener(`click`, () => printContent(`skills`));
 }
 
 window.addEventListener(`load`, async () => { 
