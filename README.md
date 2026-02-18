@@ -1,5 +1,5 @@
 # Portfolio
-Personal development portfolio showcasing my projects, skills, and contact information in a responsive and minimal design.
+Personal development portfolio showcasing my projects, skills, and contact information.
 
 ![Vite](https://img.shields.io/badge/Vite-7.2.6-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -7,9 +7,9 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 ![Portfolio Screenshot](./images/portfolio.png)
 
 ## Features
-- Responsive design with HTML, CSS, and JavaScript.
+- Responsive design with HTML, CSS, and TypeScript.
 - Contact form using Resend API.
-- Project showcase with image previews, tech stacks, and GitHub links.
+- Project showcase with dynamic README fetching with description fallbacks, tech stacks, and GitHub links.
 - Typewriter-style introduction
 
 ## 🔗 **Website**: 
@@ -20,7 +20,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 <p align="left">
   <img height="35" src="https://img.shields.io/badge/HTML5-%23E34F26?logo=html5&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/CSS3-%231572B6?logo=css3&logoColor=white&style=for-the-badge"/>
-  <img height="35" src="https://img.shields.io/badge/JavaScript-%23F7DF1E?logo=javascript&logoColor=black&style=for-the-badge"/>
+  <img height="35" src="https://img.shields.io/badge/TypeScript-%23007ACC?logo=typescript&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Node.js-%23339933?logo=node.js&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vite-%2300C0FF?logo=vite&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=for-the-badge"/>
@@ -34,12 +34,15 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 
 
 ## Deployment & Configuration
+
 ### Prerequisites
+
 - npm
 - Node.js 18+ (for local development and building only)
 - Resend API key (optional, for email form on contact page)
 
 ### 1. Clone the Repository
+
 ```bash
 # Clone Portfolio
 git clone https://github.com/masonlet/portfolio.git
@@ -50,17 +53,24 @@ npm install
 ```
 
 ### **Resend**
+
 If you wish to use the contact form with resend you must create `.env` file from `.env.example` and add your Resend API key before starting your server.
 
-### Run Locally
+### Development
+
+**Note:** API routes (`/api/contact`, `/api/github-readme`) will not function with `npm run dev` or `npm run preview`. You must use Vercel to test the full application locally.
+
+#### Run Locally
+
 ```bash
 # Start development server
 npm run dev
 ```
 
-#### Open https://localhost:5173 (or the address shown in your terminal) in your browser.
+##### Open https://localhost:5173 (or the address shown in your terminal) in your browser.
 
-### Build for Production
+#### Build for Production
+
 ```bash
 # Build 
 npm run build
@@ -69,9 +79,17 @@ npm run build
 npm run preview
 ```
 
-#### Open https://localhost:4173 (or the address shown in your terminal) in your browser.
+##### Open https://localhost:4173 (or the address shown in your terminal) in your browser.
+
+#### API Routing
+
+```bash
+# Start local dev server
+vercel dev
+```
 
 ### Deployment
+
 The production build outputs static files to the `dist/` directory which can be hosted on any static hosting provider. Node.js is **not required** to run the deployed site.
 
 
