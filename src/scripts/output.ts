@@ -40,6 +40,17 @@ const content: Content = {
   second: {}
 };
 
+function parseHash(): SectionKey {
+  const hash = window.location.hash.slice(1);
+  return (SECTIONS as readonly string[]).includes(hash)
+    ? (hash as SectionKey)
+    : `about`;
+}
+
+function syncURL(section: SectionKey): void {
+  history.replaceState(null, '', `#${section}`);
+}
+
 // State Management
 class StateManager {
   private activeTyping: ActiveTyping | null = null;
@@ -123,11 +134,9 @@ async function preloadImages(images: Record<string, string>): Promise<void> {
 function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
-    if (element) {
-      element.style.backgroundColor = section === activeSection 
-        ? `rgba(0, 0, 0, 0.5)` 
-        : `rgba(0, 0, 0, 0.25)`;
-    }
+    if (element) element.style.backgroundColor = section === activeSection 
+      ? `rgba(0, 0, 0, 0.5)` 
+      : `rgba(0, 0, 0, 0.25)`;
   }); 
 }
 
@@ -146,13 +155,10 @@ async function printContent(
 
   if (state.shouldContinueTyping(section)) return;
 
-  // Cancel any active typing
   state.cancelTyping();
-
-  // Highlight section
   updateSectionHighlight(section);
+  syncURL(section);
 
-  // No typing needed for skills
   if (section === `skills`) {
     outputDiv.innerHTML = createSkills();
     return;
@@ -160,15 +166,13 @@ async function printContent(
 
   if (state.getCurrentSection() !== section) 
     state.saveProgress(section, 0);
-
-  // Validate content
+  
   const sideContent = content[side][section];
   if (!sideContent) {
     console.error(`Content not found for ${section}`);
     return;
   }
 
-  // Start typing
   state.startTyping(section);
   outputDiv.innerHTML = ``;
   await typeContent(section, sideContent, outputDiv);
@@ -200,7 +204,7 @@ async function typeContent(
     await new Promise(resolve => setTimeout(resolve, TYPING_SPEED));
   }
  
-  if (state.shouldContinueTyping(section)) 
+  if (state.shouldContinueTyping(section))
     state.saveProgress(section, index);
 }
 
@@ -220,9 +224,9 @@ window.addEventListener(`load`, async () => {
   const homePage = document.getElementById(`home-page`);
   if(!homePage) return;
 
-  await preloadImages(IMAGE_PATHS);
+  if (!window.location.hash) 
+    history.replaceState(null, ``, `#about`);
 
-  const progress = state.getProgress();
-  const section = progress.currentSection || `about`;
-  await printContent(section); 
+  await preloadImages(IMAGE_PATHS);
+  await printContent(parseHash()); 
 });
