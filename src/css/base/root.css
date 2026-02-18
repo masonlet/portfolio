@@ -14,3 +14,8 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
