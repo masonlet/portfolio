@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
 
     "strict": true,
@@ -36,5 +36,11 @@
   "include": [
     "./src/**/*.ts",
     "./api/**/*.ts"
+  ],
+  "exclude": [
+    "dist/",
+    "node_modules/",
+    ".vercel/",
+    "images/"
   ]
 }

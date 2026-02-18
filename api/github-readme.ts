@@ -1,28 +1,29 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const valid = /^[a-zA-Z0-9_.-]+$/;
+const VALID = /^[a-zA-Z0-9_.-]+$/;
+
+function validateParam(value: unknown): value is string {
+  return typeof value === 'string' && VALID.test(value);
+}
 
 export default async (
   req: VercelRequest,
   res: VercelResponse
-) => {
-  if (req.method !== "GET") return res.status(405).json({ 
-    error: "Method not allowed" 
-  });
+): Promise<void> => {
+  if (req.method !== "GET") {
+    res.status(405).json({ error: "Method not allowed" });
+    return;
+  }
 
   const { owner, repo } = req.query;
-  if (!owner || !repo) return res.status(400).json({ 
-    error: "Missing owner or repo" 
-  });
 
-  if (typeof owner !== "string" || !valid.test(owner) || 
-      typeof repo !== "string" || !valid.test(repo)
-  ) return res.status(400).json({ 
-    error: "Invalid owner or repo" 
-  });
+  if (!validateParam(owner) || !validateParam(repo)) {
+    res.status(400).json({ error: 'Invalid or missing owner/repo' });
+    return;
+  }
 
   try {
-     const apiUrl = `https://api.github.com/repos/${owner}/${repo}/readme`;
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/readme`;
     const headers = {
       "Accept": "application/vnd.github.html",      
       "User-Agent": "portfolio-readme-loader",
@@ -30,7 +31,6 @@ export default async (
         Authorization: `token ${process.env['GITHUB_TOKEN']}`
       }),
     };
- 
     const response = await fetch(apiUrl, { headers });
 
     if (!response.ok) {
@@ -38,22 +38,24 @@ export default async (
            
       if (response.status === 403 && 
           response.headers.get("x-ratelimit-remaining") === "0"
-      ) return res.status(429).json({ 
-        error: "GitHub rate limit exceeded" 
-      });
+      ) {
+        res.status(429).json({ error: "GitHub rate limit exceeded" });
+        return;
+      }
 
-      return res.status(response.status).json({
-        error: `Failed to fetch README: ${response.status}`
-      });
+      res.status(response.status).json({ error: `Failed to fetch README: ${response.status}` });
+      return;
     }
 
     const githubHtml = await response.text();
-    if (!githubHtml?.trim()) return res.status(404).json({
-      error: "No README content found"
-    });
+    if (!githubHtml?.trim()) {
+      res.status(404).json({ error: "No README content found" });
+      return;
+    }
 
     const baseUrl = `https://github.com/${owner}/${repo}`;
     const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/HEAD`;
+
     const processedHtml = githubHtml
       .replace(/src="(?!http)(.*?)"/g, `src="${rawBase}/$1"`)
       .replace(/href="(?!http)(.*?)\.md"/g, `href="${baseUrl}/blob/HEAD/$1.md"`)
@@ -61,13 +63,9 @@ export default async (
 
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
-    return res.status(200).send(
-      `<div class="readme-content">${processedHtml}</div>`
-    );
+    res.status(200).send(`<div class="readme-content">${processedHtml}</div>`);
   } catch (err) {
     console.error("README endpoint error:", err);
-    return res.status(500).json({ 
-      error: "Server error" 
-    });
+    res.status(500).json({ error: "Server error" });
   }
 };

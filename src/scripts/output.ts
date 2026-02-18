@@ -1,5 +1,7 @@
-import { IMAGE_PATHS } from './projectData';
-import type { TechKey } from './projectData';
+import { 
+  type TechKey,
+  IMAGE_PATHS 
+} from './projectData';
 
 const TYPING_SPEED: number = 20;
 

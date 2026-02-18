@@ -6,39 +6,34 @@ import {
   IMAGE_PATHS
 } from './projectData';
 
-const projectCards = document.querySelectorAll<HTMLElement>('.project-card');
-const grid = document.querySelector<HTMLElement>('#projects-grid');
-const details = document.querySelector<HTMLElement>('#project-details');
 const ANIMATION_DURATION = 300;
 
 interface GithubParsedUrl {
-  owner: string;
-  repo: string;
+  readonly owner: string;
+  readonly repo: string;
+}
+
+function isProjectKey(key: string): key is ProjectKey {
+  return key in projectData;
 }
 
 function parseGithubUrl(url: string): GithubParsedUrl | null {
-  try {
-    const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
-    if (match) return {
-      owner: match[1]!, 
-      repo: match[2]!.replace(/\.git$/, '') 
-    };
-  } catch (e) {
-    console.error("Failed to parse GitHub URL:", e);
-  }
-  return null;
+  const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+  if (!match || !match[1] || !match[2]) return null;
+  return { owner: match[1], repo: match[2].replace(/\.git$/, '') };
 }
 
-function createTechIcons(icons: TechKey[] | undefined): string {
-  if (!icons || icons.length === 0) return '';
+function createTechIcons(icons: readonly TechKey[]): string {
+  if (icons.length === 0) return '';
 
   const iconData = icons
-    .map(lang => {
+    .map((lang): string => {
       const imagePath = IMAGE_PATHS[lang];
-      if (!imagePath) return  '';
-      return `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+      return imagePath 
+        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+        : '';
     })
-    .filter(Boolean)
+    .filter((s): s is string => s.length > 0)
     .join('');
 
   return `<div class="project-tech">${iconData}</div>`;
@@ -47,6 +42,7 @@ function createTechIcons(icons: TechKey[] | undefined): string {
 function fadeTransition(
   hideElement: HTMLElement,
   showElement: HTMLElement,
+  showDisplay: string,
   callback?: () => void
 ): void {
   hideElement.classList.add('fade-out');
@@ -56,10 +52,10 @@ function fadeTransition(
     hideElement.classList.add('hidden');
     hideElement.classList.remove('fade-out');
 
-    if(callback) callback();
+    callback?.();
 
     showElement.classList.remove('hidden');
-    showElement.style.display = showElement === grid ? 'grid' : 'block';
+    showElement.style.display = showDisplay;
     showElement.style.opacity = '0';    
 
     requestAnimationFrame(() => {
@@ -70,23 +66,54 @@ function fadeTransition(
   }, ANIMATION_DURATION);
 }
 
-function displayFallbackContent(
-  container: HTMLElement | null, 
-  data: Project
-): void {
-  if (!container) return;
-
+function displayFallbackContent(container: HTMLElement, data: Project): void {
   container.classList.remove('loading');
-  container.innerHTML = `<p>${data.description}</p><img src="${data.image}" alt="${data.title}" id="project-preview"/>`;
+  container.innerHTML = `
+    <p>${data.description}</p>
+    <img src="${data.image}" alt="${data.title}" id="project-preview"/>
+  `;
 }
 
-function showProjectDetails(projectKey: string): void {
-  const data = projectData[projectKey as ProjectKey];
-  if (!data) return;
+let active: AbortController | null = null;
 
-  if (!grid || !details) return;
+async function loadReadme(
+  container: HTMLElement,
+  data: Project
+): Promise<void> {
+  const parsed = parseGithubUrl(data.github);
+  if (!parsed) {
+    displayFallbackContent(container, data);
+    return;
+  }
+
+  active?.abort();
+  active = new AbortController();
+
+  try {
+    const response = await fetch(
+      `/api/github-readme?owner=${parsed.owner}&repo=${parsed.repo}`,
+      { signal: active.signal }
+    );
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const html = await response.text();
+    container.classList.remove('loading');
+    container.innerHTML = html;
+  } catch (e: unknown) {
+    if (e instanceof Error && e.name === 'AbortError') return;
+    console.error('README fetch failed:', e);
+    displayFallbackContent(container, data);
+  }
+}
+
+function showProjectDetails(
+  projectKey: string,
+  grid: HTMLElement,
+  details: HTMLElement
+): void {
+  if (!isProjectKey(projectKey)) return;
+  const data: Project = projectData[projectKey];
   
-  fadeTransition(grid, details, () => {
+  fadeTransition(grid, details, 'block', () => {
     details.innerHTML = `
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
@@ -101,54 +128,25 @@ function showProjectDetails(projectKey: string): void {
       </div>
     `;
 
-    const parsed = parseGithubUrl(data.github);
-
-    if (!parsed || !parsed.owner || !parsed.repo) {
-      displayFallbackContent(document.getElementById('readme-container'), data);
-      return;
-    }
-
-    fetch(
-      `/api/github-readme?owner=${parsed.owner}&repo=${parsed.repo}`
-    ).then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.text();
-    }).then(html => {
-      const container = document.getElementById('readme-container');
-      if (container) {
-        container.classList.remove('loading');
-        container.innerHTML = html;
-      }
-    }).catch((e: unknown) => {
-      if (e instanceof Error && e.name === 'AbortError') return;
-      console.error('README fetch failed:', e);
-      displayFallbackContent(document.getElementById('readme-container'), data);
-    })
-  });
-}
-projectCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const projectKey = card.getAttribute('data-project');
-    if (projectKey) showProjectDetails(projectKey);
-  });
-});
-
-function showProjectsGrid() {
-  if (!grid || !details) return;
-
-  fadeTransition(details, grid, () => {
-    details.innerHTML = '';
+    const container = document.getElementById('readme-container');
+    if (!container) return;
+    loadReadme(container, data);
   });
 }
 
-document.addEventListener('click', (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
-
-  if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
-    showProjectsGrid();
-});
+function showProjectsGrid(
+  grid: HTMLElement, 
+  details: HTMLElement
+): void {
+  active?.abort();
+  fadeTransition(details, grid, 'grid', () => { 
+    details.innerHTML = ''; 
+  });
+}
 
 window.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector<HTMLElement>('#projects-grid');
+  const details = document.querySelector<HTMLElement>('#project-details');
   if (!grid || !details) return;
 
   grid.classList.remove('hidden');
@@ -157,4 +155,18 @@ window.addEventListener('DOMContentLoaded', () => {
   
   details.classList.add('hidden');
   details.style.display = 'none';
+
+  document.querySelectorAll<HTMLElement>('.project-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const projectKey = card.getAttribute('data-project');
+      if (projectKey) showProjectDetails(projectKey, grid, details);
+    });
+  });
+
+  document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
+      showProjectsGrid(grid, details);
+  });
 });
+
