@@ -1,5 +1,8 @@
 html {
   background: black;
+  color: var(--colour-txt);
+  text-shadow: 2px 2px var(--colour-primary);
+  font-family: "Bebas Neue", system-ui, sans-serif;
 }
 
 body {
@@ -10,3 +13,4 @@ body {
   animation: gradient 10s ease infinite;
   overflow: hidden;
 }
+

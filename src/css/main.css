@@ -1,8 +1,8 @@
-@import url('settings/variables.css');
-@import url('settings/animations.css');
-
+@import url('base/variables.css');
+@import url('base/animations.css');
 @import url('base/reset.css');
 @import url('base/root.css');
+@import url('base/utilities.css');
 
 @import url('layout/main.css');
 @import url('layout/sections.css');
@@ -13,8 +13,6 @@
 @import url('components/images.css');
 @import url('components/cards.css');
 @import url('components/projects.css');
-
-@import url('utilities/utilities.css');
 
 @import url('responsive/mobile.css');
 @import url('responsive/mobile-landscape.css');

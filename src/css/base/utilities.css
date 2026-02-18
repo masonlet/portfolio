@@ -5,11 +5,11 @@
 }
 
 #first-output-div p {
-  text-align: left !important;
+  text-align: left;
 }
 
 #first-output-div a p {
-  text-align: center !important;
+  text-align: center;
 }
 
 /* State */
@@ -19,13 +19,14 @@
 }
 
 .fade-out {
-  opacity: 0 !important;
+  opacity: 0;
   pointer-events: none;
 }
 
 /* Interactive */
 .hover-colour:hover {
-  background: var(--hover-bg) !important;
+  background: var(--hover-bg);
   z-index: 1;
   cursor: pointer;
 }
+
