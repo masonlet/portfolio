@@ -1,3 +1,17 @@
+/* Text Alignment */
+#second-output-div a, 
+#first-output-div a {
+  text-align: center;
+}
+
+#first-output-div p {
+  text-align: left;
+}
+
+#first-output-div a p {
+  text-align: center;
+}
+
 /* Content Area */
 #first-output,
 #first-output-div {
@@ -36,3 +50,4 @@
   align-items: center;
   margin: 2vh;
 }
+

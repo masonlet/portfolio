@@ -31,3 +31,11 @@
   transform: scale(1.05);
   background: var(--hover-bg) !important;
 }
+
+/* Interactive */
+.hover-colour:hover {
+  background: var(--hover-bg);
+  z-index: 1;
+  cursor: pointer;
+}
+
