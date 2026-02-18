@@ -6,7 +6,7 @@ textarea {
 
 .email-input, 
 textarea {
-  color: var(--colour-txt-light);
+  color: var(--colour-txt);
   background: var(--light-bg);
   width: 100%;
 }
