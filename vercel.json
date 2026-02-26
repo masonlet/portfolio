@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/languages",
+      "destination": "https://github-top-languages-ijcbmqsy6-mason-letoiles-projects.vercel.app/api/languages"
+    }
+  ]
+}
