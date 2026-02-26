@@ -105,17 +105,19 @@ export function showProjectDetails(
   fadeTransition(grid, details, "block", () => {
     const label = data.embedLabel ?? "Play";
     const playButton = data.embedUrl
-      ? `<button id="play-button" data-embed="${data.embedUrl}" data-label="${label}">${label}!</button>`
+      ? `<button class="action-button" data-action="play" data-embed="${data.embedUrl}" data-label="${label}">
+          ${label}!
+        </button>`
       : '';
 
     details.innerHTML = `
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
       <div id="project-buttons">
-        <button id="back-to-grid">← Back to Projects</button>
+        <button class="action-button" data-action="back">← Back to Projects</button>
         ${playButton}
         <a href="${data.github}" target="_blank" id="github-link">
-          <button id="github-button">View on GitHub →</button>
+          <button class="action-button">View on GitHub →</button>
         </a>
       </div>
       <div id="readme-container" class="loading">
@@ -133,7 +135,7 @@ export function showProjectDetails(
 export function togglePlayMode(details: HTMLElement): void {
   const readme = details.querySelector<HTMLElement>      ("#readme-container");
   const embed  = details.querySelector<HTMLElement>      ("#embed-container");
-  const button = details.querySelector<HTMLButtonElement>("#play-button");
+  const button = details.querySelector<HTMLButtonElement>(`[data-action="play"]`);
   if (!readme || !embed || !button) return;
 
   const tech  = details.querySelector<HTMLElement>(".project-tech");

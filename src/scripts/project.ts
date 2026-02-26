@@ -37,10 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   details.addEventListener("click", (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.id === "back-to-grid" || target.closest("#back-to-grid")) showProjectsGrid(
-      grid, details, currentGroup
-    );
-    else if (target.id === "play-button") togglePlayMode(details);
+    if (target.dataset["action"] === "back" || target.closest(`[data-action="back"]`))
+      showProjectsGrid(grid, details, currentGroup);
+    else if (target.dataset["action"] === "play" || target.closest(`[data-action="play"]`))
+      togglePlayMode(details);
   });
   
   const { projectKey: initial, groupKey: initialGroup } = parseHash();
