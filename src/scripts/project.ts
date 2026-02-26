@@ -129,9 +129,9 @@ function showProjectDetails(
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
       <div id="project-buttons">
-        <button id="back-to-grid">← Back to Projects</button>
+        <button class="action-button" data-action="back">← Back to Projects</button>
         <a href="${data.github}" target="_blank" id="github-link">
-          <button id="github-button">View on GitHub →</button>
+          <button class="action-button">View on GitHub →</button>
         </a>
       </div>
       <div id="readme-container" class="loading">
@@ -177,7 +177,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
+    if (target.dataset.action === 'back' || target.closest('[data-action="back"]')) 
       showProjectsGrid(grid, details);
   });
 

@@ -12,8 +12,7 @@
   background: var(--dark-bg);
 }
 
-#back-to-grid,
-#github-button {
+.action-button {
   background: var(--dark-bg);
   border: 2px solid var(--colour-primary);
   border-radius: 8px;
@@ -26,8 +25,7 @@
   align-self: flex-start;
 }
 
-#back-to-grid:hover, 
-#github-button:hover {
+.action-button:hover {
   transform: scale(1.05);
   background: var(--hover-bg);
 }
