@@ -1,7 +1,7 @@
 @media (max-height: 430px) and (max-width: 789px){
   /* Images */
   #email-icon {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   /* Navigation */
@@ -18,16 +18,16 @@
 
   /* Sections */
   #sections {
-    flex-direction: row !important;
+    flex-direction: row;
   }
 
   #second-section {
-    flex-direction: column !important;
+    flex-direction: column;
   }
 
   #first-section, 
   #second-section {
-    width: 42vw !important;
+    width: 42vw;
   }
 
   /* Content */
@@ -36,8 +36,8 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 2.5vmin !important;
-    line-height: 2.5vmin !important;
+    font-size: 2.5vmin;
+    line-height: 2.5vmin;
   }
 }
 @media (max-height: 430px) and (max-width: 972px){
@@ -84,7 +84,7 @@
 
   /* Images */
   #email-icon {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   #header-nav img, 
@@ -100,16 +100,16 @@
   /* Sections */
   #sections {
     width: 85vw;
-    flex-direction: row !important;
+    flex-direction: row;
   }
 
   #first-section, 
   #second-section {
-    width: 42vw !important;
+    width: 42vw;
   }
 
   #second-section {
-    flex-direction: column !important;
+    flex-direction: column;
   }
 
   /* Content */
@@ -118,14 +118,14 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 2.25vmin !important;
-    line-height: 2.25vmin !important;
+    font-size: 2.25vmin;
+    line-height: 2.25vmin;
   }
 
   /* Other */
   .tech {
-    width: 5vw !important;
-    height: 6vw !important;
+    width: 5vw;
+    height: 6vw;
   }
   .image-out, 
   #skills-div {

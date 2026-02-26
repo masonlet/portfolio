@@ -136,8 +136,8 @@
   }
 
   .tech {
-    width: 15vmin !important;
-    height: 20vmin !important;
+    width: 15vmin;
+    height: 20vmin;
     padding: 10px;
   }
 
