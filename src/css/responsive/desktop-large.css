@@ -125,8 +125,8 @@
   }
 
   .tech {
-    width: 6vw !important;
-    height: 8vw !important;
+    width: 6vw;
+    height: 8vw;
     padding: 10px;
   }
   .imageOut, 
