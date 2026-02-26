@@ -58,7 +58,7 @@
 
 .project-card:hover {
   transform: scale(1.05);
-  background: var(--hover-bg) !important;
+  background: var(--hover-bg);
 }
 
 .project-card h4 {
