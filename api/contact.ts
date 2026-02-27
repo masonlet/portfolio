@@ -5,12 +5,13 @@ import type { ContactBody } from "../src/types"
 const resend = new Resend(process.env['RESEND_API_KEY']);
 
 function isValidBody(body: unknown): body is ContactBody {
+  if (body === null || typeof body !== "object") return false;
+
+  const record = body as Record<string, unknown>;
   return (
-    body !== null &&
-    typeof body === 'object' &&
-    typeof (body as Record<string, unknown>)['subject'] === 'string' &&
-    typeof (body as Record<string, unknown>)['email'] === 'string' &&
-    typeof (body as Record<string, unknown>)['message'] === 'string'
+    typeof record["subject"] === 'string' && !!record["subject"].trim() &&
+    typeof record["email"] === 'string' && !!record["email"].trim() &&
+    typeof record["message"] === 'string' && !!record["message"].trim()
   );
 }
 
