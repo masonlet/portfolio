@@ -100,13 +100,13 @@ async function loadReadme(
 
   try {
     const response = await fetch(
-      `/api/github-readme?owner=${parsed.owner}&repo=${parsed.repo}`,
+      `/api/readme?owner=${parsed.owner}&repo=${parsed.repo}`,
       { signal: active.signal }
     );
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const html = await response.text();
     container.classList.remove('loading');
-    container.innerHTML = html;
+    container.innerHTML = `<div class="readme-content">${html}</div>`;
   } catch (e: unknown) {
     if (e instanceof Error && e.name === 'AbortError') return;
     console.error('README fetch failed:', e);
