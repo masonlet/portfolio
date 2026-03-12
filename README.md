@@ -8,7 +8,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 
 ## Features
 - Responsive design with HTML, CSS, and TypeScript.
-- Contact form using Resend API.
+- Contact form via external [contact-api](https://github.com/masonlet/contact-api) microservice
 - Project showcase with dynamic README fetching with description fallbacks, tech stacks, and GitHub links.
 - Typewriter-style introduction
 
@@ -24,14 +24,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
   <img height="35" src="https://img.shields.io/badge/Node.js-%23339933?logo=node.js&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vite-%2300C0FF?logo=vite&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=for-the-badge"/>
-  <img height="35" src="https://img.shields.io/badge/Resend-%23FFB300?logoColor=white&style=for-the-badge"/>
 </p>
-
-
-
-<br/>
-
-
 
 ## Deployment & Configuration
 
@@ -39,7 +32,6 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 
 - npm
 - Node.js 18+ (for local development and building only)
-- Resend API key (optional, for email form on contact page)
 
 ### 1. Clone the Repository
 
@@ -52,13 +44,9 @@ cd portfolio
 npm install
 ```
 
-### **Resend**
-
-If you wish to use the contact form with resend you must create `.env` file from `.env.example` and add your Resend API key before starting your server.
-
 ### Development
 
-**Note:** API routes (`/api/contact`, `/api/github-readme`) will not function with `npm run dev` or `npm run preview`. You must use Vercel to test the full application locally.
+**Note:** API route `/api/github-readme` will not function with `npm run dev` or `npm run preview`. You must use Vercel to test the full application locally.
 
 #### Run Locally
 
@@ -91,12 +79,6 @@ vercel dev
 ### Deployment
 
 The production build outputs static files to the `dist/` directory which can be hosted on any static hosting provider. Node.js is **not required** to run the deployed site.
-
-
-
-<br/>
-
-
 
 ## License
 MIT License - see [LICENSE](./LICENSE) for details.
