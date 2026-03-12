@@ -8,8 +8,8 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 
 ## Features
 - Responsive design with HTML, CSS, and TypeScript.
-- Contact form via external [contact-api](https://github.com/masonlet/contact-api) microservice
-- Project showcase with dynamic README fetching with description fallbacks, tech stacks, and GitHub links.
+- Integrated contact form.
+- Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
 - Typewriter-style introduction
 
 ## 🔗 **Website**: 
@@ -25,6 +25,12 @@ Personal development portfolio showcasing my projects, skills, and contact infor
   <img height="35" src="https://img.shields.io/badge/Vite-%2300C0FF?logo=vite&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=for-the-badge"/>
 </p>
+
+## Dependencies
+The portfolio frontend is static — contact form submission and README fetching are offloaded to dedicated microservices, keeping the frontend decoupled and independently deployable.
+
+- [contact-api](https://github.com/masonlet/contact-api) — Contact form microservice
+- [readme-api](https://github.com/masonlet/readme-api) — GitHub README fetching microservice
 
 ## Deployment & Configuration
 
@@ -46,8 +52,6 @@ npm install
 
 ### Development
 
-**Note:** API route `/api/github-readme` will not function with `npm run dev` or `npm run preview`. You must use Vercel to test the full application locally.
-
 #### Run Locally
 
 ```bash
@@ -55,7 +59,7 @@ npm install
 npm run dev
 ```
 
-##### Open https://localhost:5173 (or the address shown in your terminal) in your browser.
+##### Open http://localhost:5173 (or the address shown in your terminal) in your browser.
 
 #### Build for Production
 
@@ -67,14 +71,7 @@ npm run build
 npm run preview
 ```
 
-##### Open https://localhost:4173 (or the address shown in your terminal) in your browser.
-
-#### API Routing
-
-```bash
-# Start local dev server
-vercel dev
-```
+##### Open http://localhost:4173 (or the address shown in your terminal) in your browser.
 
 ### Deployment
 
