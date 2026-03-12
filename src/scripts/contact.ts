@@ -23,7 +23,7 @@ function validateForm(form: HTMLFormElement): ContactBody {
 }
 
 async function submitForm(form: ContactBody): Promise<void> {
-  const response = await fetch('https://contact-api-jet.vercel.app/api/contact', {
+  const response = await fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(form),

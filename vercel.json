@@ -7,6 +7,10 @@
     {
       "source": "/api/contact",
       "destination": "https://contact-api-jet.vercel.app/api/contact"
+    },
+    {
+      "source": "/api/readme",
+      "destination": "https://readme-api-nine.vercel.app/api/readme"
     }
   ]
 }
