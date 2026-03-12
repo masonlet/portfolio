@@ -3,6 +3,10 @@
     {
       "source": "/api/languages",
       "destination": "https://github-top-languages-ijcbmqsy6-mason-letoiles-projects.vercel.app/api/languages"
+    },
+    {
+      "source": "/api/contact",
+      "destination": "https://contact-api-jet.vercel.app/api/contact"
     }
   ]
 }
