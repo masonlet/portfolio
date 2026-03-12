@@ -100,7 +100,7 @@ async function loadReadme(
 
   try {
     const response = await fetch(
-      `/api/github-readme?owner=${parsed.owner}&repo=${parsed.repo}`,
+      `https://readme-api-nine.vercel.app/api/readme?owner=${parsed.owner}&repo=${parsed.repo}`,
       { signal: active.signal }
     );
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
