@@ -11,6 +11,14 @@
     {
       "source": "/api/readme",
       "destination": "https://readme-api-nine.vercel.app/api/readme"
+    },
+    {
+      "source": "/contact-api-demo",
+      "destination": "https://contact-api-demo.vercel.app/"
+    },
+    {
+      "source": "/contact-api-demo/:path*",
+      "destination": "https://contact-api-demo.vercel.app/:path*"
     }
   ]
 }
