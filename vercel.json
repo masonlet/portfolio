@@ -6,7 +6,7 @@
     },
     {
       "source": "/api/contact",
-      "destination": "https://contact-api-jet.vercel.app/api/contact"
+      "destination": "https://contact-api-resend.vercel.app/api/contact"
     },
     {
       "source": "/api/readme",
