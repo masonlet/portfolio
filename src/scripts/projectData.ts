@@ -158,6 +158,13 @@ export const projectData = {
     github: 'https://github.com/starlet-engine/testing',
     tech: ['cpp', 'cmake', 'googletest']
   },
+  'lookingforlove': {
+    title: 'LookingForLove',
+    description: 'An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.',
+    image: asset('/img/projects/lookingforlove.webp'),
+    github: 'https://github.com/masonlet/info-3112-project',
+    tech: ['js', 'nodejs', 'vercel', 'vitest']
+  },
 } satisfies Record<string, Project>;
 
 export type ProjectKey = keyof typeof projectData;
