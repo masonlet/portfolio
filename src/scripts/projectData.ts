@@ -1,12 +1,15 @@
 const asset = (path: string): string => new URL(path, import.meta.url).href;
 
 export const TECH_KEYS = [
-  'html', 'css', 'js',
+  'html', 
+  'js', 'ts',
+  'css', 'tailwind',
   'python', 'java', 'cpp', 'cs',
   'opengl', 'glfw', 'cmake',
-  'googletest', 'pytest',
+  'supabase',
+  'googletest', 'pytest', 'vitest',
   'pip', 'pypi',
-  'vercel', 'vitest', 'nodejs',
+  'vercel', 'nodejs', 'nextjs'
 ] as const;
 export type TechKey = (typeof TECH_KEYS)[number];
 
@@ -30,7 +33,7 @@ export const projectData = {
     description: 'A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.',
     image: asset('/img/projects/github-top-languages.webp'),
     github: 'https://github.com/masonlet/github-top-languages',
-    tech: ['js', 'nodejs', 'vercel', 'vitest']
+    tech: ['ts', 'nodejs', 'vercel', 'vitest']
   },
   'starlet-setup': {
     title: 'Starlet Setup',
@@ -55,10 +58,10 @@ export const projectData = {
   },
   'portfolio': {
     title: 'Portfolio',
-    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.',
+    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.',
     image: asset('/img/projects/portfolio.webp'),
     github: 'https://github.com/masonlet/portfolio',
-    tech: ['html', 'css', 'js', 'vercel']
+    tech: ['html', 'css', 'ts', 'vercel']
   },
   'githubvisualizer': {
     title: 'GitHub Visualizer',
@@ -157,6 +160,13 @@ export const projectData = {
     image: asset('/img/projects/tests.webp'),
     github: 'https://github.com/starlet-engine/testing',
     tech: ['cpp', 'cmake', 'googletest']
+  },
+  'lookingforlove': {
+    title: 'LookingForLove',
+    description: 'An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.',
+    image: asset('/img/projects/lookingforlove.webp'),
+    github: 'https://github.com/masonlet/info-3112-project',
+    tech: ['nextjs', 'ts', 'supabase', 'tailwind', 'vercel', 'vitest']
   },
 } satisfies Record<string, Project>;
 
