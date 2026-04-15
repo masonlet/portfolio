@@ -1,12 +1,15 @@
 const asset = (path: string): string => new URL(path, import.meta.url).href;
 
 export const TECH_KEYS = [
-  'html', 'css', 'js',
+  'html', 
+  'js', 'ts',
+  'css', 'tailwind',
   'python', 'java', 'cpp', 'cs',
   'opengl', 'glfw', 'cmake',
-  'googletest', 'pytest',
+  'supabase',
+  'googletest', 'pytest', 'vitest',
   'pip', 'pypi',
-  'vercel', 'vitest', 'nodejs',
+  'vercel', 'nodejs', 'nextjs'
 ] as const;
 export type TechKey = (typeof TECH_KEYS)[number];
 
@@ -163,7 +166,7 @@ export const projectData = {
     description: 'An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.',
     image: asset('/img/projects/lookingforlove.webp'),
     github: 'https://github.com/masonlet/info-3112-project',
-    tech: ['js', 'nodejs', 'vercel', 'vitest']
+    tech: ['nextjs', 'ts', 'supabase', 'tailwind', 'vercel', 'vitest']
   },
 } satisfies Record<string, Project>;
 
