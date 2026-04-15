@@ -33,7 +33,7 @@ export const projectData = {
     description: 'A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.',
     image: asset('/img/projects/github-top-languages.webp'),
     github: 'https://github.com/masonlet/github-top-languages',
-    tech: ['js', 'nodejs', 'vercel', 'vitest']
+    tech: ['ts', 'nodejs', 'vercel', 'vitest']
   },
   'starlet-setup': {
     title: 'Starlet Setup',
@@ -58,10 +58,10 @@ export const projectData = {
   },
   'portfolio': {
     title: 'Portfolio',
-    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.',
+    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.',
     image: asset('/img/projects/portfolio.webp'),
     github: 'https://github.com/masonlet/portfolio',
-    tech: ['html', 'css', 'js', 'vercel']
+    tech: ['html', 'css', 'ts', 'vercel']
   },
   'githubvisualizer': {
     title: 'GitHub Visualizer',
