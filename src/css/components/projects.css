@@ -74,6 +74,12 @@
   flex-wrap: wrap;
 }
 
+.tech {
+  border: 4px solid var(--colour-primary);
+  border-radius: 15px;
+  background: var(--dark-bg);
+}
+
 .tech-icon {
   width: 80px;
   height: 80px;

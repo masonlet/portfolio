@@ -49,3 +49,13 @@
   margin: 2vh;
 }
 
+#resume-display, 
+#projects-grid, 
+#project-details {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--colour-primary);
+  border-radius: 8px;
+  background: var(--light-bg);
+}
+
