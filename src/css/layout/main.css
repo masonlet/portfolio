@@ -9,6 +9,17 @@ main {
   position: fixed;
 }
 
+#first-nav, 
+#second-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+#second-nav {
+  flex-direction: column;
+}
+
 #sections {
   height: 100%;
 }
