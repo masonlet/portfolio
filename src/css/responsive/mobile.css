@@ -19,8 +19,8 @@
   }
 
   header p a {
-    background: var(--dark-bg);
-    border: 2px solid var(--colour-primary);
+    background: var(--bg-dark);
+    border: 2px solid var(--primary);
     border-radius: 5px;
     padding: 2.5px;
   }
@@ -46,7 +46,7 @@
   #email-button {
     font-size: 4vw;
     line-height: 4vw;
-    border: 2px solid var(--colour-primary);
+    border: 2px solid var(--primary);
     border-radius: 5px;
     padding: 1.5vw;
   }
@@ -58,7 +58,7 @@
     width: 12.5vw;
     height: 12.5vw;
     padding: 2px;
-    border: 2px solid var(--colour-primary);
+    border: 2px solid var(--primary);
     border-radius: 5px;
   }
 

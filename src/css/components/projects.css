@@ -17,7 +17,7 @@
 
 #project-details {
   overflow-y: auto;
-  background: var(--light-bg);
+  background: var(--bg-light);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
 }
 
 .project-card {
-  background: var(--dark-bg);
+  background: var(--bg-dark);
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
@@ -58,7 +58,7 @@
 
 .project-card:hover {
   transform: scale(1.05);
-  background: var(--hover-bg);
+  background: var(--bg-hover);
 }
 
 .project-card h4 {
@@ -75,16 +75,16 @@
 }
 
 .tech {
-  border: 4px solid var(--colour-primary);
+  border: 4px solid var(--primary);
   border-radius: 15px;
-  background: var(--dark-bg);
+  background: var(--bg-dark);
 }
 
 .tech-icon {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  background: var(--light-bg);
+  background: var(--bg-light);
   padding: 0.5rem;
   border-radius: 8px;
   transition: transform 0.2s ease;

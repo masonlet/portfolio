@@ -1,13 +1,13 @@
 input, 
 textarea {
-  border: 2px solid var(--colour-primary);
-  background: var(--light-bg);
+  border: 2px solid var(--primary);
+  background: var(--bg-light);
 }
 
 .email-input, 
 textarea {
-  color: var(--colour-txt);
-  background: var(--light-bg);
+  color: var(--text-primary);
+  background: var(--bg-light);
   width: 100%;
 }
 
