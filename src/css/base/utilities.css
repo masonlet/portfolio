@@ -8,13 +8,11 @@
   pointer-events: none;
 }
 
-.hover-bg {
-  cursor: pointer;
-  padding: 0.25rem;
-  border-radius: 4px;
-  transition: background 0.2s ease;
-}
+/* Hover */
+.hover-cursor { cursor: pointer; }
 
-.hover-bg:hover {
-  background: var(--bg-hover);
-}
+.hover-bg { transition: background 0.2s ease; }
+.hover-bg:hover { background: var(--bg-hover); }
+
+.hover-bounce { transition: transform 0.2s ease; }
+.hover-bounce:hover { scale: 1.05; }
