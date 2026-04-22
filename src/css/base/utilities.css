@@ -1,0 +1,9 @@
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
