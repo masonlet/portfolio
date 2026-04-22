@@ -1,7 +1,7 @@
 #header-nav img, 
 #first-output-div img,
 #second-output-div img {
-  background: var(--light-bg);
+  background: var(--bg-light);
 }
 
 .project-card img,

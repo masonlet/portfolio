@@ -1,14 +1,14 @@
 html {
   background: black;
-  color: var(--colour-txt);
-  text-shadow: 2px 2px var(--colour-primary);
+  color: var(--text-primary);
+  text-shadow: 2px 2px var(--primary);
   font-family: "Bebas Neue", system-ui, sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100dvh;
-  background: linear-gradient(var(--colour-gradient));
+  background: var(--bg-gradient);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   overflow: hidden;
