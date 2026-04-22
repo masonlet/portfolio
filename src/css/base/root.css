@@ -13,9 +13,3 @@ body {
   animation: gradient 10s ease infinite;
   overflow: hidden;
 }
-
-.hidden {
-  display: none;
-  pointer-events: none;
-}
-

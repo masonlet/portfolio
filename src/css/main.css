@@ -3,6 +3,7 @@
 @import url('base/animations.css');
 @import url('base/reset.css');
 @import url('base/root.css');
+@import url('base/utilities.css');
 
 @import url('layout/main.css');
 @import url('layout/sections.css');
@@ -17,4 +18,3 @@
 @import url('responsive/tablet.css');
 @import url('responsive/tablet-large.css');
 @import url('responsive/desktop.css');
-
