@@ -7,3 +7,14 @@
   opacity: 0;
   pointer-events: none;
 }
+
+.hover-bg {
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.hover-bg:hover {
+  background: var(--bg-hover);
+}

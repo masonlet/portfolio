@@ -1,3 +1,16 @@
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--bg-dark);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: normal;
+  font-family: inherit;
+}
+
+/* ------------------ OLD ------------------ */
 #first-nav a, 
 #second-nav a, 
 #link-buttons a, 

@@ -5,6 +5,7 @@
 @import url('base/root.css');
 @import url('base/utilities.css');
 
+@import url('layout.css');
 @import url('layout/main.css');
 @import url('layout/sections.css');
 
