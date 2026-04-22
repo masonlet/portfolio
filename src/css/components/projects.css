@@ -47,7 +47,6 @@
   border-radius: 10px;
   text-align: center;
   font-size: 1.4rem;
-  cursor: pointer;
   transition: transform 0.2s ease;
   pointer-events: auto;
   min-height: 320px;
@@ -88,10 +87,6 @@
   padding: 0.5rem;
   border-radius: 8px;
   transition: transform 0.2s ease;
-}
-
-.tech-icon:hover {
-  transform: scale(1.1);
 }
 
 #embed-container iframe {

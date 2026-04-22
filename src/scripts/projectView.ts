@@ -45,7 +45,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
     .map((lang): string => {
       const imagePath = IMAGE_PATHS[lang];
       return imagePath 
-        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon hover-bounce" loading="lazy">`
         : '';
     })
     .filter((s): s is string => s.length > 0)
@@ -104,7 +104,7 @@ export function showProjectDetails(
   fadeTransition(grid, details, "block", () => {
     const label = data.embedLabel ?? "Play";
     const playButton = data.embedUrl
-      ? `<button class="action-button" data-action="play" data-embed="${data.embedUrl}" data-label="${label}">
+      ? `<button class="btn hover-bg hover-cursor" data-action="play" data-embed="${data.embedUrl}" data-label="${label}">
           ${label}!
         </button>`
       : '';
@@ -113,10 +113,10 @@ export function showProjectDetails(
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
       <div id="project-buttons">
-        <button class="action-button" data-action="back">← Back to Projects</button>
+        <button class="btn hover-bg hover-cursor" data-action="back">← Back to Projects</button>
         ${playButton}
         <a href="${data.github}" target="_blank" id="github-link">
-          <button class="action-button">View on GitHub →</button>
+          <button class="btn hover-bg hover-cursor">View on GitHub →</button>
         </a>
       </div>
       <div id="readme-container" class="loading">
