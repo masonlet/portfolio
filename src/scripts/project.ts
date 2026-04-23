@@ -14,14 +14,14 @@ window.addEventListener('DOMContentLoaded', () => {
   details.classList.add('hidden');
   details.style.display = 'none';
 
-  document.querySelectorAll<HTMLElement>('.project-card').forEach((card) => {
-    card.addEventListener('click', () => {
-      const projectKey = card.getAttribute('data-project');
-      if (projectKey) showProjectDetails(projectKey, grid, details);
-    });
+  grid.addEventListener('click', (e: MouseEvent) => {
+    const card = (e.target as HTMLElement).closest<HTMLElement>('.project-card');
+    if (!card) return;
+    const projectKey = card.getAttribute('data-project');
+    if (projectKey) showProjectDetails(projectKey, grid, details);
   });
 
-  document.addEventListener('click', (e: MouseEvent) => {
+  details.addEventListener('click', (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
       showProjectsGrid(grid, details);
