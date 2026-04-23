@@ -47,6 +47,20 @@ function createTechIcons(icons: readonly TechKey[]): string {
 
   return `<div class="project-tech">${iconData}</div>`;
 }
+function createProjectCard(key: ProjectKey, data: Project): string {
+  return `
+    <div class="project-card" data-project="${key}">
+      <h4>${data.title}</h4>
+      <img src="${data.preview.src}" width="${data.preview.w}" height="${data.preview.h}" alt="${data.title} Project Screenshot" loading="lazy">
+    </div>
+  `;
+}
+
+function populateGrid(grid: HTMLElement): void {
+  grid.innerHTML = (Object.entries(projectData) as [ProjectKey, Project][])
+    .map(([key, data]) => createProjectCard(key, data))
+    .join('');
+}
 
 function fadeTransition(
   hideElement: HTMLElement,
@@ -164,7 +178,8 @@ window.addEventListener('DOMContentLoaded', () => {
   grid.classList.remove('hidden');
   grid.style.display = 'grid';
   grid.style.opacity = '1';
-  
+  populateGrid(grid);
+
   details.classList.add('hidden');
   details.style.display = 'none';
 
@@ -184,4 +199,3 @@ window.addEventListener('DOMContentLoaded', () => {
   const initial = parseHash();
   if (initial) showProjectDetails(initial, grid, details);
 });
-
