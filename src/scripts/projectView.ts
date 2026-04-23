@@ -1,0 +1,106 @@
+import { type TechKey, IMAGE_PATHS } from './techData';
+import { type Project, type ProjectKey, projectData } from './projectData';
+import { loadReadme, abortReadme } from './githubApi';
+import { isProjectKey, syncURL } from './projectRouter';
+
+const ANIMATION_DURATION = 300;
+
+function fadeTransition(
+  hideElement: HTMLElement,
+  showElement: HTMLElement,
+  showDisplay: string,
+  callback?: () => void
+): void {
+  hideElement.classList.add('fade-out');
+
+  setTimeout(() => {
+    hideElement.style.display = 'none';
+    hideElement.classList.add('hidden');
+    hideElement.classList.remove('fade-out');
+
+    callback?.();
+
+    showElement.classList.remove('hidden');
+    showElement.style.display = showDisplay;
+    showElement.style.opacity = '0';    
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        showElement.style.opacity = '1';
+      });
+    });
+  }, ANIMATION_DURATION);
+}
+
+function createTechIcons(icons: readonly TechKey[]): string {
+  if (icons.length === 0) return '';
+
+  const iconData = icons
+    .map((lang): string => {
+      const imagePath = IMAGE_PATHS[lang];
+      return imagePath 
+        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+        : '';
+    })
+    .filter((s): s is string => s.length > 0)
+    .join('');
+
+  return `<div class="project-tech">${iconData}</div>`;
+}
+function createProjectCard(key: ProjectKey, data: Project): string {
+  return `
+    <div class="project-card" data-project="${key}">
+      <h4>${data.title}</h4>
+      <img src="${data.preview.src}" width="${data.preview.w}" height="${data.preview.h}" alt="${data.title} Project Screenshot" loading="lazy">
+    </div>
+  `;
+}
+
+export function populateGrid(grid: HTMLElement): void {
+  grid.innerHTML = (Object.entries(projectData) as [ProjectKey, Project][])
+    .map(([key, data]) => createProjectCard(key, data))
+    .join('');
+}
+
+export function showProjectDetails(
+  projectKey: string,
+  grid: HTMLElement,
+  details: HTMLElement
+): void {
+  if (!isProjectKey(projectKey)) return;
+  const data: Project = projectData[projectKey];
+  
+  syncURL(projectKey);
+
+  fadeTransition(grid, details, 'block', () => {
+    details.innerHTML = `
+      <h3>${data.title}</h3>
+      ${createTechIcons(data.tech)}
+      <div id="project-buttons">
+        <button id="back-to-grid">← Back to Projects</button>
+        <a href="${data.github}" target="_blank" id="github-link">
+          <button id="github-button">View on GitHub →</button>
+        </a>
+      </div>
+      <div id="readme-container" class="loading">
+        <p>Loading README...</p>
+      </div>
+    `;
+
+    const container = document.getElementById('readme-container');
+    if (!container) return;
+    loadReadme(container, data);
+  });
+}
+
+export function showProjectsGrid(
+  grid: HTMLElement, 
+  details: HTMLElement
+): void {
+  abortReadme();
+  syncURL(null);
+  fadeTransition(
+    details, grid, 'grid', 
+    () => { details.innerHTML = ''; }
+  );
+}

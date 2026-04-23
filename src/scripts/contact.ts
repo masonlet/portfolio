@@ -1,4 +1,8 @@
-import type { ContactBody } from "../types";
+interface ContactBody {
+  subject: string;
+  email: string;
+  message: string;
+}
 
 interface ApiResponse {
   success: boolean;
