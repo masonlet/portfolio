@@ -1,9 +1,11 @@
+import {
+  type TechKey,
+  IMAGE_PATHS
+} from "./techData"
 import { 
   type Project,
   type ProjectKey,
   projectData,
-  type TechKey,
-  IMAGE_PATHS
 } from './projectData';
 
 const ANIMATION_DURATION = 300;

@@ -1,7 +1,7 @@
 import { 
   type TechKey,
   IMAGE_PATHS 
-} from './projectData';
+} from './techData';
 
 const TYPING_SPEED: number = 20;
 
