@@ -23,6 +23,7 @@ export interface Project {
   readonly title: string;
   readonly description: string;
   readonly image: string;
+  readonly preview: { src: string; w: number; h: number; }
   readonly github: string;
   readonly tech: readonly TechKey[];
 }
@@ -32,6 +33,7 @@ export const projectData = {
     title: 'GitHub Top Languages',
     description: 'A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.',
     image: asset('/img/projects/github-top-languages.webp'),
+    preview: { src: asset('/img/projects/github-top-languages_prev.webp'), w: 500, h: 353 },
     github: 'https://github.com/masonlet/github-top-languages',
     tech: ['ts', 'nodejs', 'vercel', 'vitest']
   },
@@ -39,13 +41,23 @@ export const projectData = {
     title: 'Starlet Setup',
     description: 'Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.',
     image: asset('/img/projects/starlet-setup.webp'),
+    preview: { src: asset('/img/projects/starlet-setup_prev.webp'), w: 500, h: 127 },
     github: 'https://github.com/starlet-engine/starlet-setup',
     tech: ['python', 'cmake', 'pytest', 'pip', 'pypi']
+  },
+  'lookingforlove': {
+    title: 'LookingForLove',
+    description: 'An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.',
+    image: asset('/img/projects/lookingforlove.webp'),
+    preview: { src: asset('/img/projects/lookingforlove_prev.webp'), w: 500, h: 280 },
+    github: 'https://github.com/masonlet/info-3112-project',
+    tech: ['nextjs', 'ts', 'supabase', 'tailwind', 'vercel', 'vitest']
   },
   'tasktracker': {
     title: 'Task Tracker',
     description: 'TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.',
     image: asset('/img/projects/tasktracker.webp'),
+    preview: { src: asset('/img/projects/tasktracker_prev.webp'), w: 500, h: 377 },
     github: 'https://github.com/masonlet/tasktracker',
     tech: ['cpp', 'cmake', 'googletest']
   },
@@ -53,6 +65,7 @@ export const projectData = {
     title: 'Starlet Engine',
     description: 'A C++ OpenGL engine ecosystem.',
     image: asset('/img/projects/opengl.webp'),
+    preview: { src: asset('/img/projects/opengl_prev.webp'), w: 500, h: 274 },
     github: 'https://github.com/starlet-engine/.github',
     tech: ['cpp', 'opengl', 'cmake', 'glfw']
   },
@@ -60,6 +73,7 @@ export const projectData = {
     title: 'Portfolio',
     description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.',
     image: asset('/img/projects/portfolio.webp'),
+    preview: { src: asset('/img/projects/portfolio_prev.webp'), w: 500, h: 260 },
     github: 'https://github.com/masonlet/portfolio',
     tech: ['html', 'css', 'ts', 'vercel']
   },
@@ -67,6 +81,7 @@ export const projectData = {
     title: 'GitHub Visualizer',
     description: 'A Python utility to explore and visualize GitHub repositories and their activity.',
     image: asset('/img/projects/githubvisualizer.webp'),
+    preview: { src: asset('/img/projects/githubvisualizer_prev.webp'), w: 500, h: 247 },
     github: 'https://github.com/masonlet/githubvisualizer',
     tech: ['python', 'pytest', 'pip']
   },
@@ -74,6 +89,7 @@ export const projectData = {
     title: 'Image Sandbox',
     description: 'A C++ playground for experimenting with images loaded using StarletSerializer.',
     image: asset('/img/projects/imagesandbox.webp'),
+    preview: { src: asset('/img/projects/imagesandbox_prev.webp'), w: 456, h: 500 },
     github: 'https://github.com/starlet-engine/image-sandbox',
     tech: ['cpp', 'cmake']
   },
@@ -81,6 +97,7 @@ export const projectData = {
     title: 'Starlet Samples',
     description: 'A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.',
     image: asset('/img/projects/samples.webp'),
+    preview: { src: asset('/img/projects/samples_prev.webp'), w: 500, h: 280 },
     github: 'https://github.com/starlet-engine/samples',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
   },
@@ -88,6 +105,7 @@ export const projectData = {
     title: 'Noise Sandbox',
     description: 'A C++ playground for learning and experimenting with noise algorithms.',
     image: asset('/img/projects/noise.webp'),
+    preview: { src: asset('/img/projects/noise_prev.webp'), w: 500, h: 367 },
     github: 'https://github.com/starlet-engine/noise-sandbox',
     tech: ['cpp', 'cmake']
   },
@@ -95,20 +113,15 @@ export const projectData = {
     title: 'Starlet Starter',
     description: 'A Template for Starlet Game Projects.',
     image: asset('/img/projects/starter.webp'),
+    preview: { src: asset('/img/projects/starter_prev.webp'), w: 500, h: 275 },
     github: 'https://github.com/starlet-engine/starter',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
-  },
-  'cardportfolio': {
-    title: 'Card Portfolio',
-    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.',
-    image: asset('/img/projects/card.webp'),
-    github: 'https://github.com/masonlet/cardportfolio',
-    tech: ['html', 'css', 'js']
   },
   'graphics': {
     title: 'Starlet Graphics',
     description: 'Graphics loading & management library for Starlet projects.',
     image: asset('/img/projects/graphics.webp'),
+    preview: { src: asset('/img/projects/graphics_prev.webp'), w: 500, h: 310 },
     github: 'https://github.com/starlet-engine/graphics',
     tech: ['cpp', 'cmake']
   },
@@ -116,6 +129,7 @@ export const projectData = {
     title: 'Starlet Serializer',
     description: 'Serialization library for Starlet projects to handle both data reading and writing.',
     image: asset('/img/projects/serializer.webp'),
+    preview: { src: asset('/img/projects/serializer_prev.webp'), w: 500, h: 312 },
     github: 'https://github.com/starlet-engine/serializer',
     tech: ['cpp', 'cmake', 'googletest']
   },
@@ -123,6 +137,7 @@ export const projectData = {
     title: 'Starlet Engine',
     description: 'Modular OpenGL engine written in C++.',
     image: asset('/img/projects/engine.webp'),
+    preview: { src: asset('/img/projects/engine_prev.webp'), w: 500, h: 300 },
     github: 'https://github.com/starlet-engine/engine',
     tech: ['cpp', 'opengl', 'glfw', 'cmake']
   },
@@ -130,6 +145,7 @@ export const projectData = {
     title: 'Starlet Scene',
     description: 'ECS-based scene & scene management library for Starlet projects.',
     image: asset('/img/projects/scene.webp'),
+    preview: { src: asset('/img/projects/scene_prev.webp'), w: 500, h: 310 },
     github: 'https://github.com/starlet-engine/scene',
     tech: ['cpp', 'cmake']
   },
@@ -137,6 +153,7 @@ export const projectData = {
     title: 'Starlet Logger',
     description: 'Logging library for Starlet projects.',
     image: asset('/img/projects/logger.webp'),
+    preview: { src: asset('/img/projects/logger_prev.webp'), w: 500, h: 273 },
     github: 'https://github.com/starlet-engine/logger',
     tech: ['cpp', 'cmake', 'googletest']
   },
@@ -144,6 +161,7 @@ export const projectData = {
     title: 'Starlet Controls',
     description: 'Input management library for Starlet projects.',
     image: asset('/img/projects/controls.webp'),
+    preview: { src: asset('/img/projects/controls_prev.webp'), w: 500, h: 300 },
     github: 'https://github.com/starlet-engine/controls',
     tech: ['cpp', 'cmake']
   },
@@ -151,6 +169,7 @@ export const projectData = {
     title: 'Starlet Math',
     description: 'A lightweight header-only math library for Starlet projects.',
     image: asset('/img/projects/math.webp'),
+    preview: { src: asset('/img/projects/math_prev.webp'), w: 500, h: 313 },
     github: 'https://github.com/starlet-engine/math',
     tech: ['cpp', 'cmake', 'googletest']
   },
@@ -158,15 +177,17 @@ export const projectData = {
     title: 'Starlet Testing',
     description: 'A repository containing unit tests for Starlet libraries using GoogleTest.',
     image: asset('/img/projects/tests.webp'),
+    preview: { src: asset('/img/projects/tests_prev.webp'), w: 500, h: 291 },
     github: 'https://github.com/starlet-engine/testing',
     tech: ['cpp', 'cmake', 'googletest']
   },
-  'lookingforlove': {
-    title: 'LookingForLove',
-    description: 'An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.',
-    image: asset('/img/projects/lookingforlove.webp'),
-    github: 'https://github.com/masonlet/info-3112-project',
-    tech: ['nextjs', 'ts', 'supabase', 'tailwind', 'vercel', 'vitest']
+  'cardportfolio': {
+    title: 'Card Portfolio',
+    description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.',
+    image: asset('/img/projects/card.webp'),
+    preview: { src: asset('/img/projects/card_prev.webp'), w: 500, h: 261 },
+    github: 'https://github.com/masonlet/cardportfolio',
+    tech: ['html', 'css', 'js']
   },
 } satisfies Record<string, Project>;
 
