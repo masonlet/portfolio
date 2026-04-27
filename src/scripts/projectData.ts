@@ -35,14 +35,6 @@ export const projectData = {
     github: 'https://github.com/masonlet/info-3112-project',
     tech: ['nextjs', 'ts', 'supabase', 'tailwind', 'vercel', 'vitest']
   },
-  'tasktracker': {
-    title: 'Task Tracker',
-    description: 'TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.',
-    image: asset('/img/projects/tasktracker.webp'),
-    preview: { src: asset('/img/projects/tasktracker_prev.webp'), w: 500, h: 377 },
-    github: 'https://github.com/masonlet/tasktracker',
-    tech: ['cpp', 'cmake', 'googletest']
-  },
   'opengl': {
     title: 'Starlet Engine',
     description: 'A C++ OpenGL engine ecosystem.',
@@ -51,13 +43,29 @@ export const projectData = {
     github: 'https://github.com/starlet-engine/.github',
     tech: ['cpp', 'opengl', 'cmake', 'glfw']
   },
+  'fixit': {
+    title: 'Fix It!',
+    description: 'A conveyor-belt repair arcade game built for Gamedev.js Jam 2026 (theme: Machines). Spot faults, tap to inspect, and fix items via quick minigames before they slide off the belt. Deployed to Itch.io and Wavedash.',
+    image: asset('/img/projects/fixit.webp'),
+    preview: { src: asset('/img/projects/fixit_prev.webp'), w: 500, h: 313 },
+    github: 'https://github.com/masonlet/fix-it',
+    tech: ['js', 'phaser', 'vite']
+  },
   'portfolio': {
     title: 'Portfolio',
     description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.',
     image: asset('/img/projects/portfolio.webp'),
     preview: { src: asset('/img/projects/portfolio_prev.webp'), w: 500, h: 260 },
     github: 'https://github.com/masonlet/portfolio',
-    tech: ['html', 'css', 'ts', 'vercel']
+    tech: ['html', 'css', 'ts', 'vercel', 'vite']
+  },
+  'tasktracker': {
+    title: 'Task Tracker',
+    description: 'TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.',
+    image: asset('/img/projects/tasktracker.webp'),
+    preview: { src: asset('/img/projects/tasktracker_prev.webp'), w: 500, h: 377 },
+    github: 'https://github.com/masonlet/tasktracker',
+    tech: ['cpp', 'cmake', 'googletest']
   },
   'githubvisualizer': {
     title: 'GitHub Visualizer',
