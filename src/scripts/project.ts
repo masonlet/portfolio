@@ -1,5 +1,10 @@
 import { parseHash } from './projectRouter';
-import { populateGrid, showProjectDetails, showProjectsGrid } from './projectView';
+import {
+  populateGrid,
+  showProjectDetails,
+  showProjectsGrid,
+  togglePlayMode
+} from './projectView';
 
 window.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector<HTMLElement>('#projects-grid');
@@ -25,6 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const target = e.target as HTMLElement;
     if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
       showProjectsGrid(grid, details);
+    else if (target.id === 'play-button')
+      togglePlayMode(details);
   });
 
   const initial = parseHash();
