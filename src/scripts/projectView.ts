@@ -73,11 +73,16 @@ export function showProjectDetails(
   syncURL(projectKey);
 
   fadeTransition(grid, details, 'block', () => {
+    const playButton = data.embedUrl
+      ? `<button id="play-button" data-embed="${data.embedUrl}">Play!</button>`
+      : '';
+
     details.innerHTML = `
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
       <div id="project-buttons">
         <button id="back-to-grid">← Back to Projects</button>
+        ${playButton}
         <a href="${data.github}" target="_blank" id="github-link">
           <button id="github-button">View on GitHub →</button>
         </a>
@@ -85,12 +90,40 @@ export function showProjectDetails(
       <div id="readme-container" class="loading">
         <p>Loading README...</p>
       </div>
+      <div id="embed-container" class="hidden"></div>
     `;
 
     const container = document.getElementById('readme-container');
     if (!container) return;
     loadReadme(container, data);
   });
+}
+
+export function togglePlayMode(details: HTMLElement): void {
+  const readme = details.querySelector<HTMLElement>('#readme-container');
+  const embed = details.querySelector<HTMLElement>('#embed-container');
+  const button = details.querySelector<HTMLButtonElement>('#play-button');
+  if (!readme || !embed || !button) return;
+
+  const tech = details.querySelector<HTMLElement>('.project-tech');
+  const title = details.querySelector<HTMLElement>('h3');
+  const showing = !embed.classList.contains('hidden');
+  if (showing) {
+    embed.classList.add('hidden');
+    readme.classList.remove('hidden');
+    tech?.classList.remove('hidden');
+    title?.classList.remove('hidden');
+    button.textContent = 'Play!';
+  } else {
+    if (!embed.innerHTML) embed.innerHTML = `
+      <iframe src="${button.dataset['embed']}" frameborder="0" allowfullscreen></iframe>
+    `;
+    tech?.classList.add('hidden');
+    title?.classList.add('hidden')
+    readme.classList.add('hidden');
+    embed.classList.remove('hidden');
+    button.textContent = 'Back to README';
+  }
 }
 
 export function showProjectsGrid(

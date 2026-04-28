@@ -87,3 +87,9 @@
 .tech-icon:hover {
   transform: scale(1.1);
 }
+
+#embed-container iframe {
+  width: 100%;
+  height: 60vh;
+  border: 0;
+}

@@ -13,7 +13,8 @@
 }
 
 #back-to-grid,
-#github-button {
+#github-button,
+#play-button {
   background: var(--dark-bg);
   border: 2px solid var(--colour-primary);
   border-radius: 8px;
@@ -27,7 +28,8 @@
 }
 
 #back-to-grid:hover, 
-#github-button:hover {
+#github-button:hover,
+#play-button:hover {
   transform: scale(1.05);
   background: var(--hover-bg) !important;
 }

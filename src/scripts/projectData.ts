@@ -7,6 +7,7 @@ export interface Project {
   readonly image: string;
   readonly preview: { src: string; w: number; h: number; }
   readonly github: string;
+  readonly embedUrl?: string;
   readonly tech: readonly TechKey[];
 }
 
@@ -49,6 +50,7 @@ export const projectData = {
     image: asset('/img/projects/fixit.webp'),
     preview: { src: asset('/img/projects/fixit_prev.webp'), w: 500, h: 313 },
     github: 'https://github.com/masonlet/fix-it',
+    embedUrl: 'https://itch.io/embed-upload/17308768?color=333333',
     tech: ['js', 'phaser', 'vite']
   },
   'portfolio': {
