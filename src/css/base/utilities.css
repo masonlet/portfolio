@@ -8,6 +8,24 @@
   pointer-events: none;
 }
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-light);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  line-height: 0;
+}
+
 /* Hover */
 .hover-cursor { cursor: pointer; }
 

@@ -131,9 +131,7 @@ async function preloadImages(images: Record<string, string>): Promise<void> {
 function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
-    if (element) element.style.backgroundColor = section === activeSection 
-      ? "rgba(0, 0, 0, 0.5)"
-      : "rgba(0, 0, 0, 0.25)";
+    if (element) element.classList.toggle("btn-active", section === activeSection);
   }); 
 }
 
