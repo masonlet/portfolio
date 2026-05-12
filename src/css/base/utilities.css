@@ -11,8 +11,12 @@
 /* Hover */
 .hover-cursor { cursor: pointer; }
 
-.hover-bg { transition: background 0.2s ease; }
+.hover-bg { transition: background var(--hover-bg-duration) ease; }
 .hover-bg:hover { background: var(--bg-hover); }
 
-.hover-bounce { transition: transform 0.2s ease; }
+.hover-bounce { transition: scale var(--hover-bounce-duration) ease; }
 .hover-bounce:hover { scale: 1.05; }
+
+.hover-bounce.hover-bg {
+  transition: scale var(--hover-bounce-duration) ease, background var(--hover-bg-duration) ease;
+}
