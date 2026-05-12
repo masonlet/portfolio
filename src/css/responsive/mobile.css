@@ -11,18 +11,9 @@
     letter-spacing: 3px;
   }
 
-  header p, 
-  #first-output-div a p,
-  #second-output-div a p {
+  header p {
     font-size: 3vw; 
     line-height: 5vw;
-  }
-
-  header p a {
-    background: var(--bg-dark);
-    border: 2px solid var(--primary);
-    border-radius: 5px;
-    padding: 2.5px;
   }
 
   /* Navigation */
@@ -40,19 +31,7 @@
     margin: 2vh 0 0;
   }
 
-  #first-nav a, 
-  #second-nav a, 
-  #link-buttons a, 
-  #email-button {
-    font-size: 4vw;
-    line-height: 4vw;
-    border: 2px solid var(--primary);
-    border-radius: 5px;
-    padding: 1.5vw;
-  }
-
   /* Image */
-  #header-nav img, 
   #second-output-div img, 
   #first-output-div img {
     width: 12.5vw;
@@ -109,13 +88,6 @@
     margin: 2vh 0 0;
   }
 
-  #first-output-div a, 
-  #first-output-div a img, 
-  #second-output-div a, 
-  #second-output-div a img {
-    border-radius: 10px;
-  }
-
   #second-output-div, 
   #first-output-div {
     display: flex;
@@ -139,12 +111,6 @@
   }
 
   /* Other */
-  #link-buttons a {
-    margin-top: 1vh;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .tech {
     width: 15vw;
     height: 20vw;

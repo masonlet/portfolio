@@ -9,17 +9,9 @@
     line-height: 9.5vmin;
     letter-spacing: 3px;
   }
-  header p,
-  #first-output-div a p,
-  #second-output-div a p {
+  header p {
     font-size: 3vmin;
     line-height: 5vmin;
-  }
-  header p a {
-    border-radius: 5px;
-    padding: 2.5px;
-    background: var(--bg-dark);
-    border: 2px solid var(--primary);
   }
 
   /* Navigation */
@@ -34,20 +26,8 @@
     column-gap: 5px;
   }
 
-  #first-nav a, 
-  #second-nav a, 
-  #link-buttons a, 
-  #email-button {
-    font-size: 3.5vmin;
-    line-height: 3.5vmin;
-    border: 4px solid var(--primary);
-    border-radius: 10px;
-    padding: 1.5vmin;
-  }
-
   /* Image */
-  #header-nav img, 
-  #second-output-div img, 
+  #second-output-div img,
   #first-output-div img {
     padding: 2px;
     width: 10vmin;
@@ -99,13 +79,6 @@
     margin: 2vh 0 0;
   }
 
-  #first-output-div a, 
-  #first-output-div a img, 
-  #second-output-div a, 
-  #second-output-div a img {
-    border-radius: 10px;
-  }
-
   #second-output-div, 
   #first-output-div {
     display: flex;
@@ -129,12 +102,6 @@
   }
 
   /* Other */
-  #link-buttons a {
-    margin-top: 1vh;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .tech {
     width: 15vmin;
     height: 20vmin;

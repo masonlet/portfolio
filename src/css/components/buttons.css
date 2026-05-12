@@ -10,18 +10,12 @@
   font-family: inherit;
 }
 
-/* ------------------ OLD ------------------ */
-#first-nav a, 
-#second-nav a, 
-#link-buttons a, 
-#email-button {
+.btn-full {
   width: 100%;
-  background: var(--bg-dark);
-  text-align: center;
-  display: inline-block;
+  display: block;
 }
 
-.email-submit {
-  background: var(--bg-dark);
+.btn-active {
+  background: var(--bg-hover);
 }
-
+  

@@ -1,7 +1,8 @@
-#header-nav img, 
-#first-output-div img,
-#second-output-div img {
-  background: var(--bg-light);
+.nav-icon {
+  display: block;
+  width: 10vmin;
+  height: 10vmin;
+  padding: 2px;
 }
 
 .project-card img,
