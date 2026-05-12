@@ -93,6 +93,14 @@ export const projectData = {
     github: 'https://github.com/starlet-engine/image-sandbox',
     tech: ['cpp', 'cmake']
   },
+  'contact-api-demo': {
+    title: 'Contact API Demo',
+    description: 'A demo site for Contact API with live contact form examples for both Resend and Nodemailer configurations.',
+    image: asset('/img/projects/contact-api-demo.webp'),
+    preview: { src: asset('/img/projects/contact-api-demo_prev.webp'), w: 839, h: 481 },
+    github: 'https://github.com/masonlet/contact-api-demo',
+    tech: ['html', 'css', 'ts', 'vite']
+  },
   'samples': {
     title: 'Starlet Samples',
     description: 'A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.',
