@@ -61,6 +61,14 @@ export const projectData = {
     github: 'https://github.com/masonlet/portfolio',
     tech: ['html', 'css', 'ts', 'vercel', 'vite']
   },
+  'contact-api': {
+    title: 'Contact API',
+    description: 'A deployable multi-provider contact form API for Vercel with Resend and Nodemailer support, input validation, CORS controls, honeypot spam protection, and Vitest coverage.',
+    image: asset('/img/projects/contact-api.webp'),
+    preview: { src: asset('/img/projects/contact-api_prev.webp'), w: 660, h: 491 },
+    github: 'https://github.com/masonlet/contact-api',
+    tech: ['ts', 'nodejs', 'vercel', 'vitest']
+  },
   'tasktracker': {
     title: 'Task Tracker',
     description: 'TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.',
