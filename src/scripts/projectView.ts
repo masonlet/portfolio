@@ -56,7 +56,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
 
 function createProjectCard(key: ProjectKey, data: Project): string {
   return `
-    <div class="project-card" data-project="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-project="${key}">
       <h4>${data.title}</h4>
       <img src="${data.preview.src}" width="${data.preview.w}" height="${data.preview.h}" alt="${data.title} Project Screenshot" loading="lazy">
     </div>

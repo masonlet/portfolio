@@ -3,7 +3,7 @@
   --primary: #004d4d;
   --secondary: #4d4d00;
 
-  /* Text */
+  /* Text Colour */
   --text-primary: white;
 
   /* Background Colours */
@@ -11,5 +11,9 @@
   --bg-dark: rgba(0, 0, 0, 0.25);
   --bg-hover: rgba(0, 0, 0, 0.5);
   --bg-gradient: linear-gradient(-145deg, var(--secondary), var(--primary), var(--secondary), var(--primary));
+
+  /* Durations */
+  --hover-bg-duration: 0.2s;
+  --hover-bounce-duration: 0.2s;
 }
 

@@ -47,17 +47,11 @@
   border-radius: 10px;
   text-align: center;
   font-size: 1.4rem;
-  transition: transform 0.2s ease;
   pointer-events: auto;
   min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  background: var(--bg-hover);
 }
 
 .project-card h4 {
@@ -86,7 +80,6 @@
   background: var(--bg-light);
   padding: 0.5rem;
   border-radius: 8px;
-  transition: transform 0.2s ease;
 }
 
 #embed-container iframe {
