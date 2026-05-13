@@ -117,6 +117,14 @@ export const projectData = {
     github: 'https://github.com/starlet-engine/noise-sandbox',
     tech: ['cpp', 'cmake']
   },
+  'fix-it-jam': {
+    title: 'Fix It! Jam',
+    description: 'The archived Gamedev.js Jam 2026 version of Fix It!, built as a casual HTML5 arcade game around the jam theme "Machines."',
+    image: asset('/img/projects/fix-it-jam.webp'),
+    preview: { src: asset('/img/projects/fix-it-jam_prev.webp'), w: 645, h: 486 },
+    github: 'https://github.com/masonlet/fix-it-jam',
+    tech: ['js', 'phaser', 'vite']
+  },
   'starter': {
     title: 'Starlet Starter',
     description: 'A Template for Starlet Game Projects.',
