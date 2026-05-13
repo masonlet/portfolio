@@ -109,6 +109,14 @@ export const projectData = {
     github: 'https://github.com/masonlet/contact-api-demo',
     tech: ['html', 'css', 'ts', 'vite']
   },
+  'readme-api-demo': {
+    title: 'Readme API Demo',
+    description: 'A live demo for Readme API that fetches and renders GitHub README files via the API.',
+    image: asset('/img/projects/readme-api-demo.webp'),
+    preview: { src: asset('/img/projects/readme-api-demo_prev.webp'), w: 856, h: 495 },
+    github: 'https://github.com/masonlet/readme-api-demo',
+    tech: ['html', 'css', 'ts', 'vite']
+  },
   'samples': {
     title: 'Starlet Samples',
     description: 'A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.',
