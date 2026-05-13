@@ -19,6 +19,14 @@
     {
       "source": "/contact-api-demo/:path*",
       "destination": "https://contact-api-demo.vercel.app/:path*"
+    },
+    {
+      "source": "/readme-api-demo",
+      "destination": "https://readme-api-demo.vercel.app/"
+    },
+    {
+      "source": "/readme-api-demo/:path*",
+      "destination": "https://readme-api-demo.vercel.app/:path*"
     }
   ]
 }
