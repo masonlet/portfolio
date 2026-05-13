@@ -69,6 +69,14 @@ export const projectData = {
     github: 'https://github.com/masonlet/contact-api',
     tech: ['ts', 'nodejs', 'vercel', 'vitest']
   },
+  'readme-api': {
+    title: 'Readme API',
+    description: 'A deployable GitHub README API that fetches rendered README HTML, rewriting relative asset links to absolute GitHub URLs, and serving the result from a Vercel-hosted endpoint.',
+    image: asset('/img/projects/readme-api.webp'),
+    preview: { src: asset('/img/projects/readme-api_prev.webp'), w: 778, h: 492 },
+    github: 'https://github.com/masonlet/readme-api',
+    tech: ['ts', 'nodejs', 'vercel']
+  },
   'tasktracker': {
     title: 'Task Tracker',
     description: 'TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.',
