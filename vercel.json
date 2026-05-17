@@ -27,6 +27,14 @@
     {
       "source": "/readme-api-demo/:path*",
       "destination": "https://readme-api-demo.vercel.app/:path*"
+    },
+    {
+      "source": "/pixel-parker/",
+      "destination": "https://masonlet.github.io/pixel-parker/"
+    },
+    {
+      "source": "/pixel-parker/:path*",
+      "destination": "https://masonlet.github.io/pixel-parker/:path*"
     }
   ]
 }

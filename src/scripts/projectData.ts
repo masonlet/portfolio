@@ -53,6 +53,14 @@ export const projectData = {
     embedUrl: 'https://itch.io/embed-upload/17308768?color=333333',
     tech: ['js', 'phaser', 'vite']
   },
+  'pixel-parker': {
+    title: 'Pixel Parker',
+    description: 'A top-down vehicle parking puzzle game built with TypeScript, Vite, and a custom 2D web engine. Park vehicles in the correct spots across handcrafted levels.',
+    image: asset('/img/projects/pixel-parker.webp'),
+    preview: { src: asset('/img/projects/pixel-parker_prev.webp'), w: 500, h: 313 },
+    github: 'https://github.com/masonlet/pixel-parker',
+    tech: ['ts', 'vite', 'html', 'css']
+  },
   'portfolio': {
     title: 'Portfolio',
     description: 'A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.',
