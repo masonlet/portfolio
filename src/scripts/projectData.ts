@@ -57,9 +57,17 @@ export const projectData = {
     title: 'Pixel Parker',
     description: 'A top-down vehicle parking puzzle game built with TypeScript, Vite, and a custom 2D web engine. Park vehicles in the correct spots across handcrafted levels.',
     image: asset('/img/projects/pixel-parker.webp'),
-    preview: { src: asset('/img/projects/pixel-parker_prev.webp'), w: 500, h: 313 },
+    preview: { src: asset('/img/projects/pixel-parker_prev.webp'), w: 493, h: 281 },
     github: 'https://github.com/masonlet/pixel-parker',
     tech: ['ts', 'vite', 'html', 'css']
+  },
+  'web-engine': {
+    title: 'Web Engine',
+    description: 'A lightweight 2D game engine for the browser. Includes a fixed/variable game loop, OBB/AABB SAT collision, Web Audio mixer, and per-frame input state for keyboard and pointer.',
+    image: asset('/img/projects/web-engine.webp'),
+    preview: { src: asset('/img/projects/web-engine_prev.webp'), w: 787, h: 381 },
+    github: 'https://github.com/masonlet/web-engine',
+    tech: ['ts']
   },
   'portfolio': {
     title: 'Portfolio',
