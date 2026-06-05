@@ -87,18 +87,20 @@ export function populateGrid(grid: HTMLElement): void {
 export function showGroupGrid(groupKey: string, grid: HTMLElement): void {
   const group = projectGroups[groupKey];
   if (!group) return;
+  syncURL(null, groupKey);
   grid.innerHTML = createBackCard() + group.keys.map(key => createProjectCard(key, projectData[key])).join('');
 }
 
 export function showProjectDetails(
   projectKey: string,
+  groupKey: string | null,
   grid: HTMLElement,
   details: HTMLElement
 ): void {
   if (!isProjectKey(projectKey)) return;
   const data: Project = projectData[projectKey];
   
-  syncURL(projectKey);
+  syncURL(projectKey, groupKey);
 
   fadeTransition(grid, details, 'block', () => {
     const playButton = data.embedUrl
@@ -155,11 +157,12 @@ export function togglePlayMode(details: HTMLElement): void {
 }
 
 export function showProjectsGrid(
-  grid: HTMLElement, 
-  details: HTMLElement
+  grid: HTMLElement,
+  details: HTMLElement,
+  groupKey: string | null
 ): void {
   abortReadme();
-  syncURL(null);
+  syncURL(null, groupKey);
   fadeTransition(
     details, grid, 'grid', 
     () => { details.innerHTML = ''; }
