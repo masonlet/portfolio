@@ -1,10 +1,11 @@
-import { parseHash } from './projectRouter';
+import { parseHash } from "./projectRouter";
 import {
   populateGrid,
+  showGroupGrid,
   showProjectDetails,
   showProjectsGrid,
   togglePlayMode
-} from './projectView';
+} from "./projectView";
 
 window.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector<HTMLElement>('#projects-grid');
@@ -22,8 +23,14 @@ window.addEventListener('DOMContentLoaded', () => {
   grid.addEventListener('click', (e: MouseEvent) => {
     const card = (e.target as HTMLElement).closest<HTMLElement>('.project-card');
     if (!card) return;
+
+    const groupKey = card.getAttribute('data-group');
     const projectKey = card.getAttribute('data-project');
-    if (projectKey) showProjectDetails(projectKey, grid, details);
+    const isBack = card.getAttribute('data-back');
+
+    if (groupKey) showGroupGrid(groupKey, grid);
+    else if (isBack) populateGrid(grid);
+    else if (projectKey) showProjectDetails(projectKey, grid, details);
   });
 
   details.addEventListener('click', (e: MouseEvent) => {
