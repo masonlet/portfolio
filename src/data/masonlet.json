@@ -32,14 +32,6 @@
     "github": "https://github.com/masonlet/pixel-parker",
     "tech": ["ts", "vite", "html", "css"]
   },
-  "web-engine": {
-    "title": "Web Engine",
-    "description": "A lightweight 2D game engine for the browser. Includes a fixed/variable game loop, OBB/AABB SAT collision, Web Audio mixer, and per-frame input state for keyboard and pointer.",
-    "image": "/img/projects/web-engine.webp",
-    "preview": { "src": "/img/projects/web-engine_prev.webp", "w": 787, "h": 381 },
-    "github": "https://github.com/masonlet/web-engine",
-    "tech": ["ts"]
-  },
   "portfolio": {
     "title": "Portfolio",
     "description": "A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.",
