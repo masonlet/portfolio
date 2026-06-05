@@ -1,7 +1,8 @@
-import masonletData      from "../data/masonlet.json";
-import starletEngineRaw  from "../data/starlet-engine.json";
-import { asset         } from "./assets";
-import { type TechKey, } from "./techData";
+import masonletData        from "../data/masonlet.json";
+import starletEngineRaw    from "../data/starlet-engine.json";
+import starletWebEngineRaw from "../data/starlet-web-engine.json";
+import { asset           } from "./assets";
+import { type TechKey    } from "./techData";
 
 export interface Project {
   readonly title:         string;
@@ -20,7 +21,8 @@ export interface ProjectGroup {
 }
 
 const { _meta: starletEngineMeta, ...starletEngineProjects } = starletEngineRaw;
-const allRaw = { ...masonletData, ...starletEngineProjects };
+const { _meta: starletWebEngineMeta, ...starletWebEngineProjects } = starletWebEngineRaw;
+const allRaw = { ...masonletData, ...starletEngineProjects, ...starletWebEngineProjects };
 
 export type ProjectKey = keyof typeof allRaw;
 
@@ -45,4 +47,9 @@ export const projectGroups: Record<string, ProjectGroup> = {
     preview: { ...starletEngineMeta.preview, src: asset(starletEngineMeta.preview.src) },
     keys: Object.keys(starletEngineProjects) as ProjectKey[],
   },
+  "starlet-web-engine": {
+    ...starletWebEngineMeta,
+    preview: { ...starletWebEngineMeta.preview, src: asset(starletWebEngineMeta.preview.src) },
+    keys: Object.keys(starletWebEngineProjects) as ProjectKey[],
+  }
 };
