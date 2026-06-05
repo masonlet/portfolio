@@ -1,10 +1,13 @@
-import { parseHash } from './projectRouter';
+import { parseHash, syncURL } from "./projectRouter";
 import {
   populateGrid,
+  showGroupGrid,
   showProjectDetails,
   showProjectsGrid,
   togglePlayMode
-} from './projectView';
+} from "./projectView";
+
+let currentGroup: string | null = null;
 
 window.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector<HTMLElement>('#projects-grid');
@@ -22,18 +25,25 @@ window.addEventListener('DOMContentLoaded', () => {
   grid.addEventListener('click', (e: MouseEvent) => {
     const card = (e.target as HTMLElement).closest<HTMLElement>('.project-card');
     if (!card) return;
+
+    const groupKey = card.getAttribute('data-group');
     const projectKey = card.getAttribute('data-project');
-    if (projectKey) showProjectDetails(projectKey, grid, details);
+    const isBack = card.getAttribute('data-back');
+
+    if (groupKey) { currentGroup = groupKey; showGroupGrid(groupKey, grid); }
+    else if (isBack) { currentGroup = null; syncURL(null, null); populateGrid(grid); }
+    else if (projectKey) showProjectDetails(projectKey, currentGroup, grid, details);
   });
 
   details.addEventListener('click', (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target.id === 'back-to-grid' || target.closest('#back-to-grid')) 
-      showProjectsGrid(grid, details);
+      showProjectsGrid(grid, details, currentGroup);
     else if (target.id === 'play-button')
       togglePlayMode(details);
   });
 
-  const initial = parseHash();
-  if (initial) showProjectDetails(initial, grid, details);
+  const { projectKey: initial, groupKey: initialGroup } = parseHash();
+  if (initialGroup) { currentGroup = initialGroup; showGroupGrid(initialGroup, grid); }
+  if (initial) showProjectDetails(initial, currentGroup, grid, details);
 });

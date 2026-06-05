@@ -1,18 +1,30 @@
-import rawData from '../data/projects.json';
-import { asset } from "./assets";
+import masonletData      from "../data/masonlet.json";
+import starletEngineRaw  from "../data/starlet-engine.json";
+import { asset         } from "./assets";
 import { type TechKey, } from "./techData";
 
 export interface Project {
-  readonly title: string;
-  readonly description: string;
-  readonly image: string;
-  readonly preview: { src: string; w: number; h: number; }
-  readonly github: string;
-  readonly embedUrl?: string;
+  readonly title:         string;
+  readonly description:   string;
+  readonly image:         string;
+  readonly preview:       { src: string; w: number; h: number; }
+  readonly github:        string;
+  readonly embedUrl?:     string;
   readonly tech: readonly TechKey[];
 }
 
-function applyAssets(raw: typeof rawData): Record<ProjectKey, Project> {
+export interface ProjectGroup {
+  readonly title:         string;
+  readonly preview:       { src: string; w: number; h: number; };
+  readonly keys: readonly ProjectKey[];
+}
+
+const { _meta: starletEngineMeta, ...starletEngineProjects } = starletEngineRaw;
+const allRaw = { ...masonletData, ...starletEngineProjects };
+
+export type ProjectKey = keyof typeof allRaw;
+
+function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
   return Object.fromEntries(
     Object.entries(raw).map(([key, data]) => [
       key,
@@ -25,5 +37,12 @@ function applyAssets(raw: typeof rawData): Record<ProjectKey, Project> {
   ) as Record<ProjectKey, Project>;
 }
 
-export const projectData = applyAssets(rawData);
-export type ProjectKey = keyof typeof rawData;
+export const projectData = applyAssets(allRaw);
+
+export const projectGroups: Record<string, ProjectGroup> = {
+  "starlet-engine": {
+    ...starletEngineMeta,
+    preview: { ...starletEngineMeta.preview, src: asset(starletEngineMeta.preview.src) },
+    keys: Object.keys(starletEngineProjects) as ProjectKey[],
+  },
+};

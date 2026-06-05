@@ -1,7 +1,13 @@
-import { type TechKey, IMAGE_PATHS } from './techData';
-import { type Project, type ProjectKey, projectData } from './projectData';
-import { loadReadme, abortReadme } from './githubApi';
-import { isProjectKey, syncURL } from './projectRouter';
+import { type TechKey, IMAGE_PATHS } from "./techData";
+import {
+  type Project,
+  type ProjectKey,
+  type ProjectGroup,
+  projectData,
+  projectGroups
+} from "./projectData";
+import { loadReadme, abortReadme } from "./githubApi";
+import { isProjectKey, syncURL } from "./projectRouter";
 
 const ANIMATION_DURATION = 300;
 
@@ -47,6 +53,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
 
   return `<div class="project-tech">${iconData}</div>`;
 }
+
 function createProjectCard(key: ProjectKey, data: Project): string {
   return `
     <div class="project-card" data-project="${key}">
@@ -55,22 +62,45 @@ function createProjectCard(key: ProjectKey, data: Project): string {
     </div>
   `;
 }
+function createFolderCard(key: string, group: ProjectGroup): string {
+  return `
+    <div class="project-card folder-card" data-group="${key}">
+      <h4>${group.title}</h4>
+      <img src="${group.preview.src}" width="${group.preview.w}" height="${group.preview.h}" alt="${group.title}" loading="lazy">
+    </div>
+  `;
+}
+function createBackCard(): string {
+  return `<div class="project-card back-card" data-back="true"><h4>← Back</h4></div>`;
+}
 
 export function populateGrid(grid: HTMLElement): void {
-  grid.innerHTML = (Object.entries(projectData) as [ProjectKey, Project][])
+  const groupedKeys = new Set(Object.values(projectGroups).flatMap(g => [...g.keys]));
+  const folders = Object.entries(projectGroups).map(([k, g]) => createFolderCard(k, g)).join('');
+  const projects = (Object.entries(projectData) as [ProjectKey, Project][])
+    .filter(([key]) => !groupedKeys.has(key))
     .map(([key, data]) => createProjectCard(key, data))
     .join('');
+  grid.innerHTML = folders + projects;
+}
+
+export function showGroupGrid(groupKey: string, grid: HTMLElement): void {
+  const group = projectGroups[groupKey];
+  if (!group) return;
+  syncURL(null, groupKey);
+  grid.innerHTML = createBackCard() + group.keys.map(key => createProjectCard(key, projectData[key])).join('');
 }
 
 export function showProjectDetails(
   projectKey: string,
+  groupKey: string | null,
   grid: HTMLElement,
   details: HTMLElement
 ): void {
   if (!isProjectKey(projectKey)) return;
   const data: Project = projectData[projectKey];
   
-  syncURL(projectKey);
+  syncURL(projectKey, groupKey);
 
   fadeTransition(grid, details, 'block', () => {
     const playButton = data.embedUrl
@@ -127,11 +157,12 @@ export function togglePlayMode(details: HTMLElement): void {
 }
 
 export function showProjectsGrid(
-  grid: HTMLElement, 
-  details: HTMLElement
+  grid: HTMLElement,
+  details: HTMLElement,
+  groupKey: string | null
 ): void {
   abortReadme();
-  syncURL(null);
+  syncURL(null, groupKey);
   fadeTransition(
     details, grid, 'grid', 
     () => { details.innerHTML = ''; }
