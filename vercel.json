@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/languages",
-      "destination": "https://github-top-languages-ijcbmqsy6-mason-letoiles-projects.vercel.app/api/languages"
+      "destination": "https://github-top-languages.vercel.app/api/languages"
     },
     {
       "source": "/api/contact",
@@ -29,12 +29,20 @@
       "destination": "https://readme-api-demo.vercel.app/:path*"
     },
     {
-      "source": "/pixel-parker/",
+      "source": "/pixel-parker",
       "destination": "https://masonlet.github.io/pixel-parker/"
     },
     {
       "source": "/pixel-parker/:path*",
       "destination": "https://masonlet.github.io/pixel-parker/:path*"
+    },
+    {
+      "source": "/starweb-sandbox",
+      "destination": "https://starlet-web-engine.github.io/starweb-sandbox/"
+    },
+    {
+      "source": "/starweb-sandbox/:path*",
+      "destination": "https://starlet-web-engine.github.io/starweb-sandbox/:path*"
     }
   ]
 }
