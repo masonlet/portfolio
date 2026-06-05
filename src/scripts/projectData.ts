@@ -12,7 +12,7 @@ export interface Project {
   readonly tech: readonly TechKey[];
 }
 
-function applyAssets(raw: typeof rawData): Record<string, Project> {
+function applyAssets(raw: typeof rawData): Record<ProjectKey, Project> {
   return Object.fromEntries(
     Object.entries(raw).map(([key, data]) => [
       key,
@@ -22,7 +22,7 @@ function applyAssets(raw: typeof rawData): Record<string, Project> {
         preview: { ...data.preview, src: asset(data.preview.src) },
       } as Project,
     ])
-  );
+  ) as Record<ProjectKey, Project>;
 }
 
 export const projectData = applyAssets(rawData);
