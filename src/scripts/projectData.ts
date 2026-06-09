@@ -1,8 +1,8 @@
-import masonletData        from "../data/masonlet.json";
-import starletEngineRaw    from "../data/starlet-engine.json";
-import starletWebEngineRaw from "../data/starlet-web-engine.json";
-import { asset           } from "./assets";
-import { type TechKey    } from "./techData";
+import masonletData     from "../data/masonlet.json";
+import starletRaw       from "../data/starlet-libs.json";
+import starwebRaw       from "../data/starweb-libs.json";
+import { asset        } from "./assets";
+import { type TechKey } from "./techData";
 
 export interface Project {
   readonly title:         string;
@@ -20,12 +20,11 @@ export interface ProjectGroup {
   readonly keys: readonly ProjectKey[];
 }
 
-const { _meta: starletEngineMeta, ...starletEngineProjects } = starletEngineRaw;
-const { _meta: starletWebEngineMeta, ...starletWebEngineProjects } = starletWebEngineRaw;
-const allRaw = { ...masonletData, ...starletEngineProjects, ...starletWebEngineProjects };
+const { _meta: starletMeta, ...starletProjects } = starletRaw;
+const { _meta: starwebMeta, ...starwebProjects } = starwebRaw;
 
+const allRaw = { ...masonletData, ...starletProjects, ...starwebProjects };
 export type ProjectKey = keyof typeof allRaw;
-
 function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
   return Object.fromEntries(
     Object.entries(raw).map(([key, data]) => [
@@ -43,13 +42,13 @@ export const projectData = applyAssets(allRaw);
 
 export const projectGroups: Record<string, ProjectGroup> = {
   "starlet-engine": {
-    ...starletEngineMeta,
-    preview: { ...starletEngineMeta.preview, src: asset(starletEngineMeta.preview.src) },
-    keys: Object.keys(starletEngineProjects) as ProjectKey[],
+    ...starletMeta,
+    preview: { ...starletMeta.preview, src: asset(starletMeta.preview.src) },
+    keys: Object.keys(starletProjects) as ProjectKey[],
   },
   "starlet-web-engine": {
-    ...starletWebEngineMeta,
-    preview: { ...starletWebEngineMeta.preview, src: asset(starletWebEngineMeta.preview.src) },
-    keys: Object.keys(starletWebEngineProjects) as ProjectKey[],
+    ...starwebMeta,
+    preview: { ...starwebMeta.preview, src: asset(starwebMeta.preview.src) },
+    keys: Object.keys(starwebProjects) as ProjectKey[],
   }
 };
