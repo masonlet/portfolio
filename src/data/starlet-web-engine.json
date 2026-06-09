@@ -34,13 +34,5 @@
     "preview": { "src": "/img/projects/starweb-audio_prev.webp", "w": 803, "h": 438 },
     "github": "https://github.com/starlet-web-engine/starweb-audio",
     "tech": ["ts"]
-  },
-  "starweb-sandbox": {
-    "title": "Starweb Sandbox",
-    "description": "Stress test and sandbox environment for the Starlet Web Engine.",
-    "image": "/img/projects/starweb-sandbox.webp",
-    "preview": { "src": "/img/projects/starweb-sandbox_prev.webp", "w": 784, "h": 456 },
-    "github": "https://github.com/starlet-web-engine/starweb-sandbox",
-    "tech": ["ts", "vite"]
   }
 }
