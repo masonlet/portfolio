@@ -39,11 +39,11 @@
     },
     {
       "source": "/starweb-sandbox",
-      "destination": "https://starlet-web-engine.github.io/starweb-sandbox/"
+      "destination": "https://masonlet.github.io/starweb-sandbox/"
     },
     {
       "source": "/starweb-sandbox/:path*",
-      "destination": "https://starlet-web-engine.github.io/starweb-sandbox/:path*"
+      "destination": "https://masonlet.github.io/starweb-sandbox/:path*"
     }
   ]
 }
