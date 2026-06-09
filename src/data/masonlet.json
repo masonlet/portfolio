@@ -1,4 +1,12 @@
 {
+  "starlet-setup": {
+    "title": "Starlet Setup",
+    "description": "Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.",
+    "image": "/img/projects/starlet-setup.webp",
+    "preview": { "src": "/img/projects/starlet-setup_prev.webp", "w": 500, "h": 127 },
+    "github": "https://github.com/masonlet/starlet-setup",
+    "tech": ["python", "cmake", "pytest", "pip", "pypi"]
+  },
   "top-languages": {
     "title": "GitHub Top Languages",
     "description": "A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.",
@@ -48,6 +56,14 @@
     "github": "https://github.com/masonlet/starweb-sandbox",
     "tech": ["ts", "vite"]
   },
+  "imagesandbox": {
+    "title": "Starlet Image Sandbox",
+    "description": "A C++ playground for experimenting with images loaded using StarletSerializer.",
+    "image": "/img/projects/imagesandbox.webp",
+    "preview": { "src": "/img/projects/imagesandbox_prev.webp", "w": 456, "h": 500 },
+    "github": "https://github.com/masonlet/starlet-image-sandbox",
+    "tech": ["cpp", "cmake"]
+  },
   "contact-api": {
     "title": "Contact API",
     "description": "A deployable multi-provider contact form API for Vercel with Resend and Nodemailer support, input validation, CORS controls, honeypot spam protection, and Vitest coverage.",
@@ -63,6 +79,14 @@
     "preview": { "src": "/img/projects/readme-api_prev.webp", "w": 778, "h": 492 },
     "github": "https://github.com/masonlet/readme-api",
     "tech": ["ts", "nodejs", "vercel"]
+  },
+  "samples": {
+    "title": "Starlet Samples",
+    "description": "A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.",
+    "image": "/img/projects/samples.webp",
+    "preview": { "src": "/img/projects/samples_prev.webp", "w": 500, "h": 280 },
+    "github": "https://github.com/masonlet/starlet-samples",
+    "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
   "tasktracker": {
     "title": "Task Tracker",
@@ -103,6 +127,14 @@
     "preview": { "src": "/img/projects/fix-it-jam_prev.webp", "w": 645, "h": 486 },
     "github": "https://github.com/masonlet/fix-it-jam",
     "tech": ["js", "phaser", "vite"]
+  },
+  "noisesandbox": {
+    "title": "Starlet Noise Sandbox",
+    "description": "A C++ playground for learning and experimenting with noise algorithms.",
+    "image": "/img/projects/noise.webp",
+    "preview": { "src": "/img/projects/noise_prev.webp", "w": 500, "h": 367 },
+    "github": "https://github.com/masonlet/starlet-noise-sandbox",
+    "tech": ["cpp", "cmake"]
   },
   "cardportfolio": {
     "title": "Card Portfolio",

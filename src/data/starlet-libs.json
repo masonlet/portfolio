@@ -1,54 +1,22 @@
 {
   "_meta": {
-    "title": "C++ Ecosystem",
+    "title": "Starlet Libraries",
     "preview": { "src": "/img/projects/opengl_prev.webp", "w": 500, "h": 274 }
   },
   "opengl": {
-    "title": "Starlet Engine",
-    "description": "A C++ OpenGL engine ecosystem.",
+    "title": "Starlet Libraries",
+    "description": "A C++ ecosystem.",
     "image": "/img/projects/opengl.webp",
     "preview": { "src": "/img/projects/opengl_prev.webp", "w": 500, "h": 274 },
-    "github": "https://github.com/starlet-engine/.github",
+    "github": "https://github.com/starlet-libs/.github",
     "tech": ["cpp", "opengl", "cmake", "glfw"]
   },
-  "starlet-setup": {
-    "title": "Starlet Setup",
-    "description": "Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.",
-    "image": "/img/projects/starlet-setup.webp",
-    "preview": { "src": "/img/projects/starlet-setup_prev.webp", "w": 500, "h": 127 },
-    "github": "https://github.com/starlet-engine/starlet-setup",
-    "tech": ["python", "cmake", "pytest", "pip", "pypi"]
-  },
-  "imagesandbox": {
-    "title": "Image Sandbox",
-    "description": "A C++ playground for experimenting with images loaded using StarletSerializer.",
-    "image": "/img/projects/imagesandbox.webp",
-    "preview": { "src": "/img/projects/imagesandbox_prev.webp", "w": 456, "h": 500 },
-    "github": "https://github.com/starlet-engine/image-sandbox",
-    "tech": ["cpp", "cmake"]
-  },
-  "samples": {
-    "title": "Starlet Samples",
-    "description": "A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.",
-    "image": "/img/projects/samples.webp",
-    "preview": { "src": "/img/projects/samples_prev.webp", "w": 500, "h": 280 },
-    "github": "https://github.com/starlet-engine/samples",
-    "tech": ["cpp", "opengl", "glfw", "cmake"]
-  },
-  "noisesandbox": {
-    "title": "Noise Sandbox",
-    "description": "A C++ playground for learning and experimenting with noise algorithms.",
-    "image": "/img/projects/noise.webp",
-    "preview": { "src": "/img/projects/noise_prev.webp", "w": 500, "h": 367 },
-    "github": "https://github.com/starlet-engine/noise-sandbox",
-    "tech": ["cpp", "cmake"]
-  },
-  "starter": {
-    "title": "Starlet Starter",
+  "template-game": {
+    "title": "Template Game",
     "description": "A Template for Starlet Game Projects.",
     "image": "/img/projects/starter.webp",
     "preview": { "src": "/img/projects/starter_prev.webp", "w": 500, "h": 275 },
-    "github": "https://github.com/starlet-engine/starter",
+    "github": "https://github.com/starlet-libs/template-game",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
   "engine": {
@@ -56,7 +24,7 @@
     "description": "Modular OpenGL engine written in C++.",
     "image": "/img/projects/engine.webp",
     "preview": { "src": "/img/projects/engine_prev.webp", "w": 500, "h": 300 },
-    "github": "https://github.com/starlet-engine/engine",
+    "github": "https://github.com/starlet-libs/engine",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
   "serializer": {
@@ -64,7 +32,7 @@
     "description": "Serialization library for Starlet projects to handle both data reading and writing.",
     "image": "/img/projects/serializer.webp",
     "preview": { "src": "/img/projects/serializer_prev.webp", "w": 500, "h": 312 },
-    "github": "https://github.com/starlet-engine/serializer",
+    "github": "https://github.com/starlet-libs/serializer",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "graphics": {
@@ -72,7 +40,7 @@
     "description": "Graphics loading & management library for Starlet projects.",
     "image": "/img/projects/graphics.webp",
     "preview": { "src": "/img/projects/graphics_prev.webp", "w": 500, "h": 310 },
-    "github": "https://github.com/starlet-engine/graphics",
+    "github": "https://github.com/starlet-libs/graphics",
     "tech": ["cpp", "cmake"]
   },
   "scene": {
@@ -80,7 +48,7 @@
     "description": "ECS-based scene & scene management library for Starlet projects.",
     "image": "/img/projects/scene.webp",
     "preview": { "src": "/img/projects/scene_prev.webp", "w": 500, "h": 310 },
-    "github": "https://github.com/starlet-engine/scene",
+    "github": "https://github.com/starlet-libs/scene",
     "tech": ["cpp", "cmake"]
   },
   "logger": {
@@ -88,7 +56,7 @@
     "description": "Logging library for Starlet projects.",
     "image": "/img/projects/logger.webp",
     "preview": { "src": "/img/projects/logger_prev.webp", "w": 500, "h": 273 },
-    "github": "https://github.com/starlet-engine/logger",
+    "github": "https://github.com/starlet-libs/logger",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "controls": {
@@ -96,7 +64,7 @@
     "description": "Input management library for Starlet projects.",
     "image": "/img/projects/controls.webp",
     "preview": { "src": "/img/projects/controls_prev.webp", "w": 500, "h": 300 },
-    "github": "https://github.com/starlet-engine/controls",
+    "github": "https://github.com/starlet-libs/controls",
     "tech": ["cpp", "cmake"]
   },
   "math": {
@@ -104,7 +72,7 @@
     "description": "A lightweight header-only math library for Starlet projects.",
     "image": "/img/projects/math.webp",
     "preview": { "src": "/img/projects/math_prev.webp", "w": 500, "h": 313 },
-    "github": "https://github.com/starlet-engine/math",
+    "github": "https://github.com/starlet-libs/math",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "tests": {
@@ -112,7 +80,7 @@
     "description": "A repository containing unit tests for Starlet libraries using GoogleTest.",
     "image": "/img/projects/tests.webp",
     "preview": { "src": "/img/projects/tests_prev.webp", "w": 500, "h": 291 },
-    "github": "https://github.com/starlet-engine/testing",
+    "github": "https://github.com/starlet-libs/testing",
     "tech": ["cpp", "cmake", "googletest"]
   }
 }
