@@ -1,77 +1,77 @@
 {
   "_meta": {
     "title": "Starlet Libraries",
-    "preview": { "src": "/img/projects/opengl_prev.webp", "w": 500, "h": 274 }
+    "preview": { "src": "/img/projects/starlet-libs/opengl_prev.webp", "w": 500, "h": 274 }
   },
   "serializer": {
     "title": "Starlet Serializer",
     "description": "Serialization library for Starlet projects to handle both data reading and writing.",
-    "image": "/img/projects/serializer.webp",
-    "preview": { "src": "/img/projects/serializer_prev.webp", "w": 500, "h": 312 },
+    "image": "/img/projects/starlet-libs/serializer.webp",
+    "preview": { "src": "/img/projects/starlet-libs/serializer_prev.webp", "w": 500, "h": 312 },
     "github": "https://github.com/starlet-libs/serializer",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "engine": {
     "title": "Starlet Engine",
     "description": "Modular OpenGL engine written in C++.",
-    "image": "/img/projects/engine.webp",
-    "preview": { "src": "/img/projects/engine_prev.webp", "w": 500, "h": 300 },
+    "image": "/img/projects/starlet-libs/engine.webp",
+    "preview": { "src": "/img/projects/starlet-libs/engine_prev.webp", "w": 500, "h": 300 },
     "github": "https://github.com/starlet-libs/engine",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
   "scene": {
     "title": "Starlet Scene",
     "description": "ECS-based scene & scene management library for Starlet projects.",
-    "image": "/img/projects/scene.webp",
-    "preview": { "src": "/img/projects/scene_prev.webp", "w": 500, "h": 310 },
+    "image": "/img/projects/starlet-libs/scene.webp",
+    "preview": { "src": "/img/projects/starlet-libs/scene_prev.webp", "w": 500, "h": 310 },
     "github": "https://github.com/starlet-libs/scene",
     "tech": ["cpp", "cmake"]
   },
   "graphics": {
     "title": "Starlet Graphics",
     "description": "Graphics loading & management library for Starlet projects.",
-    "image": "/img/projects/graphics.webp",
-    "preview": { "src": "/img/projects/graphics_prev.webp", "w": 500, "h": 310 },
+    "image": "/img/projects/starlet-libs/graphics.webp",
+    "preview": { "src": "/img/projects/starlet-libs/graphics_prev.webp", "w": 500, "h": 310 },
     "github": "https://github.com/starlet-libs/graphics",
     "tech": ["cpp", "cmake"]
   },
   "math": {
     "title": "Starlet Math",
     "description": "A lightweight header-only math library for Starlet projects.",
-    "image": "/img/projects/math.webp",
-    "preview": { "src": "/img/projects/math_prev.webp", "w": 500, "h": 313 },
+    "image": "/img/projects/starlet-libs/math.webp",
+    "preview": { "src": "/img/projects/starlet-libs/math_prev.webp", "w": 500, "h": 313 },
     "github": "https://github.com/starlet-libs/math",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "controls": {
     "title": "Starlet Controls",
     "description": "Input management library for Starlet projects.",
-    "image": "/img/projects/controls.webp",
-    "preview": { "src": "/img/projects/controls_prev.webp", "w": 500, "h": 300 },
+    "image": "/img/projects/starlet-libs/controls.webp",
+    "preview": { "src": "/img/projects/starlet-libs/controls_prev.webp", "w": 500, "h": 300 },
     "github": "https://github.com/starlet-libs/controls",
     "tech": ["cpp", "cmake"]
   },
   "logger": {
     "title": "Starlet Logger",
     "description": "Logging library for Starlet projects.",
-    "image": "/img/projects/logger.webp",
-    "preview": { "src": "/img/projects/logger_prev.webp", "w": 500, "h": 273 },
+    "image": "/img/projects/starlet-libs/logger.webp",
+    "preview": { "src": "/img/projects/starlet-libs/logger_prev.webp", "w": 500, "h": 273 },
     "github": "https://github.com/starlet-libs/logger",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "tests": {
     "title": "Starlet Testing",
     "description": "A repository containing unit tests for Starlet libraries using GoogleTest.",
-    "image": "/img/projects/tests.webp",
-    "preview": { "src": "/img/projects/tests_prev.webp", "w": 500, "h": 291 },
+    "image": "/img/projects/starlet-libs/tests.webp",
+    "preview": { "src": "/img/projects/starlet-libs/tests_prev.webp", "w": 500, "h": 291 },
     "github": "https://github.com/starlet-libs/testing",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "template-game": {
     "title": "Template Game",
     "description": "A Template for Starlet Game Projects.",
-    "image": "/img/projects/starter.webp",
-    "preview": { "src": "/img/projects/starter_prev.webp", "w": 500, "h": 275 },
+    "image": "/img/projects/starlet-libs/starter.webp",
+    "preview": { "src": "/img/projects/starlet-libs/starter_prev.webp", "w": 500, "h": 275 },
     "github": "https://github.com/starlet-libs/template-game",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   }

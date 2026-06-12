@@ -1,38 +1,38 @@
 {
   "_meta": {
     "title": "Starweb Libraries",
-    "preview": { "src": "/img/projects/starweb-engine_prev.webp", "w": 787, "h": 381 }
+    "preview": { "src": "/img/projects/starweb-libs/engine_prev.webp", "w": 787, "h": 381 }
   },
   "starweb-engine": {
     "title": "Web Engine",
     "description": "A lightweight 2D game engine for the browser. Includes a fixed/variable game loop, canvas management, asset utilities, and per-frame input state for keyboard and pointer.",
-    "image": "/img/projects/starweb-engine.webp",
-    "preview": { "src": "/img/projects/starweb-engine_prev.webp", "w": 787, "h": 381 },
-    "github": "https://github.com/starlet-web-engine/starweb-engine",
+    "image": "/img/projects/starweb-libs/engine.webp",
+    "preview": { "src": "/img/projects/starweb-libs/engine_prev.webp", "w": 787, "h": 381 },
+    "github": "https://github.com/starweb-libs/engine",
     "tech": ["ts"]
   },
   "starweb-physics": {
     "title": "Starweb Physics",
     "description": "SAT and circle collision detection for the browser.",
-    "image": "/img/projects/starweb-physics.webp",
-    "preview": { "src": "/img/projects/starweb-physics_prev.webp", "w": 800, "h": 431 },
-    "github": "https://github.com/starlet-web-engine/starweb-physics",
+    "image": "/img/projects/starweb-libs/physics.webp",
+    "preview": { "src": "/img/projects/starweb-libs/physics_prev.webp", "w": 800, "h": 431 },
+    "github": "https://github.com/starweb-libs/physics",
     "tech": ["ts"]
   },
   "starweb-tween": {
     "title": "Starweb Tween",
     "description": "Frame-driven tween manager with easing for the browser.",
-    "image": "/img/projects/starweb-tween.webp",
-    "preview": { "src": "/img/projects/starweb-tween_prev.webp", "w": 802, "h": 436 },
-    "github": "https://github.com/starlet-web-engine/starweb-tween",
+    "image": "/img/projects/starweb-libs/tween.webp",
+    "preview": { "src": "/img/projects/starweb-libs/tween_prev.webp", "w": 802, "h": 436 },
+    "github": "https://github.com/starweb-libs/tween",
     "tech": ["ts"]
   },
   "starweb-audio": {
     "title": "Starweb Audio",
     "description": "Web Audio API playback, volume, and sound management for the browser.",
-    "image": "/img/projects/starweb-audio.webp",
-    "preview": { "src": "/img/projects/starweb-audio_prev.webp", "w": 803, "h": 438 },
-    "github": "https://github.com/starlet-web-engine/starweb-audio",
+    "image": "/img/projects/starweb-libs/audio.webp",
+    "preview": { "src": "/img/projects/starweb-libs/audio_prev.webp", "w": 803, "h": 438 },
+    "github": "https://github.com/starweb-libs/audio",
     "tech": ["ts"]
   }
 }

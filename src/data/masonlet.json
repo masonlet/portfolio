@@ -2,32 +2,32 @@
   "starlet-setup": {
     "title": "Starlet Setup",
     "description": "Starlet Setup is a lightweight Python utility to quickly clone, configure, and build CMake projects — from single repos to full mono-repos.",
-    "image": "/img/projects/starlet-setup.webp",
-    "preview": { "src": "/img/projects/starlet-setup_prev.webp", "w": 500, "h": 127 },
+    "image": "/img/projects/masonlet/starlet-setup.webp",
+    "preview": { "src": "/img/projects/masonlet/starlet-setup_prev.webp", "w": 500, "h": 127 },
     "github": "https://github.com/masonlet/starlet-setup",
     "tech": ["python", "cmake", "pytest", "pip", "pypi"]
   },
   "top-languages": {
     "title": "GitHub Top Languages",
     "description": "A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.",
-    "image": "/img/projects/github-top-languages.webp",
-    "preview": { "src": "/img/projects/github-top-languages_prev.webp", "w": 500, "h": 353 },
+    "image": "/img/projects/masonlet/github-top-languages.webp",
+    "preview": { "src": "/img/projects/masonlet/github-top-languages_prev.webp", "w": 500, "h": 353 },
     "github": "https://github.com/masonlet/github-top-languages",
     "tech": ["ts", "nodejs", "vercel", "vitest"]
   },
   "lookingforlove": {
     "title": "LookingForLove",
     "description": "An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.",
-    "image": "/img/projects/lookingforlove.webp",
-    "preview": { "src": "/img/projects/lookingforlove_prev.webp", "w": 500, "h": 280 },
+    "image": "/img/projects/masonlet/lookingforlove.webp",
+    "preview": { "src": "/img/projects/masonlet/lookingforlove_prev.webp", "w": 500, "h": 280 },
     "github": "https://github.com/masonlet/info-3112-project",
     "tech": ["nextjs", "ts", "supabase", "tailwind", "vercel", "vitest"]
   },
   "fixit": {
     "title": "Fix It!",
     "description": "A conveyor-belt repair arcade game built for Gamedev.js Jam 2026 (theme: Machines). Spot faults, tap to inspect, and fix items via quick minigames before they slide off the belt. Deployed to Itch.io and Wavedash.",
-    "image": "/img/projects/fixit.webp",
-    "preview": { "src": "/img/projects/fixit_prev.webp", "w": 500, "h": 313 },
+    "image": "/img/projects/masonlet/fixit.webp",
+    "preview": { "src": "/img/projects/masonlet/fixit_prev.webp", "w": 500, "h": 313 },
     "github": "https://github.com/masonlet/fix-it",
     "embedUrl": "https://itch.io/embed-upload/17308768?color=333333",
     "tech": ["js", "phaser", "vite"]
@@ -35,112 +35,112 @@
   "pixel-parker": {
     "title": "Pixel Parker",
     "description": "A top-down vehicle parking puzzle game built with TypeScript, Vite, and a custom 2D web engine. Park vehicles in the correct spots across handcrafted levels.",
-    "image": "/img/projects/pixel-parker.webp",
-    "preview": { "src": "/img/projects/pixel-parker_prev.webp", "w": 493, "h": 281 },
+    "image": "/img/projects/masonlet/pixel-parker.webp",
+    "preview": { "src": "/img/projects/masonlet/pixel-parker_prev.webp", "w": 493, "h": 281 },
     "github": "https://github.com/masonlet/pixel-parker",
     "tech": ["ts", "vite", "html", "css"]
   },
   "portfolio": {
     "title": "Portfolio",
     "description": "A personal site showcasing my skills and projects. Built with HTML, CSS, and TypeScript.",
-    "image": "/img/projects/portfolio.webp",
-    "preview": { "src": "/img/projects/portfolio_prev.webp", "w": 500, "h": 260 },
+    "image": "/img/projects/masonlet/portfolio.webp",
+    "preview": { "src": "/img/projects/masonlet/portfolio_prev.webp", "w": 500, "h": 260 },
     "github": "https://github.com/masonlet/portfolio",
     "tech": ["html", "css", "ts", "vercel", "vite"]
   },
   "starweb-sandbox": {
     "title": "Starweb Sandbox",
     "description": "Stress test and sandbox environment for the Starlet Web Engine.",
-    "image": "/img/projects/starweb-sandbox.webp",
-    "preview": { "src": "/img/projects/starweb-sandbox_prev.webp", "w": 784, "h": 456 },
+    "image": "/img/projects/masonlet/starweb-sandbox.webp",
+    "preview": { "src": "/img/projects/masonlet/starweb-sandbox_prev.webp", "w": 784, "h": 456 },
     "github": "https://github.com/masonlet/starweb-sandbox",
     "tech": ["ts", "vite"]
   },
   "imagesandbox": {
     "title": "Starlet Image Sandbox",
     "description": "A C++ playground for experimenting with images loaded using StarletSerializer.",
-    "image": "/img/projects/imagesandbox.webp",
-    "preview": { "src": "/img/projects/imagesandbox_prev.webp", "w": 456, "h": 500 },
+    "image": "/img/projects/masonlet/imagesandbox.webp",
+    "preview": { "src": "/img/projects/masonlet/imagesandbox_prev.webp", "w": 456, "h": 500 },
     "github": "https://github.com/masonlet/starlet-image-sandbox",
     "tech": ["cpp", "cmake"]
   },
   "contact-api": {
     "title": "Contact API",
     "description": "A deployable multi-provider contact form API for Vercel with Resend and Nodemailer support, input validation, CORS controls, honeypot spam protection, and Vitest coverage.",
-    "image": "/img/projects/contact-api.webp",
-    "preview": { "src": "/img/projects/contact-api_prev.webp", "w": 660, "h": 491 },
+    "image": "/img/projects/masonlet/contact-api.webp",
+    "preview": { "src": "/img/projects/masonlet/contact-api_prev.webp", "w": 660, "h": 491 },
     "github": "https://github.com/masonlet/contact-api",
     "tech": ["ts", "nodejs", "vercel", "vitest"]
   },
   "readme-api": {
     "title": "Readme API",
     "description": "A deployable GitHub README API that fetches rendered README HTML, rewriting relative asset links to absolute GitHub URLs, and serving the result from a Vercel-hosted endpoint.",
-    "image": "/img/projects/readme-api.webp",
-    "preview": { "src": "/img/projects/readme-api_prev.webp", "w": 778, "h": 492 },
+    "image": "/img/projects/masonlet/readme-api.webp",
+    "preview": { "src": "/img/projects/masonlet/readme-api_prev.webp", "w": 778, "h": 492 },
     "github": "https://github.com/masonlet/readme-api",
     "tech": ["ts", "nodejs", "vercel"]
   },
   "samples": {
     "title": "Starlet Samples",
     "description": "A repository for demonstrating the Starlet Engine, including sample scenes, meshes, textures, and shaders.",
-    "image": "/img/projects/samples.webp",
-    "preview": { "src": "/img/projects/samples_prev.webp", "w": 500, "h": 280 },
+    "image": "/img/projects/masonlet/starlet-samples.webp",
+    "preview": { "src": "/img/projects/masonlet/starlet-samples_prev.webp", "w": 500, "h": 280 },
     "github": "https://github.com/masonlet/starlet-samples",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
   "tasktracker": {
     "title": "Task Tracker",
     "description": "TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.",
-    "image": "/img/projects/tasktracker.webp",
-    "preview": { "src": "/img/projects/tasktracker_prev.webp", "w": 500, "h": 377 },
+    "image": "/img/projects/masonlet/tasktracker.webp",
+    "preview": { "src": "/img/projects/masonlet/tasktracker_prev.webp", "w": 500, "h": 377 },
     "github": "https://github.com/masonlet/tasktracker",
     "tech": ["cpp", "cmake", "googletest"]
   },
   "githubvisualizer": {
     "title": "GitHub Visualizer",
     "description": "A Python utility to explore and visualize GitHub repositories and their activity.",
-    "image": "/img/projects/githubvisualizer.webp",
-    "preview": { "src": "/img/projects/githubvisualizer_prev.webp", "w": 500, "h": 247 },
+    "image": "/img/projects/masonlet/githubvisualizer.webp",
+    "preview": { "src": "/img/projects/masonlet/githubvisualizer_prev.webp", "w": 500, "h": 247 },
     "github": "https://github.com/masonlet/githubvisualizer",
     "tech": ["python", "pytest", "pip"]
   },
   "contact-api-demo": {
     "title": "Contact API Demo",
     "description": "A demo site for Contact API with live contact form examples for both Resend and Nodemailer configurations.",
-    "image": "/img/projects/contact-api-demo.webp",
-    "preview": { "src": "/img/projects/contact-api-demo_prev.webp", "w": 839, "h": 481 },
+    "image": "/img/projects/masonlet/contact-api-demo.webp",
+    "preview": { "src": "/img/projects/masonlet/contact-api-demo_prev.webp", "w": 839, "h": 481 },
     "github": "https://github.com/masonlet/contact-api-demo",
     "tech": ["html", "css", "ts", "vite"]
   },
   "readme-api-demo": {
     "title": "Readme API Demo",
     "description": "A live demo for Readme API that fetches and renders GitHub README files via the API.",
-    "image": "/img/projects/readme-api-demo.webp",
-    "preview": { "src": "/img/projects/readme-api-demo_prev.webp", "w": 856, "h": 495 },
+    "image": "/img/projects/masonlet/readme-api-demo.webp",
+    "preview": { "src": "/img/projects/masonlet/readme-api-demo_prev.webp", "w": 856, "h": 495 },
     "github": "https://github.com/masonlet/readme-api-demo",
     "tech": ["html", "css", "ts", "vite"]
   },
   "fix-it-jam": {
     "title": "Fix It! Jam",
     "description": "The archived Gamedev.js Jam 2026 version of Fix It!, built as a casual HTML5 arcade game around the jam theme \"Machines.\"",
-    "image": "/img/projects/fix-it-jam.webp",
-    "preview": { "src": "/img/projects/fix-it-jam_prev.webp", "w": 645, "h": 486 },
+    "image": "/img/projects/masonlet/fix-it-jam.webp",
+    "preview": { "src": "/img/projects/masonlet/fix-it-jam_prev.webp", "w": 645, "h": 486 },
     "github": "https://github.com/masonlet/fix-it-jam",
     "tech": ["js", "phaser", "vite"]
   },
   "noisesandbox": {
     "title": "Starlet Noise Sandbox",
     "description": "A C++ playground for learning and experimenting with noise algorithms.",
-    "image": "/img/projects/noise.webp",
-    "preview": { "src": "/img/projects/noise_prev.webp", "w": 500, "h": 367 },
+    "image": "/img/projects/masonlet/noise.webp",
+    "preview": { "src": "/img/projects/masonlet/noise_prev.webp", "w": 500, "h": 367 },
     "github": "https://github.com/masonlet/starlet-noise-sandbox",
     "tech": ["cpp", "cmake"]
   },
   "cardportfolio": {
     "title": "Card Portfolio",
     "description": "A personal site showcasing my skills and projects. Built with HTML, CSS, and JavaScript.",
-    "image": "/img/projects/card.webp",
-    "preview": { "src": "/img/projects/card_prev.webp", "w": 500, "h": 261 },
+    "image": "/img/projects/masonlet/card.webp",
+    "preview": { "src": "/img/projects/masonlet/card_prev.webp", "w": 500, "h": 261 },
     "github": "https://github.com/masonlet/cardportfolio",
     "tech": ["html", "css", "js"]
   }
