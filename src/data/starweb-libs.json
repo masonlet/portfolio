@@ -34,5 +34,21 @@
     "preview": { "src": "/img/projects/starweb-libs/audio_prev.webp", "w": 803, "h": 438 },
     "github": "https://github.com/starweb-libs/audio",
     "tech": ["ts"]
+  },
+  "ui": {
+    "title": "Starweb UI",
+    "description": "Canvas UI primitives for browser games.",
+    "image": "/img/projects/starweb-libs/ui.webp",
+    "preview": { "src": "/img/projects/starweb-libs/ui_prev.webp", "w": 500, "h": 289 },
+    "github": "https://github.com/starweb-libs/ui",
+    "tech": ["ts"]
+  },
+  "template-library": {
+    "title": "Library Template",
+    "description": "Scaffold template for starweb library projects.",
+    "image": "/img/projects/starweb-libs/template.webp",
+    "preview": { "src": "/img/projects/starweb-libs/template_prev.webp", "w": 500, "h": 268 },
+    "github": "https://github.com/starweb-libs/template-library",
+    "tech": ["ts"]
   }
 }
