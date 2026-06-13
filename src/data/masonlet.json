@@ -30,6 +30,7 @@
     "image": "/img/projects/masonlet/pixel-parker.webp",
     "preview": { "src": "/img/projects/masonlet/pixel-parker_prev.webp", "w": 493, "h": 281 },
     "github": "https://github.com/masonlet/pixel-parker",
+    "embedUrl": "https://www.masonletoile.ca/pixel-parker",
     "tech": ["ts", "vite", "html", "css"]
   },
   "portfolio": {
@@ -46,6 +47,7 @@
     "image": "/img/projects/masonlet/starweb-sandbox.webp",
     "preview": { "src": "/img/projects/masonlet/starweb-sandbox_prev.webp", "w": 784, "h": 456 },
     "github": "https://github.com/masonlet/starweb-sandbox",
+    "embedUrl": "https://www.masonletoile.ca/starweb-sandbox",
     "tech": ["ts", "vite"]
   },
   "imagesandbox": {
@@ -118,6 +120,7 @@
     "image": "/img/projects/masonlet/fix-it-jam.webp",
     "preview": { "src": "/img/projects/masonlet/fix-it-jam_prev.webp", "w": 645, "h": 486 },
     "github": "https://github.com/masonlet/fix-it-jam",
+    "embedUrl": "https://itch.io/embed-upload/17308768?color=1a1a1a",
     "tech": ["js", "phaser", "vite"]
   },
   "noisesandbox": {

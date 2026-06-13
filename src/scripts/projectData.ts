@@ -11,6 +11,7 @@ export interface Project {
   readonly image:         string;
   readonly preview:       { src: string; w: number; h: number; }
   readonly github:        string;
+  readonly embedLabel?:   string;
   readonly embedUrl?:     string;
   readonly tech: readonly TechKey[];
 }
