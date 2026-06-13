@@ -21,8 +21,8 @@ export interface ProjectGroup {
   readonly keys: readonly ProjectKey[];
 }
 
-const { _meta: starletMeta,       ...starletProjects        } = starletRaw;
-const { _meta: starwebMeta,       ...starwebProjects        } = starwebRaw;
+const { _meta: starletMeta,        ...starletProjects        } = starletRaw;
+const { _meta: starwebMeta,        ...starwebProjects        } = starwebRaw;
 const { _meta: ghTopLanguagesMeta, ...ghTopLanguagesProjects } = ghTopLanguagesRaw
 
 const allRaw = { ...masonletData, ...starletProjects, ...starwebProjects, ...ghTopLanguagesProjects };

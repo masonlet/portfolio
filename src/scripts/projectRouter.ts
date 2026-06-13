@@ -17,14 +17,14 @@ export function parseHash(): { projectKey: ProjectKey | null; groupKey: string |
     const g = hash.slice(0, slash);
     const p = hash.slice(slash + 1);
     return {
-      groupKey: isGroupKey(g) ? g : null,
+      groupKey:   isGroupKey(g)   ? g : null,
       projectKey: isProjectKey(p) ? p : null,
     };
   }
 
-  if (isProjectKey(hash)) return { projectKey: hash, groupKey: null };
-  if (isGroupKey(hash)) return { projectKey: null, groupKey: hash };
-  return { projectKey: null, groupKey: null };
+  if (isProjectKey(hash))    return { projectKey: hash, groupKey: null };
+  else if (isGroupKey(hash)) return { projectKey: null, groupKey: hash };
+  else                       return { projectKey: null, groupKey: null };
 }
 
 export function syncURL(projectKey: ProjectKey | null, groupKey?: string | null): void {
