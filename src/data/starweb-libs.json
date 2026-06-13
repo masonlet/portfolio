@@ -9,7 +9,7 @@
     "image": "/img/projects/starweb-libs/engine.webp",
     "preview": { "src": "/img/projects/starweb-libs/engine_prev.webp", "w": 787, "h": 381 },
     "github": "https://github.com/starweb-libs/engine",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
   "physics": {
     "title": "Starweb Physics",
@@ -17,7 +17,7 @@
     "image": "/img/projects/starweb-libs/physics.webp",
     "preview": { "src": "/img/projects/starweb-libs/physics_prev.webp", "w": 800, "h": 431 },
     "github": "https://github.com/starweb-libs/physics",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
   "tween": {
     "title": "Starweb Tween",
@@ -25,7 +25,7 @@
     "image": "/img/projects/starweb-libs/tween.webp",
     "preview": { "src": "/img/projects/starweb-libs/tween_prev.webp", "w": 802, "h": 436 },
     "github": "https://github.com/starweb-libs/tween",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
   "audio": {
     "title": "Starweb Audio",
@@ -33,7 +33,7 @@
     "image": "/img/projects/starweb-libs/audio.webp",
     "preview": { "src": "/img/projects/starweb-libs/audio_prev.webp", "w": 803, "h": 438 },
     "github": "https://github.com/starweb-libs/audio",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
   "ui": {
     "title": "Starweb UI",
@@ -41,7 +41,7 @@
     "image": "/img/projects/starweb-libs/ui.webp",
     "preview": { "src": "/img/projects/starweb-libs/ui_prev.webp", "w": 500, "h": 289 },
     "github": "https://github.com/starweb-libs/ui",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
   "template-library": {
     "title": "Library Template",
