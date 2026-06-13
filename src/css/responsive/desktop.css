@@ -2,44 +2,44 @@
 @media (min-width: 973px) {
   /* Resume */
   .page {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    display:         flex;
+    flex-direction:  row;
+    align-items:     flex-start;
     justify-content: space-evenly;
-    padding: 0 2.5vw;
+    padding:         0 2.5vw;
   }
 
  .page-header {
-    width: 25vw;
+    width:  25vw;
     margin: 10vh 0 0 10vh;
   }
 
   .page-section {
-    width: 55vw;
-    height: 90vh;
+    width:      55vw;
+    height:     90vh;
     margin-top: 4vh;
   }
 
   /* Header */
   header {
-    width: 80vw;
+    width:  80vw;
     margin: 10vh auto 0;
   }
 
   header h1 {
-    font-size: 7.5vw;
-    line-height: 7.5vw;
+    font-size:      7.5vw;
+    line-height:    7.5vw;
     letter-spacing: 3px;
   }
 
   header p {
-    font-size: 2.25vw;
+    font-size:   2.25vw;
     line-height: 2.25vw;
   }
 
   /* Navigation */
   #header-nav {
-    top: 10vh;
+    top:   10vh;
     right: 10%;
   }
 
@@ -53,19 +53,19 @@
   #first-output-div img,
   #second-output-div img {
     padding: 5px;
-    width: 8vw;
-    height: 8vw;
-    border: 4px solid var(--primary);
+    width:   8vw;
+    height:  8vw;
+    border:  4px solid var(--primary);
     border-radius: 20px;
   }
 
   /* Sections */
   #sections {
-    height: 100%;
-    width: 80vw;
+    height:  100%;
+    width:   80vw;
     display: flex;
+    margin:  auto;
     justify-content: space-between;
-    margin: auto;
   }
 
   #first-section, 
@@ -80,7 +80,7 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 1.8vmin;
+    font-size:   1.8vmin;
     line-height: 2.2vmin;
   }
 
@@ -91,7 +91,7 @@
 
   #second-output-div, 
   #first-output-div {
-    display: flex;
+    display:         flex;
     justify-content: space-evenly;
   }
 
@@ -99,7 +99,7 @@
   input, 
   textarea, 
   .email-submit {
-    width: 100%;
+    width:   100%;
     padding: 10px;
   }
 
@@ -113,8 +113,8 @@
 
   /* Other */
   .tech {
-    width: 8vw;
-    height: 10vw;
+    width:   8vw;
+    height:  10vw;
     padding: 10px;
   }
 
@@ -129,8 +129,8 @@
 @media (min-width: 1025px) {
   /* Header */
   header h1 {
-    font-size: 6.75vw;
-    line-height: 6.75vw;
+    font-size:      6.75vw;
+    line-height:    6.75vw;
     letter-spacing: 3px;
   }
 
@@ -165,7 +165,7 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 1vw;
+    font-size:   1vw;
     line-height: 1.2vw;
   }
 }
@@ -179,8 +179,8 @@
 
   /* Other */
   .tech {
-    width: 6vw;
-    height: 8vw;
+    width:   6vw;
+    height:  8vw;
     padding: 10px;
   }
 }

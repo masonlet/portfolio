@@ -1,26 +1,25 @@
 .nav-icon {
   display: block;
-  width: 10vmin;
-  height: 10vmin;
-  padding: 2px;
+  width:   var(--nav-icon-size);
+  height:  var(--nav-icon-size);
+  padding: var(--nav-icon-padding);
+}
+
+.project-card img {
+  max-height:    var(--card-img-max-height);
+  margin-bottom: var(--space-2-5);
+}
+
+#project-preview {
+  max-height:    var(--preview-max-height);
+  margin-bottom: var(--space-3);
 }
 
 .project-card img,
 #project-preview {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  width:             100%;
+  object-fit:        cover;
+  border-radius:     var(--radius-md);
   -webkit-user-drag: none;
-  user-select: none;
+  user-select:       none;
 }
-
-.project-card img {
-  max-height: 240px;
-  margin-bottom: 0.75rem;
-}
-
-#project-preview {
-  max-height: 250px;
-  margin-bottom: 1rem;
-}
-

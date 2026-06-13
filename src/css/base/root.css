@@ -1,15 +1,15 @@
 html {
   background: black;
-  color: var(--text-primary);
+  color:       var(--text-primary);
   text-shadow: 2px 2px var(--primary);
   font-family: "Bebas Neue", system-ui, sans-serif;
 }
 
 body {
-  width: 100vw;
+  width:  100vw;
   height: 100dvh;
-  background: var(--bg-gradient);
+  background:      var(--bg-gradient);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  overflow: hidden;
+  animation:       gradient 10s ease infinite;
+  overflow:        hidden;
 }
