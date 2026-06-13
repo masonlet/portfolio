@@ -9,21 +9,21 @@
 }
 
 .stack {
-  display: flex;
+  display:        flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 0.5rem;
+  gap:            var(--space-2);
+  padding-top:    var(--space-2);
 }
 
 .icon-wrap {
-  display: inline-flex;
-  align-items: center;
+  display:         inline-flex;
+  align-items:     center;
   justify-content: center;
-  overflow: hidden;
-  background: var(--bg-light);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  line-height: 0;
+  overflow:        hidden;
+  background:      var(--bg-light);
+  border:          var(--border-thin);
+  border-radius:   var(--radius-md);
+  line-height:     0;
 }
 
 /* Hover */

@@ -1,14 +1,14 @@
 input, 
 textarea {
-  border: 2px solid var(--primary);
+  border:     var(--border-thin);
   background: var(--bg-light);
 }
 
 .email-input, 
 textarea {
-  color: var(--text-primary);
+  color:      var(--text-primary);
   background: var(--bg-light);
-  width: 100%;
+  width:      100%;
 }
 
 textarea {

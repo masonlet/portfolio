@@ -24,7 +24,7 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 2.5vmin;
+    font-size:   2.5vmin;
     line-height: 2.5vmin;
   }
 }
@@ -35,13 +35,13 @@
   }
 
   header h1 {
-    font-size: 7.5vw;
-    line-height: 6.5vw;
+    font-size:      7.5vw;
+    line-height:    6.5vw;
     letter-spacing: 3px;
   }
 
   header p{
-    font-size: 2.5vw;
+    font-size:   2.5vw;
     line-height: 4vw;
   }
 
@@ -58,15 +58,15 @@
   #second-output-div img, 
   #first-output-div img {
     padding: 2px;
-    width: 8vw;
-    height: 8vw;
-    border: 4px solid var(--primary);
+    width:   8vw;
+    height:  8vw;
+    border:        4px solid var(--primary);
     border-radius: 5px;
   }
 
   /* Sections */
   #sections {
-    width: 85vw;
+    width:          85vw;
     flex-direction: row;
   }
 
@@ -85,13 +85,13 @@
   #first-output-div input, 
   #first-output-div textarea, 
   #skills-div {
-    font-size: 2.25vmin;
+    font-size:   2.25vmin;
     line-height: 2.25vmin;
   }
 
   /* Other */
   .tech {
-    width: 5vw;
+    width:  5vw;
     height: 6vw;
   }
   .image-out, 
