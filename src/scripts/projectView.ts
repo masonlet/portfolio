@@ -102,8 +102,9 @@ export function showProjectDetails(
   syncURL(projectKey, groupKey);
 
   fadeTransition(grid, details, "block", () => {
+    const label = data.embedLabel ?? "Play";
     const playButton = data.embedUrl
-      ? `<button id="play-button" data-embed="${data.embedUrl}">Play!</button>`
+      ? `<button id="play-button" data-embed="${data.embedUrl}" data-label="${label}">${label}!</button>`
       : '';
 
     details.innerHTML = `
@@ -143,7 +144,7 @@ export function togglePlayMode(details: HTMLElement): void {
     readme.classList.remove("hidden");
     tech?.classList.remove("hidden");
     title?.classList.remove("hidden");
-    button.textContent = "Play!";
+    button.textContent = `${button.dataset["label"]}!`;
   } else {
     if (!embed.innerHTML) embed.innerHTML = `
       <iframe src="${button.dataset["embed"]}" frameborder="0" allowfullscreen></iframe>
