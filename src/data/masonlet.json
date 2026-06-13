@@ -120,6 +120,7 @@
     "image": "/img/projects/masonlet/fix-it-jam.webp",
     "preview": { "src": "/img/projects/masonlet/fix-it-jam_prev.webp", "w": 645, "h": 486 },
     "github": "https://github.com/masonlet/fix-it-jam",
+    "embedUrl": "https://itch.io/embed-upload/17308768?color=1a1a1a",
     "tech": ["js", "phaser", "vite"]
   },
   "noisesandbox": {
