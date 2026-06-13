@@ -1,16 +1,15 @@
 import { asset } from "./assets";
 
 export const TECH_KEYS = [
-  'html', 
-  'js', 'ts',
-  'css', 'tailwind',
-  'python', 'java', 'cpp', 'cs',
-  'vercel', 'supabase',
-  'vite', 'cmake',
-  'pip', 'pypi',
-  'nodejs', 'nextjs', 'phaser',
-  'opengl', 'glfw',
-  'googletest', 'pytest', 'vitest'
+  "html", 
+  "js", "ts",
+  "css", "tailwind",
+  "cpp", "python", "java", "cs",
+  "vercel", "supabase",
+  "npm", "vite", "pip", "pypi",
+  "nodejs", "nextjs", "phaser",
+  "cmake","opengl", "glfw",
+  "googletest", "pytest", "vitest"
 ] as const;
 export type TechKey = (typeof TECH_KEYS)[number];
 

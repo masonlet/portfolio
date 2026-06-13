@@ -1,8 +1,8 @@
-import { type Project } from './projectData';
+import { type Project } from "./projectData";
 
 interface GithubParsedUrl {
   readonly owner: string;
-  readonly repo: string;
+  readonly repo:  string;
 }
 
 let active: AbortController | null = null;
@@ -14,7 +14,7 @@ function parseGithubUrl(url: string): GithubParsedUrl | null {
 }
 
 function displayFallbackContent(container: HTMLElement, data: Project): void {
-  container.classList.remove('loading');
+  container.classList.remove("loading");
   container.innerHTML = `
     <p>${data.description}</p>
     <img src="${data.image}" alt="${data.title}" id="project-preview"/>
@@ -46,11 +46,11 @@ export async function loadReadme(
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const html = await response.text();
-    container.classList.remove('loading');
+    container.classList.remove("loading");
     container.innerHTML = `<div class="readme-content">${html}</div>`;
   } catch (e: unknown) {
-    if (e instanceof Error && e.name === 'AbortError') return;
-    console.error('README fetch failed:', e);
+    if (e instanceof Error && e.name === "AbortError") return;
+    console.error("README fetch failed:", e);
     displayFallbackContent(container, data);
   }
 }

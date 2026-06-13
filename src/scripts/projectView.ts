@@ -7,7 +7,7 @@ import {
   projectGroups
 } from "./projectData";
 import { loadReadme, abortReadme } from "./githubApi";
-import { isProjectKey, syncURL } from "./projectRouter";
+import { isProjectKey, syncURL   } from "./projectRouter";
 
 const ANIMATION_DURATION = 300;
 
@@ -17,16 +17,16 @@ function fadeTransition(
   showDisplay: string,
   callback?: () => void
 ): void {
-  hideElement.classList.add('fade-out');
+  hideElement.classList.add("fade-out");
 
   setTimeout(() => {
-    hideElement.style.display = 'none';
-    hideElement.classList.add('hidden');
-    hideElement.classList.remove('fade-out');
+    hideElement.style.display = "none";
+    hideElement.classList.add("hidden");
+    hideElement.classList.remove("fade-out");
 
     callback?.();
 
-    showElement.classList.remove('hidden');
+    showElement.classList.remove("hidden");
     showElement.style.display = showDisplay;
     showElement.style.opacity = '0';    
 
@@ -75,10 +75,9 @@ function createBackCard(): string {
 }
 
 export function populateGrid(grid: HTMLElement): void {
-  const groupedKeys = new Set(Object.values(projectGroups).flatMap(g => [...g.keys]));
-  const folders = Object.entries(projectGroups).map(([k, g]) => createFolderCard(k, g)).join('');
-  const projects = (Object.entries(projectData) as [ProjectKey, Project][])
-    .filter(([key]) => !groupedKeys.has(key))
+  const folders     = Object.entries(projectGroups).map(([k, g]) => createFolderCard(k, g)).join('');
+  const projects    = (Object.entries(projectData) as [ProjectKey, Project][])
+    .filter(([key]) => !new Set(Object.values(projectGroups).flatMap(g => [...g.keys])).has(key))
     .map(([key, data]) => createProjectCard(key, data))
     .join('');
   grid.innerHTML = folders + projects;
@@ -93,16 +92,16 @@ export function showGroupGrid(groupKey: string, grid: HTMLElement): void {
 
 export function showProjectDetails(
   projectKey: string,
-  groupKey: string | null,
-  grid: HTMLElement,
-  details: HTMLElement
+  groupKey:   string | null,
+  grid:       HTMLElement,
+  details:    HTMLElement
 ): void {
   if (!isProjectKey(projectKey)) return;
   const data: Project = projectData[projectKey];
   
   syncURL(projectKey, groupKey);
 
-  fadeTransition(grid, details, 'block', () => {
+  fadeTransition(grid, details, "block", () => {
     const playButton = data.embedUrl
       ? `<button id="play-button" data-embed="${data.embedUrl}">Play!</button>`
       : '';
@@ -123,36 +122,37 @@ export function showProjectDetails(
       <div id="embed-container" class="hidden"></div>
     `;
 
-    const container = document.getElementById('readme-container');
+    const container = document.getElementById("readme-container");
     if (!container) return;
     loadReadme(container, data);
   });
 }
 
 export function togglePlayMode(details: HTMLElement): void {
-  const readme = details.querySelector<HTMLElement>('#readme-container');
-  const embed = details.querySelector<HTMLElement>('#embed-container');
-  const button = details.querySelector<HTMLButtonElement>('#play-button');
+  const readme = details.querySelector<HTMLElement>      ("#readme-container");
+  const embed  = details.querySelector<HTMLElement>      ("#embed-container");
+  const button = details.querySelector<HTMLButtonElement>("#play-button");
   if (!readme || !embed || !button) return;
 
-  const tech = details.querySelector<HTMLElement>('.project-tech');
-  const title = details.querySelector<HTMLElement>('h3');
-  const showing = !embed.classList.contains('hidden');
+  const tech  = details.querySelector<HTMLElement>(".project-tech");
+  const title = details.querySelector<HTMLElement>("h3");
+
+  const showing = !embed.classList.contains("hidden");
   if (showing) {
-    embed.classList.add('hidden');
-    readme.classList.remove('hidden');
-    tech?.classList.remove('hidden');
-    title?.classList.remove('hidden');
-    button.textContent = 'Play!';
+    embed.classList.add("hidden");
+    readme.classList.remove("hidden");
+    tech?.classList.remove("hidden");
+    title?.classList.remove("hidden");
+    button.textContent = "Play!";
   } else {
     if (!embed.innerHTML) embed.innerHTML = `
-      <iframe src="${button.dataset['embed']}" frameborder="0" allowfullscreen></iframe>
+      <iframe src="${button.dataset["embed"]}" frameborder="0" allowfullscreen></iframe>
     `;
-    tech?.classList.add('hidden');
-    title?.classList.add('hidden')
-    readme.classList.add('hidden');
-    embed.classList.remove('hidden');
-    button.textContent = 'Back to README';
+    tech?.classList.add("hidden");
+    title?.classList.add("hidden")
+    readme.classList.add("hidden");
+    embed.classList.remove("hidden");
+    button.textContent = "Back to README";
   }
 }
 
@@ -164,7 +164,7 @@ export function showProjectsGrid(
   abortReadme();
   syncURL(null, groupKey);
   fadeTransition(
-    details, grid, 'grid', 
+    details, grid, "grid", 
     () => { details.innerHTML = ''; }
   );
 }

@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "title": "GitHub Top Languages Org",
+    "preview": { "src": "/img/projects/gh-top-languages/api_prev.webp", "w": 500, "h": 274 }
+  },
+  "lib": {
+    "title": "Library",
+    "description": "Shared TypeScript library — handles chart generation, SVG rendering, parameter parsing, and theming. Published on npm.",
+    "image": "/img/projects/gh-top-languages/lib.webp",
+    "preview": { "src": "/img/projects/gh-top-languages/lib_prev.webp", "w": 500, "h": 305 },
+    "github": "https://github.com/gh-top-languages/lib",
+    "tech": ["ts", "npm"]
+  },
+  "api": {
+    "title": "API",
+    "description": "A deployable API that generates an embeddable SVG chart of your GitHub top languages with themes, custom colours, and caching for READMEs and portfolios.",
+    "image": "/img/projects/gh-top-languages/api.webp",
+    "preview": { "src": "/img/projects/gh-top-languages/api_prev.webp", "w": 500, "h": 353 },
+    "github": "https://github.com/gh-top-languages/api",
+    "tech": ["ts", "nodejs", "vercel", "vitest"]
+  },
+  "demo": {
+    "title": "Demo Website",
+    "description": "Interactive sandbox for testing and previewing chart configurations.",
+    "image": "/img/projects/gh-top-languages/demo.webp",
+    "preview": { "src": "/img/projects/gh-top-languages/demo_prev.webp", "w": 500, "h": 373 },
+    "github": "https://github.com/gh-top-languages/demo",
+    "tech": ["ts", "vite", "css"]
+  }
+}

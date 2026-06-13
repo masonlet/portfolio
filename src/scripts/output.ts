@@ -1,27 +1,24 @@
-import { 
-  type TechKey,
-  IMAGE_PATHS 
-} from './techData';
+import { type TechKey, IMAGE_PATHS } from "./techData";
 
 const TYPING_SPEED: number = 20;
 
-type SideKey = `first` | `second`;
+type SideKey = "first" | "second";
 
-const SECTIONS = [`about`, `skills`, `contacts`] as const;
+const SECTIONS  = ["about", "skills", "contacts"] as const;
 type SectionKey = typeof SECTIONS[number];
 
 interface TypingProgress {
-  currentSection: SectionKey | ``;
-  typingIndices: Partial<Record<SectionKey, number>>;
+  currentSection: SectionKey | '';
+  typingIndices:  Partial<Record<SectionKey, number>>;
 }
 
 interface ActiveTyping {
-  section: SectionKey;
+  section:        SectionKey;
   shouldContinue: boolean;
 }
 
 type SideContent = Partial<Record<SectionKey, string>>;
-type Content = Record<SideKey, SideContent>;
+type Content     = Record<SideKey, SideContent>;
 
 // Content
 const content: Content = {
@@ -44,7 +41,7 @@ function parseHash(): SectionKey {
   const hash = window.location.hash.slice(1);
   return (SECTIONS as readonly string[]).includes(hash)
     ? (hash as SectionKey)
-    : `about`;
+    : "about";
 }
 
 function syncURL(section: SectionKey): void {
@@ -56,18 +53,18 @@ class StateManager {
   private activeTyping: ActiveTyping | null = null;
 
   getProgress(): TypingProgress {
-    const saved = sessionStorage.getItem(`typingProgress`);
-    return saved ? JSON.parse(saved) : { currentSection: ``, typingIndices: {} };
+    const saved = sessionStorage.getItem("typingProgress");
+    return saved ? JSON.parse(saved) : { currentSection: '', typingIndices: {} };
   }
 
   saveProgress(section: SectionKey, index: number): void {
     const progress = this.getProgress();
     progress.currentSection = section;
     progress.typingIndices[section] = index;
-    sessionStorage.setItem(`typingProgress`, JSON.stringify(progress));
+    sessionStorage.setItem("typingProgress", JSON.stringify(progress));
   }
 
-  getCurrentSection(): SectionKey | `` {
+  getCurrentSection(): SectionKey | '' {
     return this.getProgress().currentSection;
   }
 
@@ -102,8 +99,8 @@ function createSkills(): string {
   const createImage = (type: TechKey): string => 
     `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
 
-  const frontEndImages = ([`html`, `css`, `js`] as TechKey[]).map(createImage).join(``);
-  const backEndImages = ([`java`, `cpp`, `cs`, `python`] as TechKey[]).map(createImage).join(``);
+  const frontEndImages = (["html", "css", "js"] as TechKey[]).map(createImage).join('');
+  const backEndImages = (["java", "cpp", "cs", "python"] as TechKey[]).map(createImage).join('');
 
   side.skills = `
     <div id="skills-div">
@@ -135,17 +132,17 @@ function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
     if (element) element.style.backgroundColor = section === activeSection 
-      ? `rgba(0, 0, 0, 0.5)` 
-      : `rgba(0, 0, 0, 0.25)`;
+      ? "rgba(0, 0, 0, 0.5)"
+      : "rgba(0, 0, 0, 0.25)";
   }); 
 }
 
 // Typewriter Functions
 async function printContent(
-  section: SectionKey, 
+  section:  SectionKey,
   isSecond: boolean = false
 ): Promise<void> {
-  const side: SideKey = isSecond ? `second` : `first`;
+  const side: SideKey = isSecond ? "second" : "first";
 
   const outputDiv = document.getElementById(`${side}-output`);
   if (!outputDiv) {
@@ -159,7 +156,7 @@ async function printContent(
   updateSectionHighlight(section);
   syncURL(section);
 
-  if (section === `skills`) {
+  if (section === "skills") {
     outputDiv.innerHTML = createSkills();
     return;
   }
@@ -174,14 +171,14 @@ async function printContent(
   }
 
   state.startTyping(section);
-  outputDiv.innerHTML = ``;
+  outputDiv.innerHTML = '';
   await typeContent(section, sideContent, outputDiv);
 }
 
 async function typeContent(
-  section: SectionKey,
+  section:     SectionKey,
   textContent: string,
-  outputDiv: HTMLElement
+  outputDiv:   HTMLElement
 ): Promise<void> {
   let index: number = state.getTypingIndex(section);
 
@@ -189,8 +186,8 @@ async function typeContent(
     outputDiv.innerHTML = textContent.substring(0, index);
   
   while(index < textContent.length && state.shouldContinueTyping(section)) {
-    if (textContent[index] === `<`) {
-      const tagEnd = textContent.indexOf(`>`, index);
+    if (textContent[index] === '<') {
+      const tagEnd = textContent.indexOf('>', index);
       if(tagEnd === -1) break;
 
       outputDiv.innerHTML += textContent.substring(index, tagEnd + 1);
@@ -204,28 +201,26 @@ async function typeContent(
     await new Promise(resolve => setTimeout(resolve, TYPING_SPEED));
   }
  
-  if (state.shouldContinueTyping(section))
-    state.saveProgress(section, index);
+  if (state.shouldContinueTyping(section)) state.saveProgress(section, index);
 }
 
 //Listeners
-if(document.getElementById(`home-page`)) {
-  const aboutBtn = document.getElementById(`about`);
-  const skillsBtn = document.getElementById(`skills`);
+if(document.getElementById("home-page")) {
+  const aboutBtn  = document.getElementById("about");
+  if (!aboutBtn)  throw new Error("Required about button not found");
 
-  if (!aboutBtn) throw new Error(`Required about button not found`);
-  if (!skillsBtn) throw new Error(`Required skills button not found`);
+  const skillsBtn = document.getElementById("skills");
+  if (!skillsBtn) throw new Error("Required skills button not found");
 
-  aboutBtn.addEventListener(`click`, () => printContent(`about`));
-  skillsBtn.addEventListener(`click`, () => printContent(`skills`));
+  aboutBtn.addEventListener ("click", () => printContent("about"));
+  skillsBtn.addEventListener("click", () => printContent("skills"));
 }
 
-window.addEventListener(`load`, async () => { 
-  const homePage = document.getElementById(`home-page`);
+window.addEventListener("load", async () => { 
+  const homePage = document.getElementById("home-page");
   if(!homePage) return;
 
-  if (!window.location.hash) 
-    history.replaceState(null, ``, `#about`);
+  if (!window.location.hash) history.replaceState(null, '', "#about");
 
   await preloadImages(IMAGE_PATHS);
   await printContent(parseHash()); 
