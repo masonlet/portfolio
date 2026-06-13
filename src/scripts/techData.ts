@@ -5,7 +5,7 @@ export const TECH_KEYS = [
   'js', 'ts',
   'css', 'tailwind',
   'python', 'java', 'cpp', 'cs',
-  'vercel', 'supabase',
+  'vercel', 'supabase', 'npm',
   'vite', 'cmake',
   'pip', 'pypi',
   'nodejs', 'nextjs', 'phaser',
