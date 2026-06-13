@@ -3,36 +3,52 @@
     "title": "Starweb Libraries",
     "preview": { "src": "/img/projects/starweb-libs/engine_prev.webp", "w": 787, "h": 381 }
   },
-  "starweb-engine": {
+  "engine": {
     "title": "Web Engine",
     "description": "A lightweight 2D game engine for the browser. Includes a fixed/variable game loop, canvas management, asset utilities, and per-frame input state for keyboard and pointer.",
     "image": "/img/projects/starweb-libs/engine.webp",
     "preview": { "src": "/img/projects/starweb-libs/engine_prev.webp", "w": 787, "h": 381 },
     "github": "https://github.com/starweb-libs/engine",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
-  "starweb-physics": {
+  "physics": {
     "title": "Starweb Physics",
     "description": "SAT and circle collision detection for the browser.",
     "image": "/img/projects/starweb-libs/physics.webp",
     "preview": { "src": "/img/projects/starweb-libs/physics_prev.webp", "w": 800, "h": 431 },
     "github": "https://github.com/starweb-libs/physics",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
-  "starweb-tween": {
+  "tween": {
     "title": "Starweb Tween",
     "description": "Frame-driven tween manager with easing for the browser.",
     "image": "/img/projects/starweb-libs/tween.webp",
     "preview": { "src": "/img/projects/starweb-libs/tween_prev.webp", "w": 802, "h": 436 },
     "github": "https://github.com/starweb-libs/tween",
-    "tech": ["ts"]
+    "tech": ["ts", "npm"]
   },
-  "starweb-audio": {
+  "audio": {
     "title": "Starweb Audio",
     "description": "Web Audio API playback, volume, and sound management for the browser.",
     "image": "/img/projects/starweb-libs/audio.webp",
     "preview": { "src": "/img/projects/starweb-libs/audio_prev.webp", "w": 803, "h": 438 },
     "github": "https://github.com/starweb-libs/audio",
+    "tech": ["ts", "npm"]
+  },
+  "ui": {
+    "title": "Starweb UI",
+    "description": "Canvas UI primitives for browser games.",
+    "image": "/img/projects/starweb-libs/ui.webp",
+    "preview": { "src": "/img/projects/starweb-libs/ui_prev.webp", "w": 500, "h": 289 },
+    "github": "https://github.com/starweb-libs/ui",
+    "tech": ["ts", "npm"]
+  },
+  "template-library": {
+    "title": "Library Template",
+    "description": "Scaffold template for starweb library projects.",
+    "image": "/img/projects/starweb-libs/template.webp",
+    "preview": { "src": "/img/projects/starweb-libs/template_prev.webp", "w": 500, "h": 268 },
+    "github": "https://github.com/starweb-libs/template-library",
     "tech": ["ts"]
   }
 }
