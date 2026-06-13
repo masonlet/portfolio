@@ -47,6 +47,7 @@
     "image": "/img/projects/masonlet/starweb-sandbox.webp",
     "preview": { "src": "/img/projects/masonlet/starweb-sandbox_prev.webp", "w": 784, "h": 456 },
     "github": "https://github.com/masonlet/starweb-sandbox",
+    "embedUrl": "https://www.masonletoile.ca/starweb-sandbox",
     "tech": ["ts", "vite"]
   },
   "imagesandbox": {
