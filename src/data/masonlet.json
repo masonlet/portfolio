@@ -30,6 +30,7 @@
     "image": "/img/projects/masonlet/pixel-parker.webp",
     "preview": { "src": "/img/projects/masonlet/pixel-parker_prev.webp", "w": 493, "h": 281 },
     "github": "https://github.com/masonlet/pixel-parker",
+    "embedUrl": "https://www.masonletoile.ca/pixel-parker",
     "tech": ["ts", "vite", "html", "css"]
   },
   "portfolio": {
