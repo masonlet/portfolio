@@ -44,6 +44,14 @@
     {
       "source": "/starweb-sandbox/:path*",
       "destination": "https://masonlet.github.io/starweb-sandbox/:path*"
+    },
+    {
+      "source": "/gh-top-languages-demo",
+      "destination": "https://gh-top-languages-demo.pages.dev/"
+    },
+    {
+      "source": "/gh-top-languages-demo/:path*",
+      "destination": "https://gh-top-languages-demo.pages.dev/:path*"
     }
   ]
 }
