@@ -39,11 +39,11 @@
     },
     {
       "source": "/starweb-sandbox",
-      "destination": "https://masonlet.github.io/starweb-sandbox/"
+      "destination": "https://starweb-sandbox.pages.dev/starweb-sandbox/"
     },
     {
       "source": "/starweb-sandbox/:path*",
-      "destination": "https://masonlet.github.io/starweb-sandbox/:path*"
+      "destination": "https://starweb-sandbox.pages.dev/starweb-sandbox/:path*"
     },
     {
       "source": "/gh-top-languages-builder",
