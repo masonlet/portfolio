@@ -39,11 +39,11 @@
     },
     {
       "source": "/starweb-sandbox",
-      "destination": "https://starweb-sandbox.pages.dev/starweb-sandbox/"
+      "destination": "https://starweb-sandbox.pages.dev/"
     },
     {
       "source": "/starweb-sandbox/:path*",
-      "destination": "https://starweb-sandbox.pages.dev/starweb-sandbox/:path*"
+      "destination": "https://starweb-sandbox.pages.dev/:path*"
     },
     {
       "source": "/gh-top-languages-builder",
