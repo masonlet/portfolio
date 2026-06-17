@@ -39,7 +39,7 @@
     "image": "/img/projects/masonlet/portfolio.webp",
     "preview": { "src": "/img/projects/masonlet/portfolio_prev.webp", "w": 500, "h": 260 },
     "github": "https://github.com/masonlet/portfolio",
-    "tech": ["html", "css", "ts", "vercel", "vite"]
+    "tech": ["html", "css", "ts", "vite"]
   },
   "starweb-sandbox": {
     "title": "Starweb Sandbox",

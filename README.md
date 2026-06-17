@@ -23,7 +23,6 @@ Personal development portfolio showcasing my projects, skills, and contact infor
   <img height="35" src="https://img.shields.io/badge/TypeScript-%23007ACC?logo=typescript&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Node.js-%23339933?logo=node.js&logoColor=white&style=for-the-badge"/>
   <img height="35" src="https://img.shields.io/badge/Vite-%2300C0FF?logo=vite&logoColor=white&style=for-the-badge"/>
-  <img height="35" src="https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=for-the-badge"/>
 </p>
 
 ## Dependencies
