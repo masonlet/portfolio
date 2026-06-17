@@ -15,19 +15,19 @@
     },
     {
       "source": "/contact-api-demo",
-      "destination": "https://contact-api-demo.vercel.app/"
+      "destination": "https://contact-api-demo.pages.dev/"
     },
     {
       "source": "/contact-api-demo/:path*",
-      "destination": "https://contact-api-demo.vercel.app/:path*"
+      "destination": "https://contact-api-demo.pages.dev/:path*"
     },
     {
       "source": "/readme-api-demo",
-      "destination": "https://readme-api-demo.vercel.app/"
+      "destination": "https://readme-api-demo.pages.dev/"
     },
     {
       "source": "/readme-api-demo/:path*",
-      "destination": "https://readme-api-demo.vercel.app/:path*"
+      "destination": "https://readme-api-demo.pages.dev/:path*"
     },
     {
       "source": "/pixel-parker",
