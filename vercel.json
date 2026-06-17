@@ -12,38 +12,6 @@
     {
       "source": "/api/readme",
       "destination": "https://readme-api-nine.vercel.app/api/readme"
-    },
-    {
-      "source": "/readme-api-demo",
-      "destination": "https://readme-api-demo.pages.dev/"
-    },
-    {
-      "source": "/readme-api-demo/:path*",
-      "destination": "https://readme-api-demo.pages.dev/:path*"
-    },
-    {
-      "source": "/pixel-parker",
-      "destination": "https://pixel-parker.pages.dev/"
-    },
-    {
-      "source": "/pixel-parker/:path*",
-      "destination": "https://pixel-parker.pages.dev/:path*"
-    },
-    {
-      "source": "/starweb-sandbox",
-      "destination": "https://starweb-sandbox.pages.dev/"
-    },
-    {
-      "source": "/starweb-sandbox/:path*",
-      "destination": "https://starweb-sandbox.pages.dev/:path*"
-    },
-    {
-      "source": "/gh-top-languages-builder",
-      "destination": "https://gh-top-languages-builder.pages.dev/"
-    },
-    {
-      "source": "/gh-top-languages-builder/:path*",
-      "destination": "https://gh-top-languages-builder.pages.dev/:path*"
     }
   ]
 }
