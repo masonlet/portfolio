@@ -14,14 +14,6 @@
       "destination": "https://readme-api-nine.vercel.app/api/readme"
     },
     {
-      "source": "/contact-api-demo",
-      "destination": "https://contact-api-demo.pages.dev/"
-    },
-    {
-      "source": "/contact-api-demo/:path*",
-      "destination": "https://contact-api-demo.pages.dev/:path*"
-    },
-    {
       "source": "/readme-api-demo",
       "destination": "https://readme-api-demo.pages.dev/"
     },
