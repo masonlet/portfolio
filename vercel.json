@@ -31,11 +31,11 @@
     },
     {
       "source": "/pixel-parker",
-      "destination": "https://masonlet.github.io/pixel-parker/"
+      "destination": "https://pixel-parker.pages.dev/"
     },
     {
       "source": "/pixel-parker/:path*",
-      "destination": "https://masonlet.github.io/pixel-parker/:path*"
+      "destination": "https://pixel-parker.pages.dev/:path*"
     },
     {
       "source": "/starweb-sandbox",
