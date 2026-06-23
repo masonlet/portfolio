@@ -29,8 +29,8 @@ export function parseHash(): { projectKey: ProjectKey | null; groupKey: string |
 
 export function syncURL(projectKey: ProjectKey | null, groupKey?: string | null): void {
   let hash: string | null = null;
-  if (projectKey && groupKey) hash = `${groupKey}/${String(projectKey)}`;
-  else if (projectKey) hash = String(projectKey);
-  else if (groupKey) hash = groupKey;
+  if (projectKey && groupKey) hash = `${groupKey}/${projectKey}`;
+  else if (projectKey)        hash = projectKey;
+  else if (groupKey)          hash = groupKey;
   history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname);
 }

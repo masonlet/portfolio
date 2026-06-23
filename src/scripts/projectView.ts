@@ -76,8 +76,9 @@ function createBackCard(): string {
 
 export function populateGrid(grid: HTMLElement): void {
   const folders     = Object.entries(projectGroups).map(([k, g]) => createFolderCard(k, g)).join('');
+  const groupedKeys = new Set(Object.values(projectGroups).flatMap(g => [...g.keys]));
   const projects    = (Object.entries(projectData) as [ProjectKey, Project][])
-    .filter(([key]) => !new Set(Object.values(projectGroups).flatMap(g => [...g.keys])).has(key))
+    .filter(([key]) => !groupedKeys.has(key))
     .map(([key, data]) => createProjectCard(key, data))
     .join('');
   grid.innerHTML = folders + projects;
@@ -87,7 +88,7 @@ export function showGroupGrid(groupKey: string, grid: HTMLElement): void {
   const group = projectGroups[groupKey];
   if (!group) return;
   syncURL(null, groupKey);
-  grid.innerHTML = createBackCard() + group.keys.map(key => createProjectCard(key, projectData[key])).join('');
+  grid.innerHTML = createBackCard() + group.keys.map(key => createProjectCard(key, projectData[key]!)).join('');
 }
 
 export function showProjectDetails(
@@ -97,7 +98,7 @@ export function showProjectDetails(
   details:    HTMLElement
 ): void {
   if (!isProjectKey(projectKey)) return;
-  const data: Project = projectData[projectKey];
+  const data: Project = projectData[projectKey]!;
   
   syncURL(projectKey, groupKey);
 
