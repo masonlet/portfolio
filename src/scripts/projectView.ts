@@ -76,8 +76,9 @@ function createBackCard(): string {
 
 export function populateGrid(grid: HTMLElement): void {
   const folders     = Object.entries(projectGroups).map(([k, g]) => createFolderCard(k, g)).join('');
+  const groupedKeys = new Set(Object.values(projectGroups).flatMap(g => [...g.keys]));
   const projects    = (Object.entries(projectData) as [ProjectKey, Project][])
-    .filter(([key]) => !new Set(Object.values(projectGroups).flatMap(g => [...g.keys])).has(key))
+    .filter(([key]) => !groupedKeys.has(key))
     .map(([key, data]) => createProjectCard(key, data))
     .join('');
   grid.innerHTML = folders + projects;
