@@ -10,7 +10,8 @@ export const TECH_KEYS = [
   "npm", "vite", "pip", "pypi",
   "nodejs", "nextjs", "phaser",
   "cmake","opengl", "glfw",
-  "googletest", "pytest", "vitest"
+  "googletest", "pytest", "vitest",
+  "homebrew"
 ] as const;
 export type TechKey = (typeof TECH_KEYS)[number];
 
