@@ -6,18 +6,6 @@ import starSetupRaw      from "../data/star-setup.json";
 import { asset         } from "./assets";
 import { type TechKey  } from "./techData";
 
-function applyPreviewAsset(preview: { src: string; w: number; h: number }) {
-  return { ...preview, src: asset(preview.src) };
-}
-
-function buildGroup(meta: Omit<ProjectGroup, "keys">, projects: object): ProjectGroup {
-  return {
-    ...meta,
-    preview: applyPreviewAsset(meta.preview),
-    keys: Object.keys(projects) as ProjectKey[],
-  };
-}
-
 export interface Project {
   readonly title:         string;
   readonly description:   string;
@@ -33,6 +21,18 @@ export interface ProjectGroup {
   readonly title:         string;
   readonly preview:       { src: string; w: number; h: number; };
   readonly keys: readonly ProjectKey[];
+}
+
+function applyPreviewAsset(preview: { src: string; w: number; h: number }) {
+  return { ...preview, src: asset(preview.src) };
+}
+
+function buildGroup(meta: Omit<ProjectGroup, "keys">, projects: object): ProjectGroup {
+  return {
+    ...meta,
+    preview: applyPreviewAsset(meta.preview),
+    keys: Object.keys(projects) as ProjectKey[],
+  };
 }
 
 const { _meta: starletMeta,        ...starletProjects        } = starletRaw;
