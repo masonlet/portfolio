@@ -4,12 +4,14 @@ export const TECH_KEYS = [
   "html", 
   "js", "ts",
   "css", "tailwind",
-  "cpp", "python", "java", "cs",
+  "cpp", "rust",
+  "python", "java", "cs",
   "vercel", "supabase",
   "npm", "vite", "pip", "pypi",
   "nodejs", "nextjs", "phaser",
   "cmake","opengl", "glfw",
-  "googletest", "pytest", "vitest"
+  "googletest", "pytest", "vitest",
+  "homebrew"
 ] as const;
 export type TechKey = (typeof TECH_KEYS)[number];
 

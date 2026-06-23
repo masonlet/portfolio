@@ -2,6 +2,7 @@ import masonletData      from "../data/masonlet.json";
 import starletRaw        from "../data/starlet-libs.json";
 import starwebRaw        from "../data/starweb-libs.json";
 import ghTopLanguagesRaw from "../data/gh-top-languages.json";
+import starSetupRaw      from "../data/star-setup.json";
 import { asset         } from "./assets";
 import { type TechKey  } from "./techData";
 
@@ -24,9 +25,14 @@ export interface ProjectGroup {
 
 const { _meta: starletMeta,        ...starletProjects        } = starletRaw;
 const { _meta: starwebMeta,        ...starwebProjects        } = starwebRaw;
-const { _meta: ghTopLanguagesMeta, ...ghTopLanguagesProjects } = ghTopLanguagesRaw
+const { _meta: ghTopLanguagesMeta, ...ghTopLanguagesProjects } = ghTopLanguagesRaw;
+const { _meta: starSetupMeta,      ...starSetupProjects      } = starSetupRaw;
 
-const allRaw = { ...masonletData, ...starletProjects, ...starwebProjects, ...ghTopLanguagesProjects };
+const allRaw = {
+  ...masonletData,
+  ...starletProjects, ...starwebProjects,
+  ...ghTopLanguagesProjects, ...starSetupProjects
+};
 export type ProjectKey = keyof typeof allRaw;
 function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
   return Object.fromEntries(
@@ -44,6 +50,11 @@ function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
 export const projectData = applyAssets(allRaw);
 
 export const projectGroups: Record<string, ProjectGroup> = {
+  "star-setup": {
+    ...starSetupMeta,
+    preview: { ...starSetupMeta.preview, src: asset(starSetupMeta.preview.src) },
+    keys: Object.keys(starSetupProjects) as ProjectKey[],
+  },
   "starlet-engine": {
     ...starletMeta,
     preview: { ...starletMeta.preview, src: asset(starletMeta.preview.src) },

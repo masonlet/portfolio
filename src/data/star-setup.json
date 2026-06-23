@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "title": "Star Setup Org",
+    "preview": {  "src": "/img/projects/star-setup/star-setup_prev.webp", "w": 500, "h": 127 }
+  },
+  "core": {
+    "title": "Core",
+    "description": "A Rust CLI tool for cloning, configuring, and wiring single or multi-repo CMake ecosystems.",
+    "image": "/img/projects/star-setup/core.webp",
+    "preview": { "src": "/img/projects/star-setup/core_prev.webp", "w": 500, "h": 351 },
+    "github": "https://github.com/star-setup/core",
+    "tech": ["rust", "cmake"]
+  },
+  "pywrapper": {
+    "title": "Py Wrapper",
+    "description": "A Python wrapper for distributing star-setup via PyPI.",
+    "image": "/img/projects/star-setup/py-wrapper.webp",
+    "preview": { "src": "/img/projects/star-setup/py-wrapper_prev.webp", "w": 500, "h": 215 },
+    "github": "https://github.com/star-setup/py-wrapper",
+    "tech": ["python", "pip", "pypi"]
+  },
+  "homebrewtap": {
+    "title": "Homebrew Tap",
+    "description": "A Homebrew tap for distributing star-setup on macOS and Linux.",
+    "image": "/img/projects/star-setup/homebrew-tap.webp",
+    "preview": { "src": "/img/projects/star-setup/homebrew-tap_prev.webp", "w": 500, "h": 308 },
+    "github": "https://github.com/star-setup/homebrew-tap",
+    "tech": ["homebrew"]
+  }
+}
