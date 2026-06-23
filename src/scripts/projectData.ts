@@ -6,6 +6,10 @@ import starSetupRaw      from "../data/star-setup.json";
 import { asset         } from "./assets";
 import { type TechKey  } from "./techData";
 
+function applyPreviewAsset(preview: { src: string; w: number; h: number }) {
+  return { ...preview, src: asset(preview.src) };
+}
+
 export interface Project {
   readonly title:         string;
   readonly description:   string;
@@ -41,7 +45,7 @@ function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
       {
         ...data,
         image: asset(data.image),
-        preview: { ...data.preview, src: asset(data.preview.src) },
+        preview: applyPreviewAsset(data.preview),
       } as Project,
     ])
   ) as Record<ProjectKey, Project>;
@@ -52,22 +56,22 @@ export const projectData = applyAssets(allRaw);
 export const projectGroups: Record<string, ProjectGroup> = {
   "star-setup": {
     ...starSetupMeta,
-    preview: { ...starSetupMeta.preview, src: asset(starSetupMeta.preview.src) },
+    preview: applyPreviewAsset(starSetupMeta.preview),
     keys: Object.keys(starSetupProjects) as ProjectKey[],
   },
   "starlet-engine": {
     ...starletMeta,
-    preview: { ...starletMeta.preview, src: asset(starletMeta.preview.src) },
+    preview: applyPreviewAsset(starletMeta.preview),
     keys: Object.keys(starletProjects) as ProjectKey[],
   },
   "starlet-web-engine": {
     ...starwebMeta,
-    preview: { ...starwebMeta.preview, src: asset(starwebMeta.preview.src) },
+    preview: applyPreviewAsset(starwebMeta.preview),
     keys: Object.keys(starwebProjects) as ProjectKey[],
   },
   "gh-top-languages": {
     ...ghTopLanguagesMeta,
-    preview: { ...ghTopLanguagesMeta.preview, src: asset(ghTopLanguagesMeta.preview.src) },
+    preview: applyPreviewAsset(ghTopLanguagesMeta.preview),
     keys: Object.keys(ghTopLanguagesProjects) as ProjectKey[],
   }
 };
