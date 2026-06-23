@@ -10,6 +10,14 @@ function applyPreviewAsset(preview: { src: string; w: number; h: number }) {
   return { ...preview, src: asset(preview.src) };
 }
 
+function buildGroup(meta: Omit<ProjectGroup, "keys">, projects: object): ProjectGroup {
+  return {
+    ...meta,
+    preview: applyPreviewAsset(meta.preview),
+    keys: Object.keys(projects) as ProjectKey[],
+  };
+}
+
 export interface Project {
   readonly title:         string;
   readonly description:   string;
@@ -54,24 +62,8 @@ function applyAssets(raw: typeof allRaw): Record<ProjectKey, Project> {
 export const projectData = applyAssets(allRaw);
 
 export const projectGroups: Record<string, ProjectGroup> = {
-  "star-setup": {
-    ...starSetupMeta,
-    preview: applyPreviewAsset(starSetupMeta.preview),
-    keys: Object.keys(starSetupProjects) as ProjectKey[],
-  },
-  "starlet-engine": {
-    ...starletMeta,
-    preview: applyPreviewAsset(starletMeta.preview),
-    keys: Object.keys(starletProjects) as ProjectKey[],
-  },
-  "starlet-web-engine": {
-    ...starwebMeta,
-    preview: applyPreviewAsset(starwebMeta.preview),
-    keys: Object.keys(starwebProjects) as ProjectKey[],
-  },
-  "gh-top-languages": {
-    ...ghTopLanguagesMeta,
-    preview: applyPreviewAsset(ghTopLanguagesMeta.preview),
-    keys: Object.keys(ghTopLanguagesProjects) as ProjectKey[],
-  }
+  "star-setup":          buildGroup(starSetupMeta,  starSetupProjects),
+  "starlet-engine":      buildGroup(starletMeta,    starletProjects),
+  "starlet-web-engine":  buildGroup(starwebMeta,    starwebProjects),
+  "gh-top-languages":    buildGroup(ghTopLanguagesMeta, ghTopLanguagesProjects),
 };
