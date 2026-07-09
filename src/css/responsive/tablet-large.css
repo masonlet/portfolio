@@ -30,33 +30,5 @@
   #second-section {
     flex-direction: column-reverse;
   }
-
-  /* Content */
-  #first-output-div,
-  #second-output-div {
-    margin: 2vh 0 0;
-  }
-
-  #second-output-div,
-  #first-output-div {
-    display:         flex;
-    justify-content: space-evenly;
-  }
-
-  /* Forms */
-  input,
-  textarea,
-  .email-submit {
-    width:   100%;
-    padding: 6px;
-  }
-
-  textarea {
-    height: 6vh;
-  }
-
-  .email-input {
-    margin: 1vh 0;
-  }
 }
 

@@ -1,3 +1,12 @@
+textarea {
+  text-align: left;
+  height: var(--textarea-height);
+}
+
+.email-input {
+  margin: 1vh 0;
+}
+
 input, 
 textarea {
   border:     var(--border-thin);
@@ -11,8 +20,11 @@ textarea {
   width:      100%;
 }
 
-textarea {
-  text-align: left;
+input,
+textarea,
+.email-submit {
+  width:   100%;
+  padding: var(--form-padding);
 }
 
 /* Typography */
@@ -24,4 +36,3 @@ textarea {
 .email-submit {
   font-family: Arial, Helvetica, sans-serif;
 }
-

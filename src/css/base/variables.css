@@ -79,5 +79,10 @@
 
   /* Components — Embed */
   --embed-height: 60vh;
+
+  /* Components — Forms */
+  --form-padding:      clamp(4px, 1.5vw, 10px);
+  --textarea-height:   clamp(6vh, 2vw, 10vh);
+  --output-margin-top: clamp(2vh, 2vw, 4vh);
 }
 

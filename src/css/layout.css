@@ -48,6 +48,13 @@ main {
   width: 100%;
 }
 
+#first-output-div,
+#second-output-div {
+  margin-top:      var(--output-margin-top);
+  display:         flex;
+  justify-content: space-evenly;
+}
+
 header h1 {
   font-size:      var(--text-display);
   line-height:    1;

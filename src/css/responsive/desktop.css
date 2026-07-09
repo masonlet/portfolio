@@ -40,34 +40,6 @@
   #contact-section {
     width: 38vw;
   }
-
-  /* Content */
-  #first-output-div,
-  #second-output-div {
-    margin-top: 4vh;
-  }
-
-  #second-output-div, 
-  #first-output-div {
-    display:         flex;
-    justify-content: space-evenly;
-  }
-
-  /* Forms */
-  input, 
-  textarea, 
-  .email-submit {
-    width:   100%;
-    padding: 10px;
-  }
-
-  textarea {
-    height: 10vh;
-  }
-
-  .email-input {
-    margin: 1vh 0;
-  }
 }
 
 
