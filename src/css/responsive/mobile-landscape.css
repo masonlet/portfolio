@@ -24,11 +24,6 @@
     width: 85vw;
   }
 
-  /* Navigation */
-  #header-nav {
-    right: 7%;
-  }
-
   /* Images */
   #email-icon {
     display: inline-block;

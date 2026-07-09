@@ -26,18 +26,6 @@
     margin: 10vh auto 0;
   }
 
-  /* Navigation */
-  #header-nav {
-    top:   10vh;
-    right: 10%;
-  }
-
-  #first-nav,
-  #second-nav {
-    margin-top: 8vh;
-    column-gap: 2px;
-  }
-
   /* Sections */
   #sections {
     height:  100%;
@@ -85,13 +73,6 @@
 
 /* Desktop Medium */
 @media (min-width: 1025px) {
-  /* Navigation */
-  #first-nav, 
-  #second-nav {
-    margin-top: 10vh;
-    column-gap: 10px;
-  }
-
   /* Sections */
   #first-section,
   #second-section {

@@ -55,6 +55,10 @@
   /* Components — Navigation */
   --nav-icon-size:    10vmin;
   --nav-icon-padding: 2px;
+  --nav-top:        clamp(5vh, 8vw, 10vh);
+  --nav-right:       clamp(5%, 4vw, 10%);
+  --nav-margin-top:  clamp(2vh, 6vw, 10vh);
+  --nav-gap:         clamp(5px, 1vw, 10px);
 
   /* Components — Project Cards */
   --card-radius:         10px;

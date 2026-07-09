@@ -5,18 +5,6 @@
     margin: 5vh auto 0;
   }
 
-  /* Navigation */
-  #header-nav {
-    top:   5vh;
-    right: 5%;
-  }
-
-  #first-nav,
-  #second-nav {
-    margin:     2vh 0 0;
-    column-gap: 5px;
-  }
-
   /* Image */
   #email-icon {
     display: none;
