@@ -6,9 +6,9 @@ main {
 }
 
 #header-nav {
-  position: fixed;
-  top:      var(--nav-top);
-  right:    var(--nav-right);
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
 }
 
 #first-nav,
@@ -55,6 +55,15 @@ main {
   justify-content: space-evenly;
 }
 
+header {
+  width:           100%;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  flex-wrap:       wrap;
+  gap:             var(--space-3-5);
+}
+
 header h1 {
   font-size:      var(--text-display);
   line-height:    1;
@@ -62,7 +71,13 @@ header h1 {
 }
 
 header p {
-  font-size: var(--text-lg);
+  font-size:  var(--text-lg);
+  margin-top: var(--space-2);
+}
+
+header p .btn {
+  font-size: var(--text-base);
+  padding:   var(--space-1) var(--space-2);
 }
 
 #first-output,
@@ -130,32 +145,6 @@ header p {
   gap:            var(--space-2);
 }
 
-/* Page Headers */
-.header {
-  width:           100%;
-  display:         flex;
-  justify-content: space-between;
-  align-items:     flex-start;
-  flex-wrap:       wrap;
-  gap:             var(--space-3-5);
-}
-
-.header h1 {
-  font-size:      var(--text-display);
-  line-height:    1;
-  letter-spacing: var(--letter-spacing-lg);
-}
-
-.header p {
-  font-size:  var(--text-lg);
-  margin-top: var(--space-2);
-}
-
-.header p .btn {
-  font-size: var(--text-base);
-  padding:   var(--space-1) var(--space-2);
-}
-
 /* Single Layout */
 .panel-single {
   width:           100%;
@@ -177,7 +166,7 @@ header p {
     justify-content: space-evenly;
   }
 
-  .layout-single .header {
+  .layout-single header {
     width:      25%;
     margin-top: var(--space-4);
   }
