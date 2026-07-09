@@ -44,6 +44,24 @@ main {
   width: 100%;
 }
 
+header h1 {
+  font-size:      var(--text-display);
+  line-height:    1;
+  letter-spacing: var(--letter-spacing-lg);
+}
+
+header p {
+  font-size: var(--text-lg);
+}
+
+#first-output,
+#second-output,
+#first-output-div input,
+#first-output-div textarea,
+#skills-div {
+  font-size: var(--text-sm);
+}
+
 #skills-div {
   text-align:     center;
   display:        flex;

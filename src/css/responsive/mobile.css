@@ -5,24 +5,13 @@
     margin: 5vh auto 0;
   }
 
-  header h1 {
-    font-size:      9.5vw;
-    line-height:    9.5vw;
-    letter-spacing: 3px;
-  }
-
-  header p {
-    font-size:   3vw;
-    line-height: 5vw;
-  }
-
   /* Navigation */
   #header-nav {
     top:   5vh;
     right: 5%;
   }
 
-  #first-nav, 
+  #first-nav,
   #second-nav {
     column-gap: 5px;
   }
@@ -32,7 +21,7 @@
   }
 
   /* Image */
-  #second-output-div img, 
+  #second-output-div img,
   #first-output-div img {
     width:   12.5vw;
     height:  12.5vw;
@@ -54,7 +43,7 @@
     justify-content: space-evenly;
   }
 
-  #first-section, 
+  #first-section,
   #second-section {
     display: flex;
   }
@@ -74,16 +63,7 @@
   }
 
   /* Content */
-  #first-output, 
-  #second-output, 
-  #first-output-div input, 
-  #first-output-div textarea, 
-  #skills-div {
-    font-size:   2.75vmin;
-    line-height: 3.75vmin;
-  }
-
-  #first-output-div, 
+  #first-output-div,
   #second-output-div {
     margin: 2vh 0 0;
   }
@@ -95,8 +75,8 @@
   }
 
   /* Forms */
-  input, 
-  textarea, 
+  input,
+  textarea,
   .email-submit {
     width:   100%;
     padding: 4px;
@@ -117,7 +97,7 @@
     padding: 10px;
   }
 
-  .image-out, 
+  .image-out,
   #skills-div {
     gap: 5vw;
   }

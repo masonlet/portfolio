@@ -5,31 +5,20 @@
     margin: 5vh auto 0;
   }
 
-  header h1 {
-    font-size:      9.5vw;
-    line-height:    9.5vw;
-    letter-spacing: 3px;
-  }
-
-  header p {
-    font-size:   3vw;
-    line-height: 5vw;
-  }
-
   /* Navigation */
   #header-nav {
     top:   5vh;
     right: 5%;
   }
   
-  #first-nav, 
+  #first-nav,
   #second-nav {
     margin:     2vh 0 0;
     column-gap: 5px;
   }
 
   /* Images */
-  #second-output-div img, 
+  #second-output-div img,
   #first-output-div img {
     padding: 2px;
     width:   10vw;
@@ -50,7 +39,7 @@
     flex-direction:  column;
     justify-content: space-evenly;
   }
-  #first-section, 
+  #first-section,
   #second-section {
     width:          90vw;
     display:        flex;
@@ -64,29 +53,20 @@
   }
 
   /* Content */
-  #first-output, 
-  #second-output, 
-  #first-output-div input, 
-  #first-output-div textarea, 
-  #skills-div {
-    font-size:   3vw;
-    line-height: 3vw;
-  }
-
-  #first-output-div, 
+  #first-output-div,
   #second-output-div {
     margin: 2vh 0 0;
   }
 
-  #second-output-div, 
+  #second-output-div,
   #first-output-div {
     display:         flex;
     justify-content: space-evenly;
   }
 
   /* Forms */
-  input, 
-  textarea, 
+  input,
+  textarea,
   .email-submit {
     width:   100%;
     padding: 6px;

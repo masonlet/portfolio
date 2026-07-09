@@ -4,15 +4,6 @@
     width:  90vw;
     margin: 5vh auto 0;
   }
-  header h1 {
-    font-size:      9.5vmin;
-    line-height:    9.5vmin;
-    letter-spacing: 3px;
-  }
-  header p {
-    font-size:   3vmin;
-    line-height: 5vmin;
-  }
 
   /* Navigation */
   #header-nav {
@@ -20,7 +11,7 @@
     right: 5%;
   }
 
-  #first-nav, 
+  #first-nav,
   #second-nav {
     margin:     2vh 0 0;
     column-gap: 5px;
@@ -49,7 +40,7 @@
     justify-content: space-evenly;
   }
 
-  #first-section, 
+  #first-section,
   #second-section {
     width:          90vw;
     display:        flex;
@@ -65,29 +56,20 @@
   }
 
   /* Content */
-  #first-output, 
-  #second-output, 
-  #first-output-div input, 
-  #first-output-div textarea, 
-  #skills-div {
-    font-size:   3vmin;
-    line-height: 3vmin;
-  }
-
-  #first-output-div, 
+  #first-output-div,
   #second-output-div {
     margin: 2vh 0 0;
   }
 
-  #second-output-div, 
+  #second-output-div,
   #first-output-div {
     display:         flex;
     justify-content: space-evenly;
   }
 
   /* Forms */
-  input, 
-  textarea, 
+  input,
+  textarea,
   .email-submit {
     width:   100%;
     padding: 6px;
@@ -108,7 +90,7 @@
     padding: 10px;
   }
 
-  .image-out, 
+  .image-out,
   #skills-div {
     gap: 3vmin;
   }

@@ -26,24 +26,13 @@
     margin: 10vh auto 0;
   }
 
-  header h1 {
-    font-size:      7.5vw;
-    line-height:    7.5vw;
-    letter-spacing: 3px;
-  }
-
-  header p {
-    font-size:   2.25vw;
-    line-height: 2.25vw;
-  }
-
   /* Navigation */
   #header-nav {
     top:   10vh;
     right: 10%;
   }
 
-  #first-nav, 
+  #first-nav,
   #second-nav {
     margin-top: 8vh;
     column-gap: 2px;
@@ -68,23 +57,14 @@
     justify-content: space-between;
   }
 
-  #first-section, 
-  #second-section, 
+  #first-section,
+  #second-section,
   #contact-section {
     width: 38vw;
   }
 
   /* Content */
-  #first-output, 
-  #second-output, 
-  #first-output-div input, 
-  #first-output-div textarea, 
-  #skills-div {
-    font-size:   1.8vmin;
-    line-height: 2.2vmin;
-  }
-
-  #first-output-div, 
+  #first-output-div,
   #second-output-div {
     margin-top: 4vh;
   }
@@ -127,18 +107,6 @@
 
 /* Desktop Medium */
 @media (min-width: 1025px) {
-  /* Header */
-  header h1 {
-    font-size:      6.75vw;
-    line-height:    6.75vw;
-    letter-spacing: 3px;
-  }
-
-  header p {
-    font-size: 1.8vw;
-    line-height: 1.8vw;
-  }
-
   /* Navigation */
   #first-nav, 
   #second-nav {
@@ -154,19 +122,9 @@
   }
 
   /* Sections */
-  #first-section, 
+  #first-section,
   #second-section {
     width: 35vw;
-  }
-
-  /* Content */
-  #first-output, 
-  #second-output, 
-  #first-output-div input, 
-  #first-output-div textarea, 
-  #skills-div {
-    font-size:   1vw;
-    line-height: 1.2vw;
   }
 }
 
