@@ -38,16 +38,6 @@
     column-gap: 2px;
   }
 
-  /* Images */
-  #first-output-div img,
-  #second-output-div img {
-    padding: 5px;
-    width:   8vw;
-    height:  8vw;
-    border:  4px solid var(--primary);
-    border-radius: 20px;
-  }
-
   /* Sections */
   #sections {
     height:  100%;
@@ -112,13 +102,6 @@
   #second-nav {
     margin-top: 10vh;
     column-gap: 10px;
-  }
-
-  /* Images */
-  #first-output-div img, 
-  #second-output-div img {
-    width: 5vw;
-    height: 5vw;
   }
 
   /* Sections */

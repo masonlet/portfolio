@@ -23,3 +23,11 @@
   -webkit-user-drag: none;
   user-select:       none;
 }
+
+#second-output-div img {
+  width:         var(--preview-icon-size);
+  height:        var(--preview-icon-size);
+  padding:       var(--space-1);
+  border:        var(--border-thick);
+  border-radius: var(--radius-sm);
+}

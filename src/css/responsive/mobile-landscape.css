@@ -34,15 +34,6 @@
     display: inline-block;
   }
 
-  #second-output-div img,
-  #first-output-div img {
-    padding: 2px;
-    width:   8vw;
-    height:  8vw;
-    border:        4px solid var(--primary);
-    border-radius: 5px;
-  }
-
   /* Sections */
   #sections {
     width:          85vw;

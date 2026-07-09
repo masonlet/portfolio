@@ -21,15 +21,6 @@
   }
 
   /* Image */
-  #second-output-div img,
-  #first-output-div img {
-    width:   12.5vw;
-    height:  12.5vw;
-    padding: 2px;
-    border:        2px solid var(--primary);
-    border-radius: 5px;
-  }
-
   #email-icon {
     display: none;
   }
@@ -68,7 +59,7 @@
     margin: 2vh 0 0;
   }
 
-  #second-output-div, 
+  #second-output-div,
   #first-output-div {
     display:         flex;
     justify-content: space-evenly;

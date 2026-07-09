@@ -63,6 +63,7 @@
 
   /* Components — Project Preview */
   --preview-max-height: 250px;
+  --preview-icon-size: clamp(3rem, 9vw, 5rem);
 
   /* Components — Tech Badges */
   --badge-radius:   15px;
