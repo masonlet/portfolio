@@ -71,6 +71,9 @@
   border:        var(--border-thick);
   border-radius: var(--badge-radius);
   background:    var(--bg-dark);
+  width:         var(--tech-size);
+  aspect-ratio:  3 / 4;
+  padding:       10px;
 }
 
 .tech-icon {

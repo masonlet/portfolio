@@ -74,6 +74,11 @@ header p {
   justify-content: space-evenly;
 }
 
+.image-out,
+#skills-div {
+  gap: var(--tech-gap);
+}
+
 /* Resume & Project */
 .page {
   width:          100%;

@@ -69,6 +69,10 @@
   --badge-radius:   15px;
   --tech-icon-size: 80px;
 
+  /* Components — Skill Icons */
+  --tech-size: clamp(2.5rem, 6vw, 4.5rem);
+  --tech-gap:  clamp(0.5rem, 2vw, 1.5rem);
+
   /* Components — Embed */
   --embed-height: 60vh;
 }

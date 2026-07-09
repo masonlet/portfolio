@@ -48,15 +48,5 @@
   #second-section {
     flex-direction: column;
   }
-
-  /* Other */
-  .tech {
-    width:  5vw;
-    height: 6vw;
-  }
-  .image-out,
-  #skills-div {
-    gap: 1vw;
-  }
 }
 

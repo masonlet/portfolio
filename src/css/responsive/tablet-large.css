@@ -70,17 +70,5 @@
   .email-input {
     margin: 1vh 0;
   }
-
-  /* Other */
-  .tech {
-    width:   15vw;
-    height:  20vw;
-    padding: 10px;
-  }
-
-  .image-out, 
-  #skills-div {
-    gap: 3vw;
-  }
 }
 
