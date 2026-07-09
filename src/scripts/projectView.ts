@@ -64,14 +64,14 @@ function createProjectCard(key: ProjectKey, data: Project): string {
 }
 function createFolderCard(key: string, group: ProjectGroup): string {
   return `
-    <div class="project-card folder-card" data-group="${key}">
+    <div class="project-card folder-card hover-cursor hover-bounce hover-bg" data-group="${key}">
       <h4>${group.title}</h4>
       <img src="${group.preview.src}" width="${group.preview.w}" height="${group.preview.h}" alt="${group.title}" loading="lazy">
     </div>
   `;
 }
 function createBackCard(): string {
-  return `<div class="project-card back-card" data-back="true"><h4>← Back</h4></div>`;
+  return `<div class="project-card back-card hover-cursor hover-bounce hover-bg" data-back="true"><h4>← Back</h4></div>`;
 }
 
 export function populateGrid(grid: HTMLElement): void {
