@@ -1,18 +1,10 @@
-main {
-  height:         100%;
-  width:          100%;
-  display:        flex;
-  flex-direction: column;
-}
-
 #header-nav {
   display:     flex;
   align-items: center;
   gap:         var(--space-2);
 }
 
-#first-nav,
-#second-nav {
+.panel-nav {
   display:         flex;
   justify-content: space-evenly;
   align-content:   center;
@@ -20,36 +12,22 @@ main {
   column-gap:      var(--nav-gap);
 }
 
-#second-nav {
-  flex-direction: column;
-}
-
-#sections {
-  height: 100%;
-}
-
 /* Text Alignment */
-#second-output-div a,
-#first-output-div a {
+.panel-content a {
   text-align: center;
 }
 
-#first-output-div p {
+#first-output {
   text-align: left;
-}
-
-#first-output-div a p {
-  text-align: center;
 }
 
 /* Content Area */
 #first-output,
-#first-output-div {
+.panel-content {
   width: 100%;
 }
 
-#first-output-div,
-#second-output-div {
+.panel-content {
   margin-top:      var(--output-margin-top);
   display:         flex;
   justify-content: space-evenly;
@@ -77,13 +55,13 @@ header p {
 
 header p .btn {
   font-size: var(--text-base);
-  padding:   var(--space-1) var(--space-2);
+  padding:   var(--space-1) var(--space-3);
 }
 
 #first-output,
 #second-output,
-#first-output-div input,
-#first-output-div textarea,
+.panel-content input,
+.panel-content textarea,
 #skills-div {
   font-size: var(--text-sm);
 }
@@ -105,25 +83,6 @@ header p .btn {
   gap: var(--tech-gap);
 }
 
-/* Resume & Project */
-.page {
-  width:          100%;
-  height:         100%;
-  display:        flex;
-  flex-direction: column;
-  align-items:    center;
-  gap:            var(--space-3);
-}
-
-.page-section {
-  width:           95%;
-  height:          80%;
-  display:         flex;
-  justify-content: center;
-  align-items:     center;
-  margin:          2vh;
-}
-
 #resume-display,
 #projects-grid,
 #project-details {
@@ -135,7 +94,8 @@ header p .btn {
 }
 
 /* Page Layouts */
-.layout-single {
+.layout-single,
+.layout-double {
   width:          100%;
   height:         100dvh;
   display:        flex;
@@ -155,24 +115,63 @@ header p .btn {
   align-items:     center;
 }
 
+/* Double Layout */
+.panels-double {
+  width:          100%;
+  flex:           1;
+  min-height:     0;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3-5);
+}
+
+.panel-double {
+  flex:           1;
+  display:        flex;
+  flex-direction: column;
+}
+
+.panel-double--reverse {
+  flex-direction: column-reverse;
+}
+
 /* Desktop */
 @media (min-width: 768px){
-  /* Single Layout */
+  .panel-double--reverse {
+    flex-direction: column;
+  }
+
+  .layout-single,
+  .layout-double {
+    padding: 10vh 10vw;
+  }
+
   .layout-single {
-    padding:         var(--space-5) var(--space-7);
     gap:             var(--space-4);
     flex-direction:  row;
     align-items:     flex-start;
     justify-content: space-evenly;
   }
-
+  
   .layout-single header {
-    width:      25%;
-    margin-top: var(--space-4);
+    width: 25%;
   }
 
   .panel-single {
     width:  60%;
-    height: 90%;
+    height: 100%;
+  }
+
+  .panels-double {
+    flex-direction: row;
+    gap:            10vw;
+  }
+
+  header p .btn {
+    border:        none;
+    background:    none;
+    font-size:     inherit;
+    padding:       0 var(--space-1);
+    border-radius: var(--radius-sm);
   }
 }

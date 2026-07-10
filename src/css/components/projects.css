@@ -3,6 +3,7 @@
   gap:        var(--space-3-5);
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: thin;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows:        max-content;
 }

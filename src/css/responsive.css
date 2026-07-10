@@ -1,0 +1,25 @@
+/* Mobile */
+@media (max-width: 972px) {
+  /* Image */
+  #email-icon {
+    display: none;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-height: 430px) and (max-width: 972px) {
+  /* Images */
+  #email-icon {
+    display: inline-block;
+  }
+
+  /* Layout */
+  .panels-double {
+    flex-direction: row;
+  }
+
+  .panel-double,
+  .panel-double--reverse {
+    flex-direction: column;
+  }
+}
