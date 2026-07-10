@@ -86,7 +86,7 @@
   --tech-icon-size: 80px;
 
   /*   ===       Skill Icons        == */
-  --tech-size: clamp(1.5rem, min(6vw, 8vh), 4.5rem);
+  --tech-size: clamp(1.5rem, min(6vw, 12vh), 6rem);
   --tech-gap:  clamp(0.5rem, 2vw, 1.5rem);
 
   /*   ===       Embed        == */

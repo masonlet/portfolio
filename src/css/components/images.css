@@ -27,10 +27,17 @@
   user-select:       none;
 }
 
-.panel-content img {
+.panel-content > a img {
   width:         var(--preview-icon-size);
   height:        var(--preview-icon-size);
   padding:       var(--space-1);
   border:        var(--border-thick);
+  border-radius: var(--radius-icon);
+}
+
+#skills-div img {
+  width:         var(--tech-size);
+  height:        auto;
+  padding:       5px;
   border-radius: var(--radius-icon);
 }

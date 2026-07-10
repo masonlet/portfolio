@@ -49,6 +49,7 @@
     --form-padding:      4px;
     --textarea-height:   7vh;
     --stack-gap:         0.8vh;
+    --tech-size:         15vw;
   }
 }
 
@@ -92,6 +93,8 @@
     --layout-padding:          2vh 4vw;
     --panels-direction:        row;
     --panel-reverse-direction: column;
+    --tech-size: 5vw;
+    --tech-gap:  1vw;
   }
 
   #email-icon {
