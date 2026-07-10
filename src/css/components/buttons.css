@@ -5,7 +5,7 @@
   font-family:   inherit;
   font-size:     var(--text-btn);
   background:    var(--bg-dark);
-  padding:       var(--space-2) var(--space-3);
+  padding:       var(--btn-padding);
   border:        var(--border-btn);
   border-radius: var(--radius-lg);
 }

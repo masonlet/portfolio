@@ -6,8 +6,35 @@
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --text-display:      9.5vw;
+    --text-lg:           3vw;
+    --text-sm:           2.75vmin;
+    --text-btn:          4vw;
+    --nav-icon-size:     12.5vw;
+    --nav-margin-top:    2vh;
+    --output-margin-top: 2vh;
+    --form-padding:      4px;
+    --textarea-height:   8vh;
+    --btn-padding:       1.5vw;
+    --stack-gap:         1vh;
+  }
+}
+
 /* Mobile Landscape */
 @media (max-height: 430px) and (max-width: 972px) {
+  :root {
+    --text-display:      7.5vw;
+    --text-lg:           2.5vw;
+    --text-sm:           2.25vmin;
+    --text-btn:          3.5vmin;
+    --btn-padding:       1vmin;
+    --nav-icon-size:     8vw;
+    --nav-margin-top:    2vh;
+    --output-margin-top: 2vh;
+  }
+
   /* Images */
   #email-icon {
     display: inline-block;
