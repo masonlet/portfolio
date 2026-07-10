@@ -1,9 +1,80 @@
+/* =====     Page shells     ===== */
+.layout-single,
+.layout-double {
+  width:          100%;
+  height:         100dvh;
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  padding:        var(--layout-padding);
+  gap:            var(--layout-gap);
+}
+
+/* =====     Header     ===== */
+header {
+  width:           100%;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  flex-wrap:       nowrap;
+  gap:             var(--header-gap);
+}
+
+header h1 {
+  font-size:      var(--text-display);
+  line-height:    1;
+  letter-spacing: var(--letter-spacing-lg);
+  white-space:    nowrap;
+}
+
+header p {
+  font-size:  var(--subtitle-size);
+  margin-top: var(--space-2);
+}
+
+header p .btn {
+  font-size: var(--text-sm);
+  padding:   var(--space-1) var(--space-3);
+}
+
 #header-nav {
   display:     flex;
   align-items: center;
   gap:         var(--space-2);
 }
 
+/* =====     Layouts     ===== */
+/*   ===       Single layout       === */
+.panel-single {
+  width:           100%;
+  flex:            1;
+  min-height:      0;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+}
+
+/*   ===       Double layout       === */
+.panels-double {
+  width:          100%;
+  flex:           1;
+  min-height:     0;
+  display:        flex;
+  flex-direction: var(--panels-direction);
+  gap:            var(--panels-gap);
+}
+
+.panel-double {
+  flex:           1;
+  display:        flex;
+  flex-direction: var(--panel-direction);
+}
+
+.panel-double--reverse {
+  flex-direction: var(--panel-reverse-direction);
+}
+
+/* =====     Panel navigation     ===== */
 .panel-nav {
   display:         flex;
   justify-content: space-evenly;
@@ -12,16 +83,7 @@
   column-gap:      var(--nav-gap);
 }
 
-/* Text Alignment */
-.panel-content a {
-  text-align: center;
-}
-
-#first-output {
-  text-align: left;
-}
-
-/* Content Area */
+/* =====     Panel content     ===== */
 #first-output,
 .panel-content {
   width: 100%;
@@ -33,29 +95,12 @@
   justify-content: space-evenly;
 }
 
-header {
-  width:           100%;
-  display:         flex;
-  justify-content: space-between;
-  align-items:     flex-start;
-  flex-wrap:       wrap;
-  gap:             var(--space-3-5);
+.panel-content a {
+  text-align: center;
 }
 
-header h1 {
-  font-size:      var(--text-display);
-  line-height:    1;
-  letter-spacing: var(--letter-spacing-lg);
-}
-
-header p {
-  font-size:  var(--text-lg);
-  margin-top: var(--space-2);
-}
-
-header p .btn {
-  font-size: var(--text-base);
-  padding:   var(--space-1) var(--space-3);
+#first-output {
+  text-align: left;
 }
 
 #first-output,
@@ -66,6 +111,7 @@ header p .btn {
   font-size: var(--text-sm);
 }
 
+/* Content Area */
 #skills-div {
   text-align:     center;
   display:        flex;
@@ -83,6 +129,7 @@ header p .btn {
   gap: var(--tech-gap);
 }
 
+/* ===== Framed content ===== */
 #resume-display,
 #projects-grid,
 #project-details {
@@ -91,87 +138,4 @@ header p .btn {
   border:        var(--border-thin);
   border-radius: var(--radius-md);
   background:    var(--bg-light);
-}
-
-/* Page Layouts */
-.layout-single,
-.layout-double {
-  width:          100%;
-  height:         100dvh;
-  display:        flex;
-  flex-direction: column;
-  align-items:    center;
-  padding:        var(--space-3-5) var(--space-3);
-  gap:            var(--space-2);
-}
-
-/* Single Layout */
-.panel-single {
-  width:           100%;
-  flex:            1;
-  min-height:      0;
-  display:         flex;
-  justify-content: center;
-  align-items:     center;
-}
-
-/* Double Layout */
-.panels-double {
-  width:          100%;
-  flex:           1;
-  min-height:     0;
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--space-3-5);
-}
-
-.panel-double {
-  flex:           1;
-  display:        flex;
-  flex-direction: column;
-}
-
-.panel-double--reverse {
-  flex-direction: column-reverse;
-}
-
-/* Desktop */
-@media (min-width: 768px){
-  .panel-double--reverse {
-    flex-direction: column;
-  }
-
-  .layout-single,
-  .layout-double {
-    padding: 10vh 10vw;
-  }
-
-  .layout-single {
-    gap:             var(--space-4);
-    flex-direction:  row;
-    align-items:     flex-start;
-    justify-content: space-evenly;
-  }
-  
-  .layout-single header {
-    width: 25%;
-  }
-
-  .panel-single {
-    width:  60%;
-    height: 100%;
-  }
-
-  .panels-double {
-    flex-direction: row;
-    gap:            10vw;
-  }
-
-  header p .btn {
-    border:        none;
-    background:    none;
-    font-size:     inherit;
-    padding:       0 var(--space-1);
-    border-radius: var(--radius-sm);
-  }
 }

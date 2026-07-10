@@ -1,52 +1,139 @@
-/* Mobile */
-@media (max-width: 972px) {
-  /* Image */
-  #email-icon {
-    display: none;
+/* Desktop */
+@media (min-width: 768px) {
+  :root {
+    --subtitle-size:           var(--text-lg);
+    --layout-padding:          clamp(1rem, 6vh, 10vh) 10vw;
+    --panels-gap:              10vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+  }
+
+  /* Single layout goes side-by-side (projects/resume) */
+  .layout-single {
+    gap:             var(--space-4);
+    flex-direction:  row;
+    align-items:     flex-start;
+    justify-content: space-evenly;
+  }
+
+  .layout-single header {
+    width: 25%;
+  }
+
+  .panel-single {
+    width:  60%;
+    height: 100%;
+  }
+
+  /* Inline text button in header subtitle */
+  header p .btn {
+    border:        none;
+    background:    none;
+    font-size:     inherit;
+    padding:       0 var(--space-1);
+    border-radius: var(--radius-sm);
   }
 }
 
+/* Mobile Small */
 @media (max-width: 480px) {
   :root {
     --text-display:      9.5vw;
     --text-lg:           3vw;
     --text-sm:           2.75vmin;
     --text-btn:          4vw;
+    --btn-padding:       1.5vw;
     --nav-icon-size:     12.5vw;
     --nav-margin-top:    2vh;
     --output-margin-top: 2vh;
     --form-padding:      4px;
-    --textarea-height:   8vh;
-    --btn-padding:       1.5vw;
-    --stack-gap:         1vh;
+    --textarea-height:   7vh;
+    --stack-gap:         0.8vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 972px) {
+  #email-icon {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+  :root {
+    --text-display:      9.5vmin;
+    --text-lg:           3vmin;
+    --text-sm:           2.1vmin;
+    --text-btn:          3.5vmin;
+    --btn-padding:       1vmin;
+    --nav-icon-size:     9vmin;
+    --nav-margin-top:    1vh;
+    --output-margin-top: 1vh;
+    --form-padding:      4px;
+    --textarea-height:   6vh;
+    --stack-gap:         0.8vh;
   }
 }
 
 /* Mobile Landscape */
-@media (max-height: 430px) and (max-width: 972px) {
+@media (max-height: 430px) and (min-width: 360px) and (max-width: 972px) {
   :root {
-    --text-display:      7.5vw;
-    --text-lg:           2.5vw;
-    --text-sm:           2.25vmin;
-    --text-btn:          3.5vmin;
-    --btn-padding:       1vmin;
-    --nav-icon-size:     8vw;
-    --nav-margin-top:    2vh;
-    --output-margin-top: 2vh;
+    --text-display:            7.5vw;
+    --text-lg:                 2.5vw;
+    --text-sm:                 2vmin;
+    --text-btn:                3.5vmin;
+    --btn-padding:             1vmin;
+    --nav-icon-size:           8vw;
+    --nav-margin-top:          1vh;
+    --output-margin-top:       1vh;
+    --textarea-height:         6vh;
+    --stack-gap:               1vh;
+    --layout-padding:          2vh 4vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
   }
 
-  /* Images */
   #email-icon {
     display: inline-block;
   }
+}
 
-  /* Layout */
-  .panels-double {
-    flex-direction: row;
+/* Short viewport, panels side by side */
+@media (min-width: 481px) and (max-width: 972px) and (max-height: 620px) {
+  :root {
+    --layout-padding:          2vh 4vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
   }
+}
 
-  .panel-double,
-  .panel-double--reverse {
-    flex-direction: column;
+/* Short viewport contacts form and links side by side */
+@media (min-width: 481px) and (max-width: 767px) and (max-height: 750px) {
+  #contact-page {
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+  }
+}
+
+/* Compact form on tiny viewports */
+@media (max-width: 549px) and (max-height: 549px) {
+  :root {
+    --textarea-height:   4vh;
+    --form-padding:      2px;
+    --btn-padding:       0.8vmin;
+    --nav-margin-top:    0.5vh;
+    --output-margin-top: 0.5vh;
+    --stack-gap:         0.5vh;
+  }
+}
+
+/* Extremely compact */
+@media (max-width: 320px) {
+  :root {
+    --text-display:  8vw;
+    --nav-icon-size: 10vw;
+    --nav-gap:       1vw;
+    --header-gap:    2vw;
   }
 }

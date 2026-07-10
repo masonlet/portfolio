@@ -4,7 +4,11 @@ textarea {
 }
 
 .email-input {
-  margin: 1vh 0;
+  margin: var(--input-margin);
+}
+
+label {
+  font-size: var(--text-sm);
 }
 
 input, 
