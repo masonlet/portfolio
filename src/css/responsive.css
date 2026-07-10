@@ -2,18 +2,21 @@
 @media (min-width: 768px) {
   :root {
     --subtitle-size:           var(--text-lg);
-    --layout-padding:          clamp(1rem, 6vh, 10vh) 10vw;
+    --layout-padding-y: clamp(1rem, 6vh, 10vh);
+    --layout-padding:   var(--layout-padding-y) 10vw;
     --panels-gap:              10vw;
+    --single-gap:              5vw;
     --panels-direction:        row;
     --panel-reverse-direction: column;
   }
 
   /* Single layout goes side-by-side (projects/resume) */
   .layout-single {
-    gap:             var(--space-4);
+    gap:             var(--single-gap);
     flex-direction:  row;
     align-items:     flex-start;
     justify-content: space-evenly;
+    padding-right: var(--layout-padding-y);
   }
 
   .layout-single header {

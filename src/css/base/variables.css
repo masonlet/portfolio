@@ -55,12 +55,14 @@
   --fade-duration:         0.3s;
 
   /* =====     Layout     ===== */
-  --layout-padding:         var(--space-3-5) var(--space-3);
-  --layout-gap:             var(--space-2);
-  --panels-gap:             var(--space-3-5);
-  --header-gap:             var(--space-3-5);
-  --panels-direction:       column;
-  --panel-direction:        column;
+  --layout-padding-y:        var(--space-3-5);
+  --layout-padding:          var(--layout-padding-y) var(--space-3);
+  --layout-gap:              var(--space-2);
+  --panels-gap:              var(--space-3-5);
+  --header-gap:              var(--space-3-5);
+  --single-gap:              var(--space-4);
+  --panels-direction:        column;
+  --panel-direction:         column;
   --panel-reverse-direction: column-reverse;
 
   /* =====     Components     ===== */
