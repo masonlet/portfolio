@@ -11,17 +11,16 @@ label {
   font-size: var(--text-sm);
 }
 
-input, 
+input,
 textarea {
   border:     var(--border-thin);
   background: var(--bg-light);
 }
 
-.email-input, 
+.email-input,
 textarea {
-  color:      var(--text-primary);
-  background: var(--bg-light);
-  width:      100%;
+  color: var(--text-primary);
+  width: 100%;
 }
 
 input,
@@ -32,11 +31,10 @@ textarea,
 }
 
 /* Typography */
-#first-output, 
-#second-output, 
-#first-output-div input, 
-#first-output-div textarea, 
-#skills-div, 
+#first-output,
+.panel-content input,
+.panel-content textarea,
+#skills-div,
 .email-submit {
   font-family: Arial, Helvetica, sans-serif;
 }

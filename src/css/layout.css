@@ -104,14 +104,12 @@ header p .btn {
 }
 
 #first-output,
-#second-output,
 .panel-content input,
 .panel-content textarea,
 #skills-div {
   font-size: var(--text-sm);
 }
 
-/* Content Area */
 #skills-div {
   text-align:     center;
   display:        flex;

@@ -38,6 +38,6 @@
 #skills-div img {
   width:         var(--tech-size);
   height:        auto;
-  padding:       5px;
+  padding:       var(--skill-icon-padding);
   border-radius: var(--radius-icon);
 }

@@ -90,6 +90,7 @@
   /*   ===       Skill Icons        == */
   --tech-size: clamp(1.5rem, min(6vw, 12vh), 6rem);
   --tech-gap:  clamp(0.5rem, 2vw, 1.5rem);
+  --skill-icon-padding: 5px;
 
   /*   ===       Embed        == */
   --embed-height: 60vh;
