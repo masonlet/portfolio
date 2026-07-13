@@ -1,3 +1,16 @@
+
+input,
+textarea {
+  width:   100%;
+  padding: var(--form-padding);
+  border:     var(--border-thin);
+  background: var(--bg-light);
+}
+
+input[type="submit"] {
+  padding: var(--form-padding);
+}
+
 textarea {
   text-align: left;
   height: var(--textarea-height);
@@ -11,30 +24,10 @@ label {
   font-size: var(--text-sm);
 }
 
-input,
-textarea {
-  border:     var(--border-thin);
-  background: var(--bg-light);
-}
-
-.email-input,
-textarea {
-  color: var(--text-primary);
-  width: 100%;
-}
-
-input,
-textarea,
-.email-submit {
-  width:   100%;
-  padding: var(--form-padding);
-}
-
 /* Typography */
 #first-output,
 .panel-content input,
 .panel-content textarea,
-#skills-div,
-.email-submit {
+#skills-div {
   font-family: Arial, Helvetica, sans-serif;
 }

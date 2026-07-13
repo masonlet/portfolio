@@ -46,8 +46,7 @@ export async function loadReadme(
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const html = await response.text();
-    container.classList.remove("loading");
-    container.innerHTML = `<div class="readme-content">${html}</div>`;
+    container.innerHTML = html;
   } catch (e: unknown) {
     if (e instanceof Error && e.name === "AbortError") return;
     console.error("README fetch failed:", e);

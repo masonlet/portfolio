@@ -64,14 +64,14 @@ function createProjectCard(key: ProjectKey, data: Project): string {
 }
 function createFolderCard(key: string, group: ProjectGroup): string {
   return `
-    <div class="project-card folder-card hover-cursor hover-bounce hover-bg" data-group="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-group="${key}">
       <h4>${group.title}</h4>
       <img src="${group.preview.src}" width="${group.preview.w}" height="${group.preview.h}" alt="${group.title}" loading="lazy">
     </div>
   `;
 }
 function createBackCard(): string {
-  return `<div class="project-card back-card hover-cursor hover-bounce hover-bg" data-back="true"><h4>← Back</h4></div>`;
+  return `<div class="project-card hover-cursor hover-bounce hover-bg" data-back="true"><h4>← Back</h4></div>`;
 }
 
 export function populateGrid(grid: HTMLElement): void {
@@ -116,11 +116,11 @@ export function showProjectDetails(
       <div id="project-buttons">
         <button class="btn hover-bg hover-cursor" data-action="back">← Back to Projects</button>
         ${playButton}
-        <a href="${data.github}" target="_blank" id="github-link">
+        <a href="${data.github}" target="_blank">
           <button class="btn hover-bg hover-cursor">View on GitHub →</button>
         </a>
       </div>
-      <div id="readme-container" class="loading">
+      <div id="readme-container">
         <p>Loading README...</p>
       </div>
       <div id="embed-container" class="hidden"></div>
