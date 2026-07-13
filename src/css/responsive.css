@@ -8,6 +8,7 @@
     --single-gap:              5vw;
     --panels-direction:        row;
     --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
   }
 
   /* Single layout goes side-by-side (projects/resume) */
@@ -96,6 +97,7 @@
     --layout-padding:          2vh 4vw;
     --panels-direction:        row;
     --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
     --tech-size: 5vw;
     --tech-gap:  1vw;
   }
@@ -111,24 +113,27 @@
     --layout-padding:          2vh 4vw;
     --panels-direction:        row;
     --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
   }
 }
 
 /* Short viewport contacts form and links side by side */
 @media (481px <= width < 768px) and (height <= 800px) {
   #contact-page {
-    --panels-direction:        row;
-    --panel-reverse-direction: column;
     --textarea-height:         5vh;
     --stack-gap:               0.5vh;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
   }
 }
 
 /* Narrow-short contacts side by side */
 @media (width < 481px) and (height < 700px) {
   #contact-page {
-    --panels-direction: row;
+    --panels-direction:        row;
     --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
   }
 }
 

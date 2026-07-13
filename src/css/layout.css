@@ -71,7 +71,8 @@ header p .btn {
 }
 
 .panel-double--reverse {
-  flex-direction: var(--panel-reverse-direction);
+  flex-direction:  var(--panel-reverse-direction);
+  justify-content: var(--panel-reverse-justify);
 }
 
 /* =====     Panel navigation     ===== */

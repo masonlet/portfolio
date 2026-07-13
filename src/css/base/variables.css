@@ -64,6 +64,7 @@
   --panels-direction:        column;
   --panel-direction:         column;
   --panel-reverse-direction: column-reverse;
+  --panel-reverse-justify:   center;
 
   /* =====     Components     ===== */
   /*   ===       Navigation        == */
