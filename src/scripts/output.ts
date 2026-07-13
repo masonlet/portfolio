@@ -23,16 +23,15 @@ type Content     = Record<SideKey, SideContent>;
 // Content
 const content: Content = {
   first: {
-    about: `Welcome to my portfolio.<br><br>
-            I am deeply invested in learning, problem-solving and exploring the fascinating world of programming.
-            While I have not yet committed to a specific specialization, my current focus is broadening my knowledge and skills across as many areas as possible.
-            I hope you enjoy learning about my projects and getting to know me.<br><br>
-            Throughout my time at Fanshawe I have completed multiple projects that have spanned across various programs and languages,
-            giving me a good hands-on experience in different areas of computer science.
-            These projects have allowed me to translate theoretical knowledge into practical solutions for real-world problems,
-            ranging from creating CRUD applications to developing mathematical expression evaluators.<br><br>
-            Throughout this process, I have gained valuable experience with tools such as Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS), 
-            and have strengthened my understanding of fundamental concepts in debugging and problem solving.`
+    about: `Welcome to my portfolio. I'm a software developer working across C++ engine systems, web tooling,
+            and full-stack applications, currently studying Computer Programming & Analysis at Fanshawe College.<br><br>
+            I'm building some open source projects:
+            <b>gh-top-languages</b>, TypeScript GitHub language chart tooling for READMEs and websites.
+            <b>star-setup</b>, a Rust CLI to clone, configure, and wire single or multi-repo ecosystems.
+            <b>contact-api</b>, a modular TypeScript contact form ecosystem.
+            <b>starweb-libs</b>, a TypeScript 2D web engine powering my browser games.
+            <b>starlet-libs</b>, a modular C++20/OpenGL engine ecosystem.<br><br>
+            I'm open to job offers, project ideas, and collaborations.`
   },
   second: {}
 };
@@ -131,9 +130,7 @@ async function preloadImages(images: Record<string, string>): Promise<void> {
 function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
-    if (element) element.style.backgroundColor = section === activeSection 
-      ? "rgba(0, 0, 0, 0.5)"
-      : "rgba(0, 0, 0, 0.25)";
+    if (element) element.classList.toggle("btn-active", section === activeSection);
   }); 
 }
 

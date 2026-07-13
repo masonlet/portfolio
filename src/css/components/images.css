@@ -1,25 +1,43 @@
-#header-nav img, 
-#first-output-div img,
-#second-output-div img {
-  background: var(--light-bg);
+.nav-icon {
+  display:       block;
+  width:         var(--nav-icon-size);
+  height:        var(--nav-icon-size);
+  padding:       var(--nav-icon-padding);
+  background:    var(--bg-light);
+  border:        var(--border-thin);
+  border-radius: var(--radius-icon);
+}
+
+.project-card img {
+  max-height:    var(--card-img-max-height);
+  margin-bottom: var(--space-2-5);
+}
+
+#project-preview {
+  max-height:    var(--preview-max-height);
+  margin-bottom: var(--space-3);
 }
 
 .project-card img,
 #project-preview {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  width:             100%;
+  object-fit:        cover;
+  border-radius:     var(--radius-md);
   -webkit-user-drag: none;
-  user-select: none;
+  user-select:       none;
 }
 
-.project-card img {
-  max-height: 240px;
-  margin-bottom: 0.75rem;
+.panel-content > a img {
+  width:         var(--preview-icon-size);
+  height:        var(--preview-icon-size);
+  padding:       var(--space-1);
+  border:        var(--border-thick);
+  border-radius: var(--radius-icon);
 }
 
-#project-preview {
-  max-height: 250px;
-  margin-bottom: 1rem;
+#skills-div img {
+  width:         var(--tech-size);
+  height:        auto;
+  padding:       var(--skill-icon-padding);
+  border-radius: var(--radius-icon);
 }
-

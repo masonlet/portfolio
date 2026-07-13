@@ -45,7 +45,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
     .map((lang): string => {
       const imagePath = IMAGE_PATHS[lang];
       return imagePath 
-        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon" loading="lazy">`
+        ? `<img src="${imagePath}" alt="${lang}" class="tech-icon hover-bounce" loading="lazy">`
         : '';
     })
     .filter((s): s is string => s.length > 0)
@@ -56,7 +56,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
 
 function createProjectCard(key: ProjectKey, data: Project): string {
   return `
-    <div class="project-card" data-project="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-project="${key}">
       <h4>${data.title}</h4>
       <img src="${data.preview.src}" width="${data.preview.w}" height="${data.preview.h}" alt="${data.title} Project Screenshot" loading="lazy">
     </div>
@@ -64,14 +64,14 @@ function createProjectCard(key: ProjectKey, data: Project): string {
 }
 function createFolderCard(key: string, group: ProjectGroup): string {
   return `
-    <div class="project-card folder-card" data-group="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-group="${key}">
       <h4>${group.title}</h4>
       <img src="${group.preview.src}" width="${group.preview.w}" height="${group.preview.h}" alt="${group.title}" loading="lazy">
     </div>
   `;
 }
 function createBackCard(): string {
-  return `<div class="project-card back-card" data-back="true"><h4>← Back</h4></div>`;
+  return `<div class="project-card hover-cursor hover-bounce hover-bg" data-back="true"><h4>← Back</h4></div>`;
 }
 
 export function populateGrid(grid: HTMLElement): void {
@@ -105,20 +105,22 @@ export function showProjectDetails(
   fadeTransition(grid, details, "block", () => {
     const label = data.embedLabel ?? "Play";
     const playButton = data.embedUrl
-      ? `<button id="play-button" data-embed="${data.embedUrl}" data-label="${label}">${label}!</button>`
+      ? `<button class="btn hover-bg hover-cursor" data-action="play" data-embed="${data.embedUrl}" data-label="${label}">
+          ${label}!
+        </button>`
       : '';
 
     details.innerHTML = `
       <h3>${data.title}</h3>
       ${createTechIcons(data.tech)}
       <div id="project-buttons">
-        <button id="back-to-grid">← Back to Projects</button>
+        <button class="btn hover-bg hover-cursor" data-action="back">← Back to Projects</button>
         ${playButton}
-        <a href="${data.github}" target="_blank" id="github-link">
-          <button id="github-button">View on GitHub →</button>
+        <a href="${data.github}" target="_blank">
+          <button class="btn hover-bg hover-cursor">View on GitHub →</button>
         </a>
       </div>
-      <div id="readme-container" class="loading">
+      <div id="readme-container">
         <p>Loading README...</p>
       </div>
       <div id="embed-container" class="hidden"></div>
@@ -133,7 +135,7 @@ export function showProjectDetails(
 export function togglePlayMode(details: HTMLElement): void {
   const readme = details.querySelector<HTMLElement>      ("#readme-container");
   const embed  = details.querySelector<HTMLElement>      ("#embed-container");
-  const button = details.querySelector<HTMLButtonElement>("#play-button");
+  const button = details.querySelector<HTMLButtonElement>(`[data-action="play"]`);
   if (!readme || !embed || !button) return;
 
   const tech  = details.querySelector<HTMLElement>(".project-tech");

@@ -1,0 +1,29 @@
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stack {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--stack-gap);
+  padding-top:    var(--stack-gap);
+}
+
+/* Hover */
+.hover-cursor { cursor: pointer; }
+
+.hover-bg { transition: background var(--hover-bg-duration) ease; }
+.hover-bg:hover { background: var(--bg-hover); }
+
+.hover-bounce { transition: scale var(--hover-bounce-duration) ease; }
+.hover-bounce:hover { scale: 1.05; }
+
+.hover-bounce.hover-bg {
+  transition: scale var(--hover-bounce-duration) ease, background var(--hover-bg-duration) ease;
+}

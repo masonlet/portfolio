@@ -1,0 +1,170 @@
+/* Desktop */
+@media (width >= 768px) {
+  :root {
+    --subtitle-size:           var(--text-lg);
+    --layout-padding-y: clamp(1rem, 6vh, 10vh);
+    --layout-padding:   var(--layout-padding-y) 10vw;
+    --panels-gap:              10vw;
+    --single-gap:              5vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
+  }
+
+  /* Single layout goes side-by-side (projects/resume) */
+  .layout-single {
+    gap:             var(--single-gap);
+    flex-direction:  row;
+    align-items:     flex-start;
+    justify-content: space-evenly;
+    padding-right: var(--layout-padding-y);
+  }
+
+  .layout-single header {
+    width: 25%;
+  }
+
+  .panel-single {
+    width:  60%;
+    height: 100%;
+  }
+
+  /* Inline text button in header subtitle */
+  header p .btn {
+    border:        none;
+    background:    none;
+    font-size:     inherit;
+    padding:       0 var(--space-1);
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Mobile Small */
+@media (width < 481px) {
+  :root {
+    --text-display:      9.5vw;
+    --text-lg:           3vw;
+    --text-sm:           2.75vmin;
+    --text-btn:          4vw;
+    --btn-padding:       1.5vw;
+    --nav-icon-size:     12.5vw;
+    --nav-margin-top:    2vh;
+    --output-margin-top: 2vh;
+    --form-padding:      4px;
+    --textarea-height:   7vh;
+    --stack-gap:         0.8vh;
+    --tech-size:         15vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 972px) {
+  #email-icon {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (481px <= width < 768px) {
+  :root {
+    --text-display:      9.5vmin;
+    --text-lg:           3vmin;
+    --text-sm:           2.1vmin;
+    --text-btn:          3.5vmin;
+    --btn-padding:       1vmin;
+    --nav-icon-size:     9vmin;
+    --nav-margin-top:    1vh;
+    --output-margin-top: 1vh;
+    --form-padding:      4px;
+    --textarea-height:   6vh;
+    --stack-gap:         0.8vh;
+  }
+}
+
+/* Mobile Landscape */
+@media (height <= 430px) and (360px <= width <= 972px) {
+  :root {
+    --text-display:            7.5vw;
+    --text-lg:                 2.5vw;
+    --text-sm:                 2vmin;
+    --text-btn:                3.5vmin;
+    --btn-padding:             1vmin;
+    --nav-icon-size:           8vw;
+    --nav-margin-top:          1vh;
+    --output-margin-top:       1vh;
+    --textarea-height:         6vh;
+    --stack-gap:               1vh;
+    --layout-padding:          2vh 4vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
+    --tech-size: 5vw;
+    --tech-gap:  1vw;
+  }
+
+  #email-icon {
+    display: inline-block;
+  }
+}
+
+/* Short viewport, panels side by side */
+@media (481px <= width <= 972px) and (height <= 620px) {
+  :root {
+    --layout-padding:          2vh 4vw;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
+  }
+}
+
+/* Short viewport contacts form and links side by side */
+@media (481px <= width < 768px) and (height <= 800px) {
+  #contact-page {
+    --textarea-height:         5vh;
+    --stack-gap:               0.5vh;
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
+  }
+}
+
+/* Narrow-short contacts side by side */
+@media (width < 481px) and (height < 700px) {
+  #contact-page {
+    --panels-direction:        row;
+    --panel-reverse-direction: column;
+    --panel-reverse-justify:   flex-start;
+  }
+}
+
+/* Compact form on tiny viewports */
+@media (width <= 549px) and (height <= 549px) {
+  :root {
+    --textarea-height:   4vh;
+    --form-padding:      2px;
+    --btn-padding:       0.8vmin;
+    --nav-margin-top:    0.5vh;
+    --output-margin-top: 0.5vh;
+    --stack-gap:         0.5vh;
+  }
+}
+
+/* Short desktop windows */
+@media (width >= 768px) and (height <= 460px) {
+  :root {
+    --textarea-height: 4vh;
+    --nav-margin-top: 0.5vh;
+    --output-margin-top: 0.5vh;
+    --layout-padding-y: 1vh;
+  }
+}
+
+/* Extremely compact */
+@media (width <= 320px) {
+  :root {
+    --text-display:  8vw;
+    --nav-icon-size: 10vw;
+    --nav-gap:       1vw;
+    --header-gap:    2vw;
+  }
+}

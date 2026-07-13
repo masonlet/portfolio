@@ -1,35 +1,20 @@
-#first-nav a, 
-#second-nav a, 
-#link-buttons a, 
-#email-button {
-  width: 100%;
-  background: var(--dark-bg);
-  text-align: center;
-  display: inline-block;
+.btn {
+  display:       inline-block;
+  text-align:    center;
+  font-weight:   normal;
+  font-family:   inherit;
+  font-size:     var(--text-btn);
+  background:    var(--bg-dark);
+  padding:       var(--btn-padding);
+  border:        var(--border-btn);
+  border-radius: var(--radius-lg);
 }
 
-.email-submit {
-  background: var(--dark-bg);
+.btn-full {
+  width:  100%;
+  display: block;
 }
 
-#back-to-grid,
-#github-button,
-#play-button {
-  background: var(--dark-bg);
-  border: 2px solid var(--colour-primary);
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 1.5rem;
-  align-self: flex-start;
-}
-
-#back-to-grid:hover, 
-#github-button:hover,
-#play-button:hover {
-  transform: scale(1.05);
-  background: var(--hover-bg) !important;
+.btn-active {
+  background: var(--bg-hover);
 }

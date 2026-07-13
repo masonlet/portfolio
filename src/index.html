@@ -15,60 +15,61 @@
   <script type="module" src="scripts/output.ts"></script>
 </head> 
 <body>
-  <main id="home-page">
+  <main id="home-page" class="layout-double">
     <header>
-      <h1>Mason L'Etoile</h1>
-      <p>Computer Programming and Analysis - Fanshawe College</p>
-      
+      <div>
+        <h1>Mason L'Etoile</h1>
+        <p>Computer Programming and Analysis - Fanshawe College</p>
+      </div>
       <nav id="header-nav" aria-label="Social Media Links">
         <a href="mailto:contact@masonletoile.ca" id="email-icon" aria-label="Email">
-          <img class="hover-colour" src="/img/email.png" alt="Email">
+          <img class="nav-icon hover-cursor hover-bg" src="/img/email.png" alt="Email">
         </a>
         <a href="https://www.linkedin.com/in/masonletoile/" target="_blank" aria-label="LinkedIn Profile">
-          <img class="hover-colour" src="/img/linkedin.png" alt="LinkedIn">
+          <img class="nav-icon hover-cursor hover-bg" src="/img/linkedin.png" alt="LinkedIn">
         </a>
         <a href="https://github.com/Masonlet" target="_blank" aria-label="GitHub Profile">
-          <img class="hover-colour" src="/img/github.png" alt="Github">
+          <img class="nav-icon hover-cursor hover-bg" src="/img/github.png" alt="Github">
         </a>
-      </nav>  
+      </nav>
     </header>
 
-    <div id="sections">
-      <section id="first-section">
-        <nav id="first-nav" aria-label="Main Navigation">
-          <a id="about" class="hover-colour" href="#about" aria-label="About Me">
+    <div class="panels-double">
+      <section class="panel-double">
+        <nav class="panel-nav" aria-label="Main Navigation">
+          <a id="about" class="btn btn-full hover-cursor hover-bg" href="#about" aria-label="About Me">
             About
           </a>
-          <a id="skills" class="hover-colour" href="#skills" aria-label="My Skills">
+          <a id="skills" class="btn btn-full hover-cursor hover-bg" href="#skills" aria-label="My Skills">
             Skills
           </a>
-          <a id="contacts" class="hover-colour" href="contacts.html" aria-label="Contact Page">
+          <a id="contacts" class="btn btn-full hover-cursor hover-bg" href="contacts.html" aria-label="Contact Page">
             Contacts
           </a>
         </nav>
-        <div id="first-output-div">
+        <div class="panel-content">
           <p id="first-output"></p> 
         </div>
       </section>
-      <section id="second-section">
-        <nav id="second-nav" aria-label="Projects Navigation">
-          <a id="projects" class="hover-colour" href="projects.html">Click for more Projects</a>
+      <section class="panel-double panel-double--reverse">
+        <nav class="panel-nav" aria-label="Projects Navigation">
+          <a class="btn btn-full hover-cursor hover-bg" href="projects.html">Click for more Projects</a>
         </nav>
-        <div id="second-output-div">
-          <a href="https://github.com/gh-top-languages" class="hover-colour" target="_blank">
+        <div class="panel-content">
+          <a href="https://github.com/gh-top-languages" class="btn-full hover-cursor hover-bg" target="_blank">
             <img src="/img/projects/gh-top-languages/api_prev.webp" alt="GitHub Top Languages Project Screenshot">
             <p>Top Languages</p>
           </a>
-          <a href="https://github.com/star-setup" class="hover-colour" target="_blank">
-            <img src="/img/projects/star-setup/star-setup_prev.webp" alt="Starlet Setup Project Screenshot">
+          <a href="https://github.com/star-setup/core" class="btn-full hover-cursor hover-bg" target="_blank">
+            <img src="/img/projects/star-setup/star-setup_prev.webp" alt="Star Setup Project Screenshot">
             <p>Star Setup</p>
           </a>
-          <a href="https://github.com/starlet-libs" class="hover-colour" target="_blank">
+          <a href="https://github.com/starlet-libs" class="btn-full hover-cursor hover-bg" target="_blank">
             <img src="/img/projects/starlet-libs/opengl_prev.webp" alt="OpenGL Engine Project Screenshot">
             <p>Starlet Libs</p>
           </a>
-          <a href="https://github.com/starweb-libs" class="hover-colour" target="_blank">
-            <img src="/img/projects/starweb-libs/engine_prev.webp" alt="Tasktracker Project Screenshot">
+          <a href="https://github.com/starweb-libs" class="btn-full hover-cursor hover-bg" target="_blank">
+            <img src="/img/projects/starweb-libs/engine_prev.webp" alt="Starweb Engine Preview">
             <p>Starweb Libs</p>
           </a>
         </div>

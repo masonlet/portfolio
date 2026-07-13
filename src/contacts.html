@@ -15,17 +15,19 @@
   <script type="module" src="scripts/contact.ts"></script>
 </head>
 <body>
-  <main id="contact-page">
+  <main id="contact-page" class="layout-double">
     <header>
-      <h1>Contact Me</h1>
-      <p><a href="index.html" class="hover-colour">Return to home page</a></p>
+      <div>
+        <h1>Contact Me</h1>
+        <p><a href="index.html" class="btn hover-cursor hover-bg">Return to home page</a></p>
+      </div>
     </header>
-    <div id="sections">
-      <section id="first-section">
-          <nav id="first-nav" aria-label="Contact Form Section">
-            <a>Email Form</a>
+    <div class="panels-double">
+      <section class="panel-double">
+          <nav class="panel-nav" aria-label="Contact Form Section">
+            <a class="btn btn-full">Email Form</a>
           </nav>
-          <div id="first-output-div">
+          <div class="panel-content">
             <form id="contact-form">
               <label for="email">Email Address</label>
               <input type="email" id="email" name="email" class="email-input" placeholder="Enter email address.." required>
@@ -36,26 +38,26 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" class="email-input" placeholder="Enter message.." required></textarea>
 
-              <input type="submit" value="Send Email" class="hover-colour email-submit">
+              <input type="submit" value="Send Email" class="btn hover-cursor hover-bg">
               <div id="form-status"></div>
             </form>
           </div>
       </section>
-      <section id="contact-section">
-        <nav id="second-nav" aria-label="Social Links Section">
-          <a>Links</a>
+      <section class="panel-double">
+        <nav class="panel-nav" aria-label="Social Links Section">
+          <a class="btn btn-full">Links</a>
         </nav>
-        <div id="link-buttons">
-          <a href="mailto:contact@masonletoile.ca" class="hover-colour" title="masonletoile@hotmail.com">
+        <div class="stack">
+          <a href="mailto:contact@masonletoile.ca" class="btn btn-full hover-cursor hover-bg" title="masonletoile@hotmail.com">
             Email
           </a>
-          <a href="https://www.linkedin.com/in/masonletoile/" class="hover-colour" target="_blank" title="https://www.linkedin.com/in/masonletoile/">
+          <a href="https://www.linkedin.com/in/masonletoile/" class="btn btn-full hover-cursor hover-bg" target="_blank" title="https://www.linkedin.com/in/masonletoile/">
             LinkedIn
           </a>
-          <a href="https://github.com/Masonlet" class="hover-colour" target="_blank" title="https://github.com/Masonlet">
+          <a href="https://github.com/Masonlet" class="btn btn-full hover-cursor hover-bg" target="_blank" title="https://github.com/Masonlet">
             GitHub
           </a>
-          <a href="resume.html" class="hover-colour" title="Click to view Resume">
+          <a href="resume.html" class="btn btn-full hover-cursor hover-bg" title="Click to view Resume">
             Resume
           </a>
         </div>
