@@ -3,6 +3,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 
 ![Vite](https://img.shields.io/badge/Vite-7-blue)
 ![Node](https://img.shields.io/badge/Node.js-22.12+-green)
+![CI](https://github.com/masonlet/portfolio/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ![Portfolio Screenshot](./images/portfolio.png)
