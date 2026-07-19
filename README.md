@@ -44,7 +44,7 @@ The portfolio frontend is static — contact form submission and README fetching
 git clone https://github.com/masonlet/portfolio.git
 cd portfolio
 
-# Install and start
+# Install dependencies
 npm install
 ```
 
