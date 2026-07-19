@@ -47,13 +47,19 @@ function initForm(): void {
     "Required status element not found"
   );
 
+  const submitBtn = form.querySelector(`input[type="submit"]`);
+  if (!(submitBtn instanceof HTMLInputElement)) throw new Error(
+    "Required submit button not found"
+  );
+
+  if (import.meta.env.DEV) {
+    submitBtn.disabled = true;
+    statusDiv.textContent = "Contact form is disabled in local development.";
+    return;
+  }
+
   form.addEventListener('submit', async (e: SubmitEvent) => {
     e.preventDefault();
-
-    const submitBtn = form.querySelector(`input[type="submit"]`);
-    if (!(submitBtn instanceof HTMLInputElement)) throw new Error(
-      "Required submit button not found"
-    );
 
     submitBtn.disabled = true;
     statusDiv.textContent = "Sending...";

@@ -29,6 +29,11 @@ export async function loadReadme(
   container: HTMLElement,
   data: Project
 ): Promise<void> {
+  if (import.meta.env.DEV) {
+    displayFallbackContent(container, data);
+    return;
+  }
+
   const parsed = parseGithubUrl(data.github);
   if (!parsed) {
     displayFallbackContent(container, data);
