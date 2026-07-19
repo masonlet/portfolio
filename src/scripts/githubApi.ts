@@ -1,4 +1,5 @@
-import { type Project } from "./projectData";
+import { API_AVAILABLE } from "./env";
+import { type Project  } from "./projectData";
 
 interface GithubParsedUrl {
   readonly owner: string;
@@ -29,6 +30,11 @@ export async function loadReadme(
   container: HTMLElement,
   data: Project
 ): Promise<void> {
+  if (!API_AVAILABLE) {
+    displayFallbackContent(container, data);
+    return;
+  }
+
   const parsed = parseGithubUrl(data.github);
   if (!parsed) {
     displayFallbackContent(container, data);

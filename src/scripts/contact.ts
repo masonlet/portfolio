@@ -1,3 +1,5 @@
+import { API_AVAILABLE } from "./env";
+
 interface ContactBody {
   subject: string;
   email:   string;
@@ -47,13 +49,19 @@ function initForm(): void {
     "Required status element not found"
   );
 
+  const submitBtn = form.querySelector(`input[type="submit"]`);
+  if (!(submitBtn instanceof HTMLInputElement)) throw new Error(
+    "Required submit button not found"
+  );
+
+  if (!API_AVAILABLE) {
+    submitBtn.disabled = true;
+    statusDiv.textContent = "Contact form is only active on the live site.";
+    return;
+  }
+
   form.addEventListener('submit', async (e: SubmitEvent) => {
     e.preventDefault();
-
-    const submitBtn = form.querySelector(`input[type="submit"]`);
-    if (!(submitBtn instanceof HTMLInputElement)) throw new Error(
-      "Required submit button not found"
-    );
 
     submitBtn.disabled = true;
     statusDiv.textContent = "Sending...";
