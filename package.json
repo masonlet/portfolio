@@ -21,6 +21,9 @@
     "static-site",
     "multi-page"
   ],
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
