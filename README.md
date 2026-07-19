@@ -27,10 +27,12 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 </p>
 
 ## Dependencies
-The portfolio frontend is static — contact form submission and README fetching are offloaded to dedicated microservices, keeping the frontend decoupled and independently deployable.
+The portfolio frontend is entirely static. Contact form submission and README fetching are offloaded to dedicated microservices, keeping the frontend decoupled and independently deployable.
 
 - [contact-api](https://github.com/masonlet/contact-api) — Contact form microservice
 - [readme-api](https://github.com/masonlet/readme-api) — GitHub README fetching microservice
+
+In production, `/api/*` routes are handled by an edge router that proxies to these services. In local development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
 
 ## Deployment & Configuration
 
