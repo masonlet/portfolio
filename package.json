@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "type": "module",
   "private": true,
+  "type": "module",
   "description": "Mason L'Etoile's portfolio website",
   "author": "Mason L'Etoile",
   "license": "MIT",
