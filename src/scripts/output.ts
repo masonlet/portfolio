@@ -23,15 +23,15 @@ type Content     = Record<SideKey, SideContent>;
 // Content
 const content: Content = {
   first: {
-    about: `Welcome to my portfolio. I'm a software developer working across C++ engine systems, web tooling,
-            and full-stack applications, currently studying Computer Programming & Analysis at Fanshawe College.<br><br>
-            I'm building some open source projects:
-            <b>gh-top-languages</b>, TypeScript GitHub language chart tooling for READMEs and websites.
-            <b>star-setup</b>, a Rust CLI to clone, configure, and wire single or multi-repo ecosystems.
-            <b>contact-api</b>, a modular TypeScript contact form ecosystem.
-            <b>starweb-libs</b>, a TypeScript 2D web engine powering my browser games.
-            <b>starlet-libs</b>, a modular C++20/OpenGL engine ecosystem.<br><br>
-            I'm open to job offers, project ideas, and collaborations.`
+    about: `Welcome to my portfolio. I'm a software developer currently working in TypeScript, C++, and Rust.<br><br>
+            I build small, composable libraries and wire them into ecosystems:
+            a Rust CLI for multi-repo development shipped on Homebrew, npm, and PyPI;
+            an SVG language chart API embedded in GitHub READMEs;
+            a modular contact form backend;
+            a 2D web engine powering my browser games;
+            and a C++/OpenGL engine behind personal labs and experiments.<br><br>
+            I'm finishing my Computer Programming & Analysis diploma and looking for
+            co-op or junior developer roles.`
   },
   second: {}
 };
