@@ -1,3 +1,5 @@
+import { API_AVAILABLE } from "./env";
+
 interface ContactBody {
   subject: string;
   email:   string;
@@ -52,9 +54,9 @@ function initForm(): void {
     "Required submit button not found"
   );
 
-  if (import.meta.env.DEV) {
+  if (!API_AVAILABLE) {
     submitBtn.disabled = true;
-    statusDiv.textContent = "Contact form is disabled in local development.";
+    statusDiv.textContent = "Contact form is only active on the live site.";
     return;
   }
 

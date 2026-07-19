@@ -32,7 +32,7 @@ The portfolio frontend is entirely static. Contact form submission and README fe
 - [contact-api](https://github.com/masonlet/contact-api) — Contact form microservice
 - [readme-api](https://github.com/masonlet/readme-api) — GitHub README fetching microservice
 
-In production, `/api/*` routes are handled by an edge router that proxies to these services. In local development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
+On the live site, `/api/*` routes are handled by an edge router that proxies to these services. In development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
 
 ## Deployment & Configuration
 
