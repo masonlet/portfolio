@@ -1,7 +1,7 @@
 # Portfolio
 Personal development portfolio showcasing my projects, skills, and contact information.
 
-![Vite](https://img.shields.io/badge/Vite-7.2.6-blue)
+![Vite](https://img.shields.io/badge/Vite-7-blue)
 ![Node](https://img.shields.io/badge/Node.js-22.12+-green)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
