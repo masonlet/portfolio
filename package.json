@@ -1,10 +1,29 @@
 {
   "name": "portfolio",
+  "private": true,
   "type": "module",
-  "version": "1.0.0",
   "description": "Mason L'Etoile's portfolio website",
   "author": "Mason L'Etoile",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masonlet/portfolio.git"
+  },
+  "homepage": "https://masonletoile.ca",
+  "bugs": {
+    "url": "https://github.com/masonlet/portfolio/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "typescript",
+    "vite",
+    "static-site",
+    "multi-page"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

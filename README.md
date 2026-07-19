@@ -1,7 +1,8 @@
 # Portfolio
 Personal development portfolio showcasing my projects, skills, and contact information.
 
-![Vite](https://img.shields.io/badge/Vite-7.2.6-blue)
+![Vite](https://img.shields.io/badge/Vite-7-blue)
+![Node](https://img.shields.io/badge/Node.js-22.12+-green)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ![Portfolio Screenshot](./images/portfolio.png)
@@ -34,9 +35,7 @@ The portfolio frontend is static — contact form submission and README fetching
 ## Deployment & Configuration
 
 ### Prerequisites
-
-- npm
-- Node.js 18+ (for local development and building only)
+- Node.js 22.12+ with npm (local development and building only)
 
 ### 1. Clone the Repository
 
@@ -45,7 +44,7 @@ The portfolio frontend is static — contact form submission and README fetching
 git clone https://github.com/masonlet/portfolio.git
 cd portfolio
 
-# Install and start
+# Install dependencies
 npm install
 ```
 
