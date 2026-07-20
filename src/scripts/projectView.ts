@@ -56,7 +56,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
 
 function createProjectCard(key: ProjectKey, data: Project): string {
   return `
-    <div class="project-card hover-cursor hover-bounce hover-bg" data-project="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-project="${key}" role="button" tabindex="0" aria-label="${data.title}">
       <h4>${data.title}</h4>
       <img src="${data.preview.src}" width="${data.preview.w}" height="${data.preview.h}" alt="${data.title} Project Screenshot" loading="lazy">
     </div>
@@ -64,14 +64,14 @@ function createProjectCard(key: ProjectKey, data: Project): string {
 }
 function createFolderCard(key: string, group: ProjectGroup): string {
   return `
-    <div class="project-card hover-cursor hover-bounce hover-bg" data-group="${key}">
+    <div class="project-card hover-cursor hover-bounce hover-bg" data-group="${key}" role="button" tabindex="0" aria-label="${group.title}">
       <h4>${group.title}</h4>
       <img src="${group.preview.src}" width="${group.preview.w}" height="${group.preview.h}" alt="${group.title}" loading="lazy">
     </div>
   `;
 }
 function createBackCard(): string {
-  return `<div class="project-card hover-cursor hover-bounce hover-bg" data-back="true"><h4>← Back</h4></div>`;
+  return `<div class="project-card hover-cursor hover-bounce hover-bg" data-back="true" role="button" tabindex="0" aria-label="Back to projects"><h4>← Back</h4></div>`;
 }
 
 export function populateGrid(grid: HTMLElement): void {
@@ -116,8 +116,8 @@ export function showProjectDetails(
       <div id="project-buttons">
         <button class="btn hover-bg hover-cursor" data-action="back">← Back to Projects</button>
         ${playButton}
-        <a href="${data.github}" target="_blank">
-          <button class="btn hover-bg hover-cursor">View on GitHub →</button>
+        <a href="${data.github}" target="_blank" rel="noopener noreferrer" class="btn hover-bg hover-cursor">
+          View on GitHub →
         </a>
       </div>
       <div id="readme-container">

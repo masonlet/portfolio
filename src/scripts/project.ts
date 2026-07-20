@@ -42,7 +42,15 @@ window.addEventListener("DOMContentLoaded", () => {
     else if (target.dataset["action"] === "play" || target.closest(`[data-action="play"]`))
       togglePlayMode(details);
   });
-  
+
+  grid.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = (e.target as HTMLElement).closest<HTMLElement>(".project-card");
+    if (!card) return;
+    e.preventDefault();
+    card.click();
+  });
+
   const { projectKey: initial, groupKey: initialGroup } = parseHash();
   if (initialGroup) { currentGroup = initialGroup; showGroupGrid(initialGroup, grid); }
   if (initial)      showProjectDetails(initial, currentGroup, grid, details);

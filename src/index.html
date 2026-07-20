@@ -6,20 +6,45 @@
 
   <title>Mason L'Etoile</title>
   <meta name="description" content="Mason L’Etoile — Computer Programming & Analysis student at Fanshawe College. Projects, skills, and contact information." />
-  
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mason L'Etoile">
   <meta property="og:title" content="Mason L'Etoile — Software Developer">
+  <meta property="og:locale" content="en_CA">
   <meta property="og:description" content="Computer Programming & Analysis student at Fanshawe College. Projects, skills, and contact information.">
   <meta property="og:url" content="https://masonletoile.ca/">
   <meta property="og:image" content="https://masonletoile.ca/img/projects/masonlet/portfolio.webp">
+  <meta property="og:image:width" content="3840">
+  <meta property="og:image:height" content="2160">
+  <meta property="og:image:alt" content="Screenshot of Mason L'Etoile's portfolio website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#004d4d">
 
-  <link rel="icon" type="image/png" href="/favicon.ico">
+  <link rel="canonical" href="https://masonletoile.ca/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <link rel="preload" href="/fonts/bebas-neue-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <script type="module" src="scripts/output.ts"></script>
+  <script type="application/ld+json"> {
+     "@context": "https://schema.org",
+     "@type": "Person",
+     "name": "Mason L'Etoile",
+     "url": "https://masonletoile.ca/",
+     "email": "contact@masonletoile.ca",
+     "jobTitle": "Software Developer",
+     "description": "Software developer building small, composable libraries and the ecosystems around them.",
+     "knowsAbout": ["TypeScript", "C++", "Rust", "Python"],
+     "alumniOf": {
+       "@type": "CollegeOrUniversity",
+       "name": "Fanshawe College"
+     },
+     "sameAs": [
+       "https://github.com/masonlet",
+       "https://www.linkedin.com/in/masonletoile/"
+     ]
+   }</script>
 </head> 
 <body>
   <main id="home-page" class="layout-double">
@@ -32,10 +57,10 @@
         <a href="mailto:contact@masonletoile.ca" id="email-icon" aria-label="Email">
           <img class="nav-icon hover-cursor hover-bg" src="/img/email.png" alt="Email">
         </a>
-        <a href="https://www.linkedin.com/in/masonletoile/" target="_blank" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/masonletoile/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img class="nav-icon hover-cursor hover-bg" src="/img/linkedin.png" alt="LinkedIn">
         </a>
-        <a href="https://github.com/Masonlet" target="_blank" aria-label="GitHub Profile">
+        <a href="https://github.com/masonlet" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
           <img class="nav-icon hover-cursor hover-bg" src="/img/github.png" alt="Github">
         </a>
       </nav>
@@ -63,19 +88,19 @@
           <a class="btn btn-full hover-cursor hover-bg" href="projects.html">Click for more Projects</a>
         </nav>
         <div class="panel-content">
-          <a href="https://github.com/gh-top-languages" class="btn-full hover-cursor hover-bg" target="_blank">
+          <a href="https://github.com/gh-top-languages" class="btn-full hover-cursor hover-bg" target="_blank" rel="noopener noreferrer">
             <img src="/img/projects/gh-top-languages/api_prev.webp" alt="GitHub Top Languages Project Screenshot">
             <p>Top Languages</p>
           </a>
-          <a href="https://github.com/star-setup/core" class="btn-full hover-cursor hover-bg" target="_blank">
+          <a href="https://github.com/star-setup/core" class="btn-full hover-cursor hover-bg" target="_blank" rel="noopener noreferrer">
             <img src="/img/projects/star-setup/star-setup_prev.webp" alt="Star Setup Project Screenshot">
             <p>Star Setup</p>
           </a>
-          <a href="https://github.com/starlet-libs" class="btn-full hover-cursor hover-bg" target="_blank">
+          <a href="https://github.com/starlet-libs" class="btn-full hover-cursor hover-bg" target="_blank" rel="noopener noreferrer">
             <img src="/img/projects/starlet-libs/opengl_prev.webp" alt="OpenGL Engine Project Screenshot">
             <p>Starlet Libs</p>
           </a>
-          <a href="https://github.com/starweb-libs" class="btn-full hover-cursor hover-bg" target="_blank">
+          <a href="https://github.com/starweb-libs" class="btn-full hover-cursor hover-bg" target="_blank" rel="noopener noreferrer">
             <img src="/img/projects/starweb-libs/engine_prev.webp" alt="Starweb Engine Preview">
             <p>Starweb Libs</p>
           </a>
