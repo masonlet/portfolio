@@ -19,11 +19,23 @@
 .hover-cursor { cursor: pointer; }
 
 .hover-bg { transition: background var(--hover-bg-duration) ease; }
-.hover-bg:hover { background: var(--bg-hover); }
+.hover-bg:hover,
+.hover-bg:focus-visible {
+  background: var(--bg-hover);
+}
 
 .hover-bounce { transition: scale var(--hover-bounce-duration) ease; }
-.hover-bounce:hover { scale: 1.05; }
+.hover-bounce:hover,
+.hover-bounce:focus-visible {
+  scale: 1.05;
+}
 
-.hover-bounce.hover-bg {
+.hover-bg.hover-bounce {
   transition: scale var(--hover-bounce-duration) ease, background var(--hover-bg-duration) ease;
+}
+
+#header-nav a:focus-visible .nav-icon {
+  background: var(--bg-hover);
+  outline: var(--border-thick) solid var(--bg-hover);
+  outline-offset: 2px;
 }
