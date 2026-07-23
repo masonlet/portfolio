@@ -33,6 +33,14 @@
     "github": "https://github.com/masonlet/portfolio",
     "tech": ["html", "css", "ts", "vite"]
   },
+  "class-sync": {
+    "title": "Class Sync",
+    "description": "A Discord bot that tracks assignment deadlines across multiple cohorts and posts automated 24h/8h/1h reminders. Features role-gated commands, per-guild data isolation, downtime recovery for missed reminders, and a 30-day grace period before purging removed-guild data.",
+    "image": "/img/projects/masonlet/class-sync.webp",
+    "preview": { "src": "/img/projects/masonlet/class-sync_prev.webp", "w": 400, "h": 276 },
+    "github": "https://github.com/masonlet/class-sync",
+    "tech": ["ts", "nodejs", "vitest"]
+  },
   "starweb-sandbox": {
     "title": "Starweb Sandbox",
     "description": "Stress test and sandbox environment for the Starlet Web Engine.",
