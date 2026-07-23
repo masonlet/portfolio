@@ -6,6 +6,7 @@ import starletRaw        from "../data/starlet-libs.json";
 import starwebRaw        from "../data/starweb-libs.json";
 import ghTopLanguagesRaw from "../data/gh-top-languages.json";
 import starSetupRaw      from "../data/star-setup.json";
+import contactRaw        from "../data/contact-api.json";
 
 export interface Project {
   readonly title:         string;
@@ -43,6 +44,7 @@ const orgRaws = [
   ["starlet-engine",     starletRaw],
   ["starlet-web-engine", starwebRaw],
   ["gh-top-languages",   ghTopLanguagesRaw],
+  ["contact-api",        contactRaw],
 ] as const;
 
 const orgs = orgRaws.map(([key, raw]) => {

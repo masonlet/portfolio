@@ -58,14 +58,6 @@
     "github": "https://github.com/masonlet/starlet-image-sandbox",
     "tech": ["cpp", "cmake"]
   },
-  "contact-api": {
-    "title": "Contact API",
-    "description": "A deployable multi-provider contact form API for Vercel with Resend and Nodemailer support, input validation, CORS controls, honeypot spam protection, and Vitest coverage.",
-    "image": "/img/projects/masonlet/contact-api.webp",
-    "preview": { "src": "/img/projects/masonlet/contact-api_prev.webp", "w": 660, "h": 491 },
-    "github": "https://github.com/masonlet/contact-api",
-    "tech": ["ts", "nodejs", "vercel", "vitest"]
-  },
   "readme-api": {
     "title": "Readme API",
     "description": "A deployable GitHub README API that fetches rendered README HTML, rewriting relative asset links to absolute GitHub URLs, and serving the result from a Vercel-hosted endpoint.",
@@ -97,14 +89,6 @@
     "preview": { "src": "/img/projects/masonlet/githubvisualizer_prev.webp", "w": 500, "h": 247 },
     "github": "https://github.com/masonlet/githubvisualizer",
     "tech": ["python", "pytest", "pip"]
-  },
-  "contact-api-demo": {
-    "title": "Contact API Demo",
-    "description": "A demo site for Contact API with live contact form examples for both Resend and Nodemailer configurations.",
-    "image": "/img/projects/masonlet/contact-api-demo.webp",
-    "preview": { "src": "/img/projects/masonlet/contact-api-demo_prev.webp", "w": 839, "h": 481 },
-    "github": "https://github.com/masonlet/contact-api-demo",
-    "tech": ["html", "css", "ts", "vite"]
   },
   "readme-api-demo": {
     "title": "Readme API Demo",
