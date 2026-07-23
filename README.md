@@ -53,7 +53,7 @@ npm install
 npm run typecheck # TypeScript type check
 npm run dev       # http://localhost:5173 (or the address shown in your terminal) in your browser.
 npm run build     # Build project
-npm run preview   # http://localhost:4173 (or the address shwon in your terminal) in your browser.
+npm run preview   # http://localhost:4173 (or the address shown in your terminal) in your browser.
 ```
 
 ### Deployment
