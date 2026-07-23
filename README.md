@@ -30,7 +30,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 ## Dependencies
 The portfolio frontend is entirely static. Contact form submission and README fetching are offloaded to dedicated microservices, keeping the frontend decoupled and independently deployable.
 
-- [contact-api](https://github.com/contact-api/vercel) — Contact form microservice
+- [contact-api](https://github.com/contact-api) — Contact form microservice
 - [readme-api](https://github.com/masonlet/readme-api) — GitHub README fetching microservice
 
 On the live site, `/api/*` routes are handled by an edge router that proxies to these services. In development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
@@ -40,39 +40,21 @@ On the live site, `/api/*` routes are handled by an edge router that proxies to 
 ### Prerequisites
 - Node.js 22.12+ with npm (local development and building only)
 
-### 1. Clone the Repository
+### 1. Clone & Install
 
 ```bash
-# Clone Portfolio
 git clone https://github.com/masonlet/portfolio.git
 cd portfolio
-
-# Install dependencies
 npm install
 ```
 
-### Development
-
-#### Run Locally
-
+### 2. Run Locally
 ```bash
-# Start development server
-npm run dev
+npm run typecheck # TypeScript type check
+npm run dev       # http://localhost:5173 (or the address shown in your terminal) in your browser.
+npm run build     # Build project
+npm run preview   # http://localhost:4173 (or the address shown in your terminal) in your browser.
 ```
-
-##### Open http://localhost:5173 (or the address shown in your terminal) in your browser.
-
-#### Build for Production
-
-```bash
-# Build 
-npm run build
-
-# Preview production output locally
-npm run preview
-```
-
-##### Open http://localhost:4173 (or the address shown in your terminal) in your browser.
 
 ### Deployment
 
