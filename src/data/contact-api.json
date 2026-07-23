@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "title": "Contact API Org",
+    "preview": { "src": "/img/projects/contact-api/vercel_prev.webp", "w": 800, "h": 590 }
+  },
+  "core": {
+    "title": "Core",
+    "description": "Platform-agnostic contact form logic: CORS evaluation, input validation, honeypot handling, and email orchestration. Published on npm and paired with a provider and a platform adapter.",
+    "image": "/img/projects/contact-api/core.webp",
+    "preview": { "src": "/img/projects/contact-api/core_prev.webp", "w": 800, "h": 583 },
+    "github": "https://github.com/contact-api/core",
+    "tech": ["ts", "npm", "vitest"]
+  },
+  "resend": {
+    "title": "Resend",
+    "description": "Resend email provider implementing the Core EmailProvider interface.",
+    "image": "/img/projects/contact-api/resend.webp",
+    "preview": { "src": "/img/projects/contact-api/resend_prev.webp", "w": 800, "h": 561 },
+    "github": "https://github.com/contact-api/resend",
+    "tech": ["ts", "npm", "vitest"]
+  },
+  "nodemailer": {
+    "title": "Nodemailer",
+    "description": "Nodemailer (SMTP) email provider implementing the Core EmailProvider interface.",
+    "image": "/img/projects/contact-api/nodemailer.webp",
+    "preview": { "src": "/img/projects/contact-api/nodemailer_prev.webp", "w": 800, "h": 562 },
+    "github": "https://github.com/contact-api/nodemailer",
+    "tech": ["ts", "npm", "vitest"]
+  },
+  "vercel": {
+    "title": "Vercel",
+    "description": "Deployable Vercel adapter exposing a single POST /api/contact endpoint with multi-provider support, CORS controls, WAF rate limiting, and honeypot spam protection.",
+    "image": "/img/projects/contact-api/vercel.webp",
+    "preview": { "src": "/img/projects/contact-api/vercel_prev.webp", "w": 800, "h": 590 },
+    "github": "https://github.com/contact-api/vercel",
+    "tech": ["ts", "nodejs", "vercel", "vitest"]
+  },
+  "demo": {
+    "title": "Demo",
+    "description": "A demo site for Contact API with live contact form examples for both Resend and Nodemailer configurations.",
+    "image": "/img/projects/contact-api/demo.webp",
+    "preview": { "src": "/img/projects/contact-api/demo_prev.webp", "w": 700, "h": 402 },
+    "github": "https://github.com/contact-api/demo",
+    "tech": ["html", "css", "ts", "vite"]
+  }
+}
