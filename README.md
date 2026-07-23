@@ -40,39 +40,21 @@ On the live site, `/api/*` routes are handled by an edge router that proxies to 
 ### Prerequisites
 - Node.js 22.12+ with npm (local development and building only)
 
-### 1. Clone the Repository
+### 1. Clone & Install
 
 ```bash
-# Clone Portfolio
 git clone https://github.com/masonlet/portfolio.git
 cd portfolio
-
-# Install dependencies
 npm install
 ```
 
-### Development
-
-#### Run Locally
-
+### 2. Run Locally
 ```bash
-# Start development server
-npm run dev
+npm run typecheck # TypeScript type check
+npm run dev       # http://localhost:5173 (or the address shown in your terminal) in your browser.
+npm run build     # Build project
+npm run preview   # http://localhost:4173 (or the address shwon in your terminal) in your browser.
 ```
-
-##### Open http://localhost:5173 (or the address shown in your terminal) in your browser.
-
-#### Build for Production
-
-```bash
-# Build 
-npm run build
-
-# Preview production output locally
-npm run preview
-```
-
-##### Open http://localhost:4173 (or the address shown in your terminal) in your browser.
 
 ### Deployment
 
