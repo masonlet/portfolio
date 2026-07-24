@@ -41,6 +41,14 @@
     "github": "https://github.com/masonlet/class-sync",
     "tech": ["ts", "nodejs", "vitest"]
   },
+  "portfolio-router": {
+    "title": "Portfolio Router",
+    "description": "A Cloudflare Worker fronting my portfolio domains. It canonicalizes .com and www hosts to masonletoile.ca with 308 redirects, proxies /api/* paths to standalone Vercel functions, proxies project prefixes to their own deployments, and falls through to the main portfolio site.",
+    "image": "/img/projects/masonlet/portfolio-router.webp",
+    "preview": { "src": "/img/projects/masonlet/portfolio-router_prev.webp", "w": 800, "h": 605 },
+    "github": "https://github.com/masonlet/portfolio-router",
+    "tech": ["ts", "cloudflare", "vitest"]
+  },
   "starweb-sandbox": {
     "title": "Starweb Sandbox",
     "description": "Stress test and sandbox environment for the Starlet Web Engine.",
