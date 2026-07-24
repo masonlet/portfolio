@@ -98,8 +98,8 @@ function createSkills(): string {
   const createImage = (type: TechKey): string => 
     `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
 
-  const frontEndImages = (["html", "css", "js"] as TechKey[]).map(createImage).join('');
-  const backEndImages = (["java", "cpp", "cs", "python"] as TechKey[]).map(createImage).join('');
+  const frontEndImages = (["html", "css", "ts", "js"] as TechKey[]).map(createImage).join('');
+  const backEndImages = (["cpp", "rust", "python"] as TechKey[]).map(createImage).join('');
 
   side.skills = `
     <div id="skills-div">
