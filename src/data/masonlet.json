@@ -1,11 +1,11 @@
 {
   "lookingforlove": {
-    "title": "LookingForLove",
-    "description": "An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.",
+    "title": "Looking For Love",
+    "description": "An IT-Themed dating website built by a 5-person team. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.",
     "image": "/img/projects/masonlet/lookingforlove.webp",
     "preview": { "src": "/img/projects/masonlet/lookingforlove_prev.webp", "w": 500, "h": 280 },
-    "github": "https://github.com/masonlet/info-3112-project",
-    "tech": ["nextjs", "ts", "supabase", "tailwind", "vercel", "vitest"]
+    "github": "https://github.com/masonlet/looking-for-love",
+    "tech": ["nextjs", "ts", "supabase", "tailwind", "vitest"]
   },
   "fixit": {
     "title": "Fix It!",
