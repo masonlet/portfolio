@@ -41,3 +41,10 @@
   padding:       var(--skill-icon-padding);
   border-radius: var(--radius-icon);
 }
+
+#lang-chart {
+  display: block;
+  width:   60%;
+  height:  auto;
+  margin:  0 auto;
+}
