@@ -6,7 +6,7 @@ export const TECH_KEYS = [
   "css", "tailwind",
   "cpp", "rust",
   "python", "java", "cs",
-  "vercel", "supabase",
+  "vercel", "cloudflare", "supabase",
   "npm", "vite", "pip", "pypi",
   "nodejs", "nextjs", "phaser",
   "cmake","opengl", "glfw",

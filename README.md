@@ -1,22 +1,21 @@
 # Portfolio
 Personal development portfolio showcasing my projects, skills, and contact information.
 
+![CI](https://github.com/masonlet/portfolio/actions/workflows/ci.yml/badge.svg)
 ![Vite](https://img.shields.io/badge/Vite-7-blue)
 ![Node](https://img.shields.io/badge/Node.js-22.12+-green)
-![CI](https://github.com/masonlet/portfolio/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ![Portfolio Screenshot](./images/portfolio.png)
 
 ## Features
-- Responsive design with HTML, CSS, and TypeScript.
-- Integrated contact form.
-- Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
 - Typewriter-style introduction
+- Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
+- Integrated contact form.
+- Responsive design with HTML, TypeScript, and CSS.
 
-## 🔗 **Website**: 
-- [**masonletoile.ca**](https://masonletoile.ca)
-- [**masonletoile.com**](https://masonletoile.com)
+## **Website**: 
+[**masonletoile.ca**](https://masonletoile.ca) • [**masonletoile.com**](https://masonletoile.com)
 
 ## Tech Stack
 <p align="left">
@@ -30,10 +29,11 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 ## Dependencies
 The portfolio frontend is entirely static. Contact form submission and README fetching are offloaded to dedicated microservices, keeping the frontend decoupled and independently deployable.
 
-- [contact-api](https://github.com/contact-api) — Contact form microservice
-- [readme-api](https://github.com/masonlet/readme-api) — GitHub README fetching microservice
+- [contact-api](https://github.com/contact-api) - Contact form microservice
+- [readme-api](https://github.com/masonlet/readme-api) - GitHub README fetching microservice
+- [portfolio-router](https://github.com/masonlet/portfolio-router) - Cloudflare Worker for canonical redirects and path routing
 
-On the live site, `/api/*` routes are handled by an edge router that proxies to these services. In development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
+In development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
 
 ## Deployment & Configuration
 

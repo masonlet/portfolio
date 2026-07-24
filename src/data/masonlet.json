@@ -1,11 +1,11 @@
 {
   "lookingforlove": {
-    "title": "LookingForLove",
-    "description": "An IT-Themed dating website built by a 5-person Scrum team for Fanshawe INFO-3112. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.",
+    "title": "Looking For Love",
+    "description": "An IT-Themed dating website built by a 5-person team. It features Supabase Auth, profile/preference settings, preference matching, role-based membership options, paid-tier matching and contact sharing, and product manager demonstration.",
     "image": "/img/projects/masonlet/lookingforlove.webp",
     "preview": { "src": "/img/projects/masonlet/lookingforlove_prev.webp", "w": 500, "h": 280 },
-    "github": "https://github.com/masonlet/info-3112-project",
-    "tech": ["nextjs", "ts", "supabase", "tailwind", "vercel", "vitest"]
+    "github": "https://github.com/masonlet/looking-for-love",
+    "tech": ["nextjs", "ts", "supabase", "tailwind", "vitest"]
   },
   "fixit": {
     "title": "Fix It!",
@@ -40,6 +40,14 @@
     "preview": { "src": "/img/projects/masonlet/class-sync_prev.webp", "w": 400, "h": 276 },
     "github": "https://github.com/masonlet/class-sync",
     "tech": ["ts", "nodejs", "vitest"]
+  },
+  "portfolio-router": {
+    "title": "Portfolio Router",
+    "description": "A Cloudflare Worker fronting my portfolio domains. It canonicalizes .com and www hosts to masonletoile.ca with 308 redirects, proxies /api/* paths to standalone Vercel functions, proxies project prefixes to their own deployments, and falls through to the main portfolio site.",
+    "image": "/img/projects/masonlet/portfolio-router.webp",
+    "preview": { "src": "/img/projects/masonlet/portfolio-router_prev.webp", "w": 800, "h": 605 },
+    "github": "https://github.com/masonlet/portfolio-router",
+    "tech": ["ts", "cloudflare", "vitest"]
   },
   "starweb-sandbox": {
     "title": "Starweb Sandbox",
