@@ -14,7 +14,7 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 - Integrated contact form.
 - Responsive design with HTML, TypeScript, and CSS.
 
-## **Website**: 
+## **Website**
 [**masonletoile.ca**](https://masonletoile.ca) • [**masonletoile.com**](https://masonletoile.com)
 
 ## Tech Stack
@@ -32,8 +32,9 @@ The portfolio frontend is entirely static. Contact form submission and README fe
 - [contact-api](https://github.com/contact-api) - Contact form microservice
 - [readme-api](https://github.com/masonlet/readme-api) - GitHub README fetching microservice
 - [portfolio-router](https://github.com/masonlet/portfolio-router) - Cloudflare Worker for canonical redirects and path routing
+- [gh-top-languages](https://github.com/gh-top-languages) - Top-languages SVG chart microservice
 
-In development, API-backed features are intentionally disabled; projects fall back to static descriptions and the contact form is deactivated. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
+In development, API-backed features are intentionally disabled; projects fall back to static descriptions, the contact form is deactivated, and the skills chart falls back to static icons. Each service is tested and verified in its own repository; API functionality is not the portfolio's development concern.
 
 ## Deployment & Configuration
 

@@ -1,4 +1,5 @@
 import { type TechKey, IMAGE_PATHS } from "./techData";
+import { API_AVAILABLE             } from "./env";
 
 const TYPING_SPEED: number = 20;
 
@@ -89,24 +90,36 @@ class StateManager {
 };
 
 const state = new StateManager();
+const LANGUAGES_EMBED = "https://www.masonletoile.ca/api/languages?theme=dark&bg=default&gap_type=grow";
 
 // Helper Functions
-function createSkills(): string {
-  const side = content.first;
-  if(side.skills) return side.skills;
-
-  const createImage = (type: TechKey): string => 
+function skillsFallback(): string {
+  const createImage = (type: TechKey): string =>
     `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
 
-  const frontEndImages = (["html", "css", "js"] as TechKey[]).map(createImage).join('');
-  const backEndImages = (["java", "cpp", "cs", "python"] as TechKey[]).map(createImage).join('');
+  const frontEndImages = (["html", "css", "ts", "js"] as TechKey[]).map(createImage).join('');
+  const backEndImages  = (["cpp", "rust", "python"] as TechKey[]).map(createImage).join('');
 
-  side.skills = `
+  return `
     <div id="skills-div">
-      Front-end languages <div class = "image-out">${frontEndImages}</div>
-      Back-end languages <div class ="image-out">${backEndImages}</div>
+      Front-end languages <div class="image-out">${frontEndImages}</div>
+      Back-end languages <div class="image-out">${backEndImages}</div>
     </div>`;
-  return side.skills;
+}
+function renderSkills(outputDiv: HTMLElement): void {
+  if (!API_AVAILABLE) {
+    outputDiv.innerHTML = skillsFallback();
+    return;
+  }
+
+  outputDiv.innerHTML = `
+    <a href="https://github.com/gh-top-languages" target="_blank" rel="noopener noreferrer" aria-label="My GitHub top languages">
+      <img id="lang-chart" src="${LANGUAGES_EMBED}" alt="My top GitHub languages" loading="lazy">
+    </a>`;
+
+  outputDiv.querySelector<HTMLImageElement>("#lang-chart")?.addEventListener(
+    "error", () => { outputDiv.innerHTML = skillsFallback(); }
+  );
 }
 
 async function preloadImages(images: Record<string, string>): Promise<void> {
@@ -154,7 +167,7 @@ async function printContent(
   syncURL(section);
 
   if (section === "skills") {
-    outputDiv.innerHTML = createSkills();
+    renderSkills(outputDiv);
     return;
   }
 
