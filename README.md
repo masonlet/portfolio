@@ -1,22 +1,21 @@
 # Portfolio
 Personal development portfolio showcasing my projects, skills, and contact information.
 
+![CI](https://github.com/masonlet/portfolio/actions/workflows/ci.yml/badge.svg)
 ![Vite](https://img.shields.io/badge/Vite-7-blue)
 ![Node](https://img.shields.io/badge/Node.js-22.12+-green)
-![CI](https://github.com/masonlet/portfolio/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ![Portfolio Screenshot](./images/portfolio.png)
 
 ## Features
-- Responsive design with HTML, CSS, and TypeScript.
-- Integrated contact form.
-- Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
 - Typewriter-style introduction
+- Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
+- Integrated contact form.
+- Responsive design with HTML, TypeScript, and CSS.
 
-## 🔗 **Website**: 
-- [**masonletoile.ca**](https://masonletoile.ca)
-- [**masonletoile.com**](https://masonletoile.com)
+## **Website**: 
+[**masonletoile.ca**](https://masonletoile.ca) • [**masonletoile.com**](https://masonletoile.com)
 
 ## Tech Stack
 <p align="left">
