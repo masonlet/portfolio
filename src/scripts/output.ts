@@ -144,24 +144,6 @@ function renderSkills(outputDiv: HTMLElement): void {
   chart.src = LANGUAGES_EMBED;
 }
 
-async function preloadImages(images: Record<string, string>): Promise<void> {
-  try {
-    await Promise.all(
-      Object.values(images).map(
-        (path): Promise<void> => 
-          new Promise<void>((resolve, reject) => {
-            const img = new Image();
-            img.onload = () => resolve();
-            img.onerror = () => reject(new Error(`Failed to load image: ${path}`));
-            img.src = path;
-          })
-      )
-    );
-  } catch(error) {
-    console.error(error);
-  }
-}
-
 function updateSectionHighlight(activeSection: SectionKey): void {
   SECTIONS.forEach(section => {
     const element = document.getElementById(section);
@@ -254,6 +236,5 @@ window.addEventListener("load", async () => {
 
   if (!window.location.hash) history.replaceState(null, '', "#about");
 
-  await preloadImages(IMAGE_PATHS);
   await printContent(parseHash()); 
 });
