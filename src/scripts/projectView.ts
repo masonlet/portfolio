@@ -44,7 +44,7 @@ function createTechIcons(icons: readonly TechKey[]): string {
   const iconData = icons
     .map((lang): string => {
       const imagePath = IMAGE_PATHS[lang];
-      return imagePath 
+      return imagePath
         ? `<img src="${imagePath}" alt="${lang}" class="tech-icon hover-bounce" loading="lazy">`
         : '';
     })
