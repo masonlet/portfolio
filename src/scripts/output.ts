@@ -91,6 +91,7 @@ class StateManager {
 
 const state = new StateManager();
 const LANGUAGES_EMBED = "https://www.masonletoile.ca/api/languages?theme=dark&bg=default&gap_type=grow";
+const LOADING_SPEED: number = 350;
 
 // Helper Functions
 const createImage = (type: TechKey): string => 
@@ -122,9 +123,18 @@ function renderSkills(outputDiv: HTMLElement): void {
     return;
   }
 
-  outputDiv.innerHTML = `<div id="skills-div">Loading...</div>`;
+  outputDiv.innerHTML = `<div id="skills-div">Loading</div>`;
+  const loading = outputDiv.querySelector<HTMLElement>("#skills-div");
+  let dots = 0;
+
+  const tick = setInterval(() => {
+    if (!loading?.isConnected) return clearInterval(tick);
+    dots = (dots % 3) + 1;
+    loading.textContent = `Loading${".".repeat(dots)}`;
+  }, LOADING_SPEED);
 
   const swap = (markup: string) => {
+    clearInterval(tick);
     if (parseHash() === "skills") outputDiv.innerHTML = markup;
   };
 
