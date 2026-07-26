@@ -226,20 +226,21 @@ async function typeContent(
   while(index < textContent.length && state.shouldContinueTyping(section)) {
     if (textContent[index] === '<') {
       const tagEnd = textContent.indexOf('>', index);
-      if(tagEnd === -1) break;
-
-      outputDiv.innerHTML += textContent.substring(index, tagEnd + 1);
+      if (tagEnd === -1) break;
       index = tagEnd + 1;
     } else {
-      outputDiv.innerHTML += textContent[index];
       index++;
     }
 
+    outputDiv.innerHTML = textContent.substring(0, index);
     state.saveProgress(section, index);
     await new Promise(resolve => setTimeout(resolve, TYPING_SPEED));
   }
  
-  if (state.shouldContinueTyping(section)) state.saveProgress(section, index);
+  if (state.shouldContinueTyping(section)) {
+    state.saveProgress(section, index);
+    state.flush();
+  }
 }
 
 //Listeners
