@@ -253,13 +253,8 @@ if(document.getElementById("home-page")) {
 
   aboutBtn.addEventListener ("click", () => printContent("about"));
   skillsBtn.addEventListener("click", () => printContent("skills"));
-}
-
-window.addEventListener("load", async () => { 
-  const homePage = document.getElementById("home-page");
-  if(!homePage) return;
+  window.addEventListener("pagehide", () => state.flush());
 
   if (!window.location.hash) history.replaceState(null, '', "#about");
-
-  await printContent(parseHash()); 
-});
+  void printContent(parseHash());
+}
