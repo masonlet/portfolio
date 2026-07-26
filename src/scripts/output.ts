@@ -37,11 +37,34 @@ const content: Content = {
   second: {}
 };
 
+function isSection(value: unknown): value is SectionKey {
+  return typeof value === "string" && (SECTIONS as readonly string[]).includes(value);
+}
+
 function parseHash(): SectionKey {
   const hash = window.location.hash.slice(1);
-  return (SECTIONS as readonly string[]).includes(hash)
-    ? (hash as SectionKey)
-    : "about";
+  return isSection(hash) ? hash : "about";
+}
+
+const STORAGE_KEY = "typingProgress";
+
+function isProgress(value: unknown): value is TypingProgress {
+  if (typeof value !== "object" || value === null) return false;
+  const { currentSection, typingIndices } = value as Partial<TypingProgress>;
+  return (currentSection === '' || isSection(currentSection))
+      && typeof typingIndices === "object" && typingIndices !== null;
+}
+
+function loadProgress(): TypingProgress {
+  try {
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    const parsed: unknown = saved ? JSON.parse(saved) : null;
+    if (isProgress(parsed)) return parsed;
+    if (saved) sessionStorage.removeItem(STORAGE_KEY);
+  } catch {
+    if (import.meta.env.DEV) console.warn("Discarding unreadable typing progress");
+  }
+  return { currentSection: '', typingIndices: {} };
 }
 
 function syncURL(section: SectionKey): void {
@@ -51,25 +74,26 @@ function syncURL(section: SectionKey): void {
 // State Management
 class StateManager {
   private activeTyping: ActiveTyping | null = null;
-
-  getProgress(): TypingProgress {
-    const saved = sessionStorage.getItem("typingProgress");
-    return saved ? JSON.parse(saved) : { currentSection: '', typingIndices: {} };
-  }
+  private progress: TypingProgress = loadProgress();
 
   saveProgress(section: SectionKey, index: number): void {
-    const progress = this.getProgress();
-    progress.currentSection = section;
-    progress.typingIndices[section] = index;
-    sessionStorage.setItem("typingProgress", JSON.stringify(progress));
+    this.progress.currentSection         = section;
+    this.progress.typingIndices[section] = index;
+  }
+
+  flush(): void {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(this.progress));
+    } catch { /* storage full or blocked */ }
   }
 
   getCurrentSection(): SectionKey | '' {
-    return this.getProgress().currentSection;
+    return this.progress.currentSection;
   }
 
   getTypingIndex(section: SectionKey): number {
-    return this.getProgress().typingIndices[section] || 0;
+    const index = this.progress.typingIndices[section];
+    return typeof index === "number" && index >= 0 ? index : 0;
   }
 
   startTyping(section: SectionKey): void {
@@ -78,10 +102,10 @@ class StateManager {
   }
 
   cancelTyping(): void {
-    if (this.activeTyping) {
-      this.activeTyping.shouldContinue = false;
-      this.activeTyping = null;
-    }
+    if (!this.activeTyping) return;
+    this.activeTyping.shouldContinue = false;
+    this.activeTyping = null;
+    this.flush();
   }
 
   shouldContinueTyping(section: SectionKey): boolean {
