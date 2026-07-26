@@ -104,7 +104,8 @@ function skillsFallback(): string {
     <div id="skills-div">
       Front-end languages <div class="image-out">${frontEndImages}</div>
       Back-end languages <div class="image-out">${backEndImages}</div>
-    </div>`;
+    </div>
+  `;
 }
 function renderSkills(outputDiv: HTMLElement): void {
   if (!API_AVAILABLE) {
@@ -115,10 +116,13 @@ function renderSkills(outputDiv: HTMLElement): void {
   outputDiv.innerHTML = `
     <a href="https://github.com/gh-top-languages" target="_blank" rel="noopener noreferrer" aria-label="My GitHub top languages">
       <img id="lang-chart" src="${LANGUAGES_EMBED}" alt="My top GitHub languages" loading="lazy">
-    </a>`;
+    </a>
+  `;
 
   outputDiv.querySelector<HTMLImageElement>("#lang-chart")?.addEventListener(
-    "error", () => { outputDiv.innerHTML = skillsFallback(); }
+    "error", () => {
+      if (parseHash() === "skills") outputDiv.innerHTML = skillsFallback();
+    }
   );
 }
 
