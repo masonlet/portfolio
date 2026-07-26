@@ -93,37 +93,45 @@ const state = new StateManager();
 const LANGUAGES_EMBED = "https://www.masonletoile.ca/api/languages?theme=dark&bg=default&gap_type=grow";
 
 // Helper Functions
-function skillsFallback(): string {
-  const createImage = (type: TechKey): string =>
+const createImage = (type: TechKey): string => 
     `<img src="${IMAGE_PATHS[type]}" alt="Logo of ${type}" class="tech" loading="lazy">`;
 
-  const frontEndImages = (["html", "css", "ts", "js"] as TechKey[]).map(createImage).join('');
-  const backEndImages  = (["cpp", "rust", "python"] as TechKey[]).map(createImage).join('');
-
+function skillsFallback(): string {
   return `
     <div id="skills-div">
-      Front-end languages <div class="image-out">${frontEndImages}</div>
-      Back-end languages <div class="image-out">${backEndImages}</div>
+      Front-end languages <div class="image-out">
+        ${(["html", "css", "ts", "js"] as TechKey[]).map(createImage).join('')}
+      </div>
+      Back-end languages <div class="image-out">
+        ${(["cpp", "rust", "python"] as TechKey[]).map(createImage).join('')}
+      </div>
     </div>
   `;
 }
+function skillsChart(): string {
+  return `
+    <a href="https://github.com/gh-top-languages" target="_blank" rel="noopener noreferrer" aria-label="My GitHub top languages">
+      <img id="lang-chart" src="${LANGUAGES_EMBED}" alt="My top GitHub languages">
+    </a>
+  `;
+}
+
 function renderSkills(outputDiv: HTMLElement): void {
   if (!API_AVAILABLE) {
     outputDiv.innerHTML = skillsFallback();
     return;
   }
 
-  outputDiv.innerHTML = `
-    <a href="https://github.com/gh-top-languages" target="_blank" rel="noopener noreferrer" aria-label="My GitHub top languages">
-      <img id="lang-chart" src="${LANGUAGES_EMBED}" alt="My top GitHub languages" loading="lazy">
-    </a>
-  `;
+  outputDiv.innerHTML = `<div id="skills-div">Loading...</div>`;
 
-  outputDiv.querySelector<HTMLImageElement>("#lang-chart")?.addEventListener(
-    "error", () => {
-      if (parseHash() === "skills") outputDiv.innerHTML = skillsFallback();
-    }
-  );
+  const swap = (markup: string) => {
+    if (parseHash() === "skills") outputDiv.innerHTML = markup;
+  };
+
+  const chart = new Image();
+  chart.onload  = () => swap(skillsChart());
+  chart.onerror = () => swap(skillsFallback());
+  chart.src = LANGUAGES_EMBED;
 }
 
 async function preloadImages(images: Record<string, string>): Promise<void> {
