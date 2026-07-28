@@ -1,4 +1,4 @@
-import {  type ProjectKey, projectData, projectGroups } from "./projectData";
+import {  type ProjectKey, projectData, projectGroups } from "./data";
 
 export function isProjectKey(key: string): key is ProjectKey {
   return key in projectData;

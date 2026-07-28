@@ -1,5 +1,5 @@
-import { API_AVAILABLE } from "./env";
-import { type Project  } from "./projectData";
+import { API_AVAILABLE } from "../env";
+import { type Project  } from "./data";
 
 interface GithubParsedUrl {
   readonly owner: string;
