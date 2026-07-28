@@ -85,7 +85,7 @@ header p .btn {
 }
 
 /* =====     Panel content     ===== */
-#first-output,
+#output,
 .panel-content {
   width: 100%;
 }
@@ -100,11 +100,11 @@ header p .btn {
   text-align: center;
 }
 
-#first-output {
+#output {
   text-align: left;
 }
 
-#first-output,
+#output,
 .panel-content input,
 .panel-content textarea,
 #skills-div {
