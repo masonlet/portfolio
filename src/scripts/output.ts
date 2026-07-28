@@ -3,8 +3,6 @@ import { API_AVAILABLE             } from "./env";
 
 const TYPING_SPEED: number = 20;
 
-type SideKey = "first" | "second";
-
 const SECTIONS  = ["about", "skills", "contacts"] as const;
 type SectionKey = typeof SECTIONS[number];
 
@@ -18,23 +16,21 @@ interface ActiveTyping {
   shouldContinue: boolean;
 }
 
-type SideContent = Partial<Record<SectionKey, string>>;
-type Content     = Record<SideKey, SideContent>;
+type Content = Partial<Record<SectionKey, string>>;
 
 // Content
 const content: Content = {
-  first: {
-    about: `Welcome to my portfolio. I'm a software developer currently working in TypeScript, C++, and Rust.<br><br>
-            I build small, composable libraries and wire them into ecosystems:
-            a Rust CLI for multi-repo development shipped on Homebrew, npm, and PyPI;
-            an SVG language chart API embedded in GitHub READMEs;
-            a modular contact form backend;
-            a 2D web engine powering my browser games;
-            and a C++/OpenGL engine behind personal labs and experiments.<br><br>
-            I'm finishing my Computer Programming & Analysis diploma and looking for
-            co-op or junior developer roles.`
-  },
-  second: {}
+  about:
+    `Welcome to my portfolio. I'm a software developer currently working in TypeScript, C++, and Rust.<br><br>
+     I build small, composable libraries and wire them into ecosystems:
+     a Rust CLI for multi-repo development shipped on Homebrew, npm, and PyPI;
+     an SVG language chart API embedded in GitHub READMEs;
+     a modular contact form backend;
+     a 2D web engine powering my browser games;
+     and a C++/OpenGL engine behind personal labs and experiments.<br><br>
+     I'm finishing my Computer Programming & Analysis diploma and looking for
+     co-op or junior developer roles.
+    `
 };
 
 function isSection(value: unknown): value is SectionKey {
@@ -176,15 +172,10 @@ function updateSectionHighlight(activeSection: SectionKey): void {
 }
 
 // Typewriter Functions
-async function printContent(
-  section:  SectionKey,
-  isSecond: boolean = false
-): Promise<void> {
-  const side: SideKey = isSecond ? "second" : "first";
-
-  const outputDiv = document.getElementById(`${side}-output`);
+async function printContent(section: SectionKey): Promise<void> {
+  const outputDiv = document.getElementById("output");
   if (!outputDiv) {
-    console.error(`Output div not found for ${side}`);
+    console.error("Output div not found");
     return;
   }
 
@@ -199,18 +190,17 @@ async function printContent(
     return;
   }
 
-  if (state.getCurrentSection() !== section) 
-    state.saveProgress(section, 0);
+  if (state.getCurrentSection() !== section) state.saveProgress(section, 0);
   
-  const sideContent = content[side][section];
-  if (!sideContent) {
+  const sectionContent = content[section];
+  if (!sectionContent) {
     console.error(`Content not found for ${section}`);
     return;
   }
 
   state.startTyping(section);
   outputDiv.innerHTML = '';
-  await typeContent(section, sideContent, outputDiv);
+  await typeContent(section, sectionContent, outputDiv);
 }
 
 async function typeContent(
