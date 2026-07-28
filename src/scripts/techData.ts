@@ -1,4 +1,4 @@
-import { asset } from "./assets";
+export const asset = (path: string): string => new URL(path, import.meta.url).href;
 
 export const TECH_KEYS = [
   "html", 

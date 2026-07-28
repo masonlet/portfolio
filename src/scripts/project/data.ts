@@ -1,5 +1,4 @@
-import { asset        } from "../assets";
-import { type TechKey } from "../techData";
+import { type TechKey, asset } from "../techData";
 
 import masonletData      from "../../data/masonlet.json";
 import starletRaw        from "../../data/starlet-libs.json";

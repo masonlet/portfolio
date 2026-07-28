@@ -1,7 +1,7 @@
-import { type TechKey, IMAGE_PATHS  } from "../techData";
-import { API_AVAILABLE              } from "../env";
-import { parseHash                  } from "./router";
-import { SECTIONS, type SectionKey  } from "./data";
+import { type TechKey, IMAGE_PATHS } from "../techData";
+import { API_AVAILABLE             } from "../env";
+import { parseHash                 } from "./router";
+import { SECTIONS, type SectionKey } from "./data";
 
 const LANGUAGES_EMBED = "https://www.masonletoile.ca/api/languages?theme=dark&bg=default&gap_type=grow";
 const LOADING_SPEED: number = 350;
