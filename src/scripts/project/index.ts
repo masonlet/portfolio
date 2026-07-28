@@ -1,11 +1,11 @@
-import { parseHash, syncURL } from "./projectRouter";
+import { parseHash, syncURL } from "./router";
 import {
   populateGrid,
   showGroupGrid,
   showProjectDetails,
   showProjectsGrid,
   togglePlayMode
-} from "./projectView";
+} from "./view";
 
 let currentGroup: string | null = null;
 

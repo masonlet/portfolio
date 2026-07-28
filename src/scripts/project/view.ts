@@ -1,13 +1,13 @@
-import { type TechKey, IMAGE_PATHS } from "./techData";
+import { type TechKey, IMAGE_PATHS } from "../techData";
 import {
   type Project,
   type ProjectKey,
   type ProjectGroup,
   projectData,
   projectGroups
-} from "./projectData";
-import { loadReadme, abortReadme } from "./githubApi";
-import { isProjectKey, syncURL   } from "./projectRouter";
+} from "./data";
+import { isProjectKey, syncURL   } from "./router";
+import { loadReadme, abortReadme } from "./github";
 
 const ANIMATION_DURATION = 300;
 

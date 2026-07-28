@@ -1,12 +1,11 @@
-import { asset         } from "./assets";
-import { type TechKey  } from "./techData";
+import { type TechKey, asset } from "../techData";
 
-import masonletData      from "../data/masonlet.json";
-import starletRaw        from "../data/starlet-libs.json";
-import starwebRaw        from "../data/starweb-libs.json";
-import ghTopLanguagesRaw from "../data/gh-top-languages.json";
-import starSetupRaw      from "../data/star-setup.json";
-import contactRaw        from "../data/contact-api.json";
+import masonletData      from "../../data/masonlet.json";
+import starletRaw        from "../../data/starlet-libs.json";
+import starwebRaw        from "../../data/starweb-libs.json";
+import ghTopLanguagesRaw from "../../data/gh-top-languages.json";
+import starSetupRaw      from "../../data/star-setup.json";
+import contactRaw        from "../../data/contact-api.json";
 
 export interface Project {
   readonly title:         string;
