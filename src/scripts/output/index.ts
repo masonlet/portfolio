@@ -1,8 +1,8 @@
-import { content, type SectionKey        } from "./outputData";
-import { parseHash, syncURL              } from "./outputRouter";
-import { state                           } from "./outputState";
-import { renderSkills, updateSectionHighlight } from "./outputView";
-import { typeContent                     } from "./outputTyping";
+import { content, type SectionKey             } from "./data";
+import { parseHash, syncURL                   } from "./router";
+import { state                                } from "./state";
+import { renderSkills, updateSectionHighlight } from "./view";
+import { typeContent                          } from "./typing";
 
 async function printContent(section: SectionKey): Promise<void> {
   const outputDiv = document.getElementById("output");

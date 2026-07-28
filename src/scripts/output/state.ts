@@ -1,4 +1,4 @@
-import { isSection, type SectionKey } from "./outputData";
+import { isSection, type SectionKey } from "./data";
 
 const STORAGE_KEY = "typingProgress";
 

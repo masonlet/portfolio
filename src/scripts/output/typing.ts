@@ -1,5 +1,5 @@
-import { state           } from "./outputState";
-import { type SectionKey } from "./outputData";
+import { state           } from "./state";
+import { type SectionKey } from "./data";
 
 const TYPING_SPEED: number = 20;
 

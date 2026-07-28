@@ -1,4 +1,4 @@
-import { isSection, type SectionKey } from "./outputData";
+import { isSection, type SectionKey } from "./data";
 
 export function parseHash(): SectionKey {
   const hash = window.location.hash.slice(1);
