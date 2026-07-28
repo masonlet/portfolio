@@ -1,19 +1,14 @@
 import { content, type SectionKey             } from "./data";
 import { parseHash, syncURL                   } from "./router";
-import { state                                } from "./state";
 import { renderSkills, updateSectionHighlight } from "./view";
-import { typeContent                          } from "./typing";
 
-async function printContent(section: SectionKey): Promise<void> {
+function printContent(section: SectionKey): void {
   const outputDiv = document.getElementById("output");
   if (!outputDiv) {
     console.error("Output div not found");
     return;
   }
 
-  if (state.shouldContinueTyping(section)) return;
-
-  state.cancelTyping();
   updateSectionHighlight(section);
   syncURL(section);
 
@@ -22,17 +17,13 @@ async function printContent(section: SectionKey): Promise<void> {
     return;
   }
 
-  if (state.getCurrentSection() !== section) state.saveProgress(section, 0);
-  
   const sectionContent = content[section];
   if (!sectionContent) {
     console.error(`Content not found for ${section}`);
     return;
   }
 
-  state.startTyping(section);
-  outputDiv.innerHTML = '';
-  await typeContent(section, sectionContent, outputDiv);
+  outputDiv.innerHTML = sectionContent;
 }
 
 //Listeners
@@ -45,8 +36,7 @@ if(document.getElementById("home-page")) {
 
   aboutBtn.addEventListener ("click", () => printContent("about"));
   skillsBtn.addEventListener("click", () => printContent("skills"));
-  window.addEventListener("pagehide", () => state.flush());
 
   if (!window.location.hash) history.replaceState(null, '', "#about");
-  void printContent(parseHash());
+  printContent(parseHash());
 }
