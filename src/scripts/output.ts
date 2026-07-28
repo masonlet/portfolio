@@ -3,7 +3,7 @@ import { API_AVAILABLE             } from "./env";
 
 const TYPING_SPEED: number = 20;
 
-const SECTIONS  = ["about", "skills", "contacts"] as const;
+const SECTIONS  = ["about", "skills"] as const;
 type SectionKey = typeof SECTIONS[number];
 
 interface TypingProgress {
