@@ -9,7 +9,6 @@ Personal development portfolio showcasing my projects, skills, and contact infor
 ![Portfolio Screenshot](./images/portfolio.png)
 
 ## Features
-- Typewriter-style introduction
 - Project showcase with README fetching and description fallbacks, tech stacks, and GitHub links.
 - Integrated contact form.
 - Responsive design with HTML, TypeScript, and CSS.
