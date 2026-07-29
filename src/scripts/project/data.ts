@@ -30,11 +30,15 @@ function applyPreviewAsset(preview: { src: string; w: number; h: number }) {
   return { ...preview, src: asset(preview.src) };
 }
 
-function buildGroup(meta: Omit<ProjectGroup, "keys">, projects: object): ProjectGroup {
+function buildGroup(
+  groupKey: string,
+  meta:     Omit<ProjectGroup, "keys">,
+  projects: object
+): ProjectGroup {
   return {
     ...meta,
     preview: applyPreviewAsset(meta.preview),
-    keys: Object.keys(projects) as ProjectKey[],
+    keys: Object.keys(projects).map(k => `${groupKey}/${k}`),
   };
 }
 
@@ -51,10 +55,12 @@ const orgs = orgRaws.map(([key, raw]) => {
   return { key, meta: _meta, projects };
 });
 
-const allRaw = {
-  ...masonletData,
-  ...Object.assign({}, ...orgs.map(o => o.projects)),
-} as Record<string, Project>;
+const allRaw: Record<string, Project> = { ...(masonletData as Record<string, Project>) };
+for (const { key, projects } of orgs) {
+  for (const [name, data] of Object.entries(projects)) {
+    allRaw[`${key}/${name}`] = data as Project;
+  }
+}
 
 function applyAssets(raw: Record<string, Project>): Record<ProjectKey, Project> {
   return Object.fromEntries(
@@ -72,5 +78,5 @@ function applyAssets(raw: Record<string, Project>): Record<ProjectKey, Project> 
 export const projectData = applyAssets(allRaw);
 
 export const projectGroups: Record<string, ProjectGroup> = Object.fromEntries(
-  orgs.map(({ key, meta, projects }) => [key, buildGroup(meta, projects)])
+  orgs.map(({ key, meta, projects }) => [key, buildGroup(key, meta, projects)])
 );
