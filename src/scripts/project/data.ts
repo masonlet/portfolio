@@ -39,11 +39,11 @@ function buildGroup(meta: Omit<ProjectGroup, "keys">, projects: object): Project
 }
 
 const orgRaws = [
-  ["star-setup",         starSetupRaw],
-  ["starlet-engine",     starletRaw],
-  ["starlet-web-engine", starwebRaw],
-  ["gh-top-languages",   ghTopLanguagesRaw],
-  ["contact-api",        contactRaw],
+  ["star-setup",       starSetupRaw],
+  ["starlet-libs",     starletRaw],
+  ["starweb-libs",     starwebRaw],
+  ["gh-top-languages", ghTopLanguagesRaw],
+  ["contact-api",      contactRaw],
 ] as const;
 
 const orgs = orgRaws.map(([key, raw]) => {
