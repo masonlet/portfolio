@@ -2,3 +2,15 @@
   0%, 100% { background-position: 0% 50%;  }
   50%      { background-position: 100% 0%; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hover-bounce-duration: 0s;
+    --fade-duration:         0s;
+  }
+
+  body { animation: none; }
+
+  .hover-bounce:hover,
+  .hover-bounce:focus-visible { scale: 1; }
+}
