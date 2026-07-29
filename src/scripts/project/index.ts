@@ -7,7 +7,7 @@ import {
   togglePlayMode
 } from "./view";
 
-let currentGroup: string | null = null;
+let renderedGroup: string | null | undefined;
 
 window.addEventListener("DOMContentLoaded", () => {
   const grid    = document.querySelector<HTMLElement>("#projects-grid");
@@ -17,10 +17,31 @@ window.addEventListener("DOMContentLoaded", () => {
   grid.classList.remove("hidden");
   grid.style.display = "grid";
   grid.style.opacity = "1";
-  populateGrid(grid);
 
   details.classList.add("hidden");
   details.style.display = "none";
+
+  const renderGrid = (groupKey: string | null): void => {
+    if (groupKey === renderedGroup) return;
+    renderedGroup = groupKey;
+    if (groupKey) showGroupGrid(groupKey, grid);
+    else          populateGrid(grid);
+  };
+
+  const applyState = (): void => {
+    const { projectKey, groupKey } = parseHash();
+    const detailsOpen = !details.classList.contains("hidden");
+
+    renderGrid(groupKey);
+
+    if      (projectKey)  showProjectDetails(projectKey, groupKey, grid, details);
+    else if (detailsOpen) showProjectsGrid(grid, details, groupKey);
+  };
+
+  const navigate = (projectKey: string | null, groupKey: string | null): void => {
+    syncURL(projectKey, groupKey, "push");
+    applyState();
+  };
 
   grid.addEventListener("click", (e: MouseEvent) => {
     const card = (e.target as HTMLElement).closest<HTMLElement>(".project-card");
@@ -30,17 +51,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const isBack     = card.getAttribute("data-back");
     const projectKey = card.getAttribute("data-project");
 
-    if      (groupKey)   { currentGroup = groupKey; showGroupGrid(groupKey, grid); }
-    else if (isBack)     { currentGroup = null; syncURL(null, null); populateGrid(grid); }
-    else if (projectKey) showProjectDetails(projectKey, currentGroup, grid, details);
-  });
-
-  details.addEventListener("click", (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    if (target.dataset["action"] === "back" || target.closest(`[data-action="back"]`))
-      showProjectsGrid(grid, details, currentGroup);
-    else if (target.dataset["action"] === "play" || target.closest(`[data-action="play"]`))
-      togglePlayMode(details);
+    if      (groupKey)   navigate(null, groupKey);
+    else if (isBack)     navigate(null, null);
+    else if (projectKey) navigate(projectKey, parseHash().groupKey);
   });
 
   grid.addEventListener("keydown", (e: KeyboardEvent) => {
@@ -51,7 +64,14 @@ window.addEventListener("DOMContentLoaded", () => {
     card.click();
   });
 
-  const { projectKey: initial, groupKey: initialGroup } = parseHash();
-  if (initialGroup) { currentGroup = initialGroup; showGroupGrid(initialGroup, grid); }
-  if (initial)      showProjectDetails(initial, currentGroup, grid, details);
+  details.addEventListener("click", (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.dataset["action"] === "back" || target.closest(`[data-action="back"]`))
+      navigate(null, parseHash().groupKey);
+    else if (target.dataset["action"] === "play" || target.closest(`[data-action="play"]`))
+      togglePlayMode(details);
+  });
+
+  window.addEventListener("hashchange", applyState);
+  applyState();
 });

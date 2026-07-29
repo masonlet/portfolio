@@ -26,17 +26,8 @@ function printContent(section: SectionKey): void {
   outputDiv.innerHTML = sectionContent;
 }
 
-//Listeners
 if(document.getElementById("home-page")) {
-  const aboutBtn  = document.getElementById("about");
-  if (!aboutBtn)  throw new Error("Required about button not found");
-
-  const skillsBtn = document.getElementById("skills");
-  if (!skillsBtn) throw new Error("Required skills button not found");
-
-  aboutBtn.addEventListener ("click", () => printContent("about"));
-  skillsBtn.addEventListener("click", () => printContent("skills"));
-
+  window.addEventListener("hashchange", () => printContent(parseHash()));
   if (!window.location.hash) history.replaceState(null, '', "#about");
   printContent(parseHash());
 }
