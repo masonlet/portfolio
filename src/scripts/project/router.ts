@@ -12,19 +12,15 @@ export function parseHash(): { projectKey: ProjectKey | null; groupKey: string |
   const hash = window.location.hash.slice(1);
   if (!hash) return { projectKey: null, groupKey: null };
 
-  const slash = hash.indexOf('/');
-  if (slash !== -1) {
-    const g = hash.slice(0, slash);
-    const p = hash.slice(slash + 1);
+  if (isProjectKey(hash)) {
+    const slash = hash.indexOf('/');
     return {
-      groupKey:   isGroupKey(g)   ? g : null,
-      projectKey: isProjectKey(p) ? p : null,
+      projectKey: hash,
+      groupKey:   slash === -1 ? null : hash.slice(0, slash),
     };
   }
 
-  if (isProjectKey(hash))    return { projectKey: hash, groupKey: null };
-  else if (isGroupKey(hash)) return { projectKey: null, groupKey: hash };
-  else                       return { projectKey: null, groupKey: null };
+  return { projectKey: null, groupKey: isGroupKey(hash) ? hash : null };
 }
 
 export function syncURL(
@@ -32,11 +28,7 @@ export function syncURL(
   groupKey?: string | null,
   mode: "push" | "replace" = "replace"
 ): void {
-  let hash: string | null = null;
-  if (projectKey && groupKey) hash = `${groupKey}/${projectKey}`;
-  else if (projectKey)        hash = projectKey;
-  else if (groupKey)          hash = groupKey;
-
+  const hash = projectKey ?? groupKey ?? null;
   const url = hash ? `#${hash}` : window.location.pathname;
   if (mode === "push") history.pushState(null, '', url);
   else                 history.replaceState(null, '', url);
