@@ -1,9 +1,9 @@
 @import url('base/variables.css');
 @import url('base/fonts.css');
-@import url('base/animations.css');
 @import url('base/reset.css');
 @import url('base/root.css');
 @import url('base/utilities.css');
+@import url('base/animations.css');
 
 @import url('components/buttons.css');
 @import url('components/forms.css');

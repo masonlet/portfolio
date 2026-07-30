@@ -10,6 +10,8 @@ import { isProjectKey, syncURL   } from "./router";
 import { loadReadme, abortReadme } from "./github";
 
 const ANIMATION_DURATION = 300;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const fadeDuration = (): number => reducedMotion.matches ? 0 : ANIMATION_DURATION;
 
 function fadeTransition(
   hideElement: HTMLElement,
@@ -35,7 +37,7 @@ function fadeTransition(
         showElement.style.opacity = '1';
       });
     });
-  }, ANIMATION_DURATION);
+  }, fadeDuration());
 }
 
 function createTechIcons(icons: readonly TechKey[]): string {
