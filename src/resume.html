@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>Resume - Mason L'Etoile</title>
-  <meta name="description" content="View/Download Mason L'Etoile's resume."/>
+  <meta name="description" content="I'm a software developer working in TypeScript, C++, and Rust. View my resume online or download the PDF — projects, experience, and education."/>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Mason L'Etoile">
   <meta property="og:title" content="Resume — Mason L'Etoile">
   <meta property="og:locale" content="en_CA">
-  <meta property="og:description" content="View or download Mason L'Etoile's resume.">
+  <meta property="og:description" content="I'm a software developer working in TypeScript, C++, and Rust. View my resume online or download the PDF — projects, experience, and education.">
   <meta property="og:url" content="https://masonletoile.ca/resume">
   <meta property="og:image" content="https://masonletoile.ca/img/projects/masonlet/portfolio.webp">
   <meta property="og:image:width" content="3840">
@@ -31,13 +31,14 @@
     <header>
       <div>
         <h1>Resume</h1>
-        <p><a href="/" class="btn hover-cursor hover-bg">Return to home page</a></p>
+        <p>
+          <a href="/" class="btn hover-cursor hover-bg">Return to home page</a>
+          <a href="/pdf/resume.pdf" download="Mason-LEtoile-Resume.pdf" class="btn hover-cursor hover-bg">Download PDF</a>
+        </p>
       </div>
     </header>
     <div class="panel-single">
-      <iframe id="resume-display" src="/pdf/resume.pdf" type="application/pdf">
-        <p>Unable to display PDF. If you want to, <a href="/pdf/resume.pdf">click here to download</a></p>
-      </iframe>
+      <iframe id="resume-display" src="/pdf/resume.pdf" title="Mason L'Etoile's resume (PDF)"></iframe>
     </div>
   </main>
 </body>
