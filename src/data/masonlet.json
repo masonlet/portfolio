@@ -82,6 +82,15 @@
     "github": "https://github.com/masonlet/starlet-samples",
     "tech": ["cpp", "opengl", "glfw", "cmake"]
   },
+  "pixel-drifter-jam": {
+    "title": "Pixel Drifter",
+    "description": "A top-down vehicle drifting game built with TypeScript, Vite, and a custom 2D web engine for A Lil Summer GameJam (theme: Drifting). Ported from Pixel Parker with drifting mechanics, handbrake control, and some basic levels. Deployed to Itch.io.",
+    "image": "/img/projects/masonlet/pixel-drifter-jam.webp",
+    "preview": { "src": "/img/projects/masonlet/pixel-drifter-jam_prev.webp", "w": 800, "h": 458 },
+    "github": "https://github.com/masonlet/pixel-drifter-jam",
+    "embedUrl": "https://itch.io/embed-upload/18720682?color=1a1a1a",
+    "tech": ["ts", "vite", "html", "css"]
+  },
   "tasktracker": {
     "title": "Task Tracker",
     "description": "TaskTracker is a lightweight tool for Windows 10 and 11 that adds task status options to the right-click context menu of folders.",
